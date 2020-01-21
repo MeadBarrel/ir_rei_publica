@@ -1,0 +1,136 @@
+﻿stability  = {
+	political_influence = 50
+}
+
+enact_law = {
+	political_influence = 35
+	stability = 15
+}
+
+buy_invention = {
+	#scaled_gold = 3
+	gold_per_pop = 0.15
+}
+
+buy_idea = {
+	political_influence = 20
+}
+
+call_omen = {
+	scaled_gold = 3.6
+}
+
+fabricate_claim = {
+	political_influence = 20
+}
+
+support_rebels = {
+	aggressive_expansion = 2
+}
+
+endorse_party = {
+	stability = 5
+	political_influence = 35
+	scaled_gold = 5
+}
+
+create_trade_route = {
+	gold = 15
+}
+
+send_gift = {
+	scaled_gold = 2.4 #scaled_gold = monthly income, so 2.4 times your monthly income
+}
+
+improve_relation = {
+	political_influence = 10
+}
+
+insult = {
+	aggressive_expansion = 1
+}
+
+inspire_devotio = {
+	tyranny = 3
+}
+
+recruit_mercenary = {
+	military_experience = 10
+}
+
+start_migration = {
+	stability = 8
+}
+
+
+buy_military_tradition = {
+	military_experience = 100
+}
+
+change_governor_policy = {
+	political_influence = 15
+}
+
+increase_legitimacy = {
+	political_influence = 10
+}
+
+change_diplomatic_stance = {
+	political_influence = 30
+}
+
+force_through_senate = {
+	tyranny = 5
+	political_influence = 100
+}
+
+monarchy_new_ruler = {
+	stability = 10
+}
+
+tribe_new_ruler = {
+	stability = 10
+}
+
+same_party_re_elected = {
+	tyranny = 2
+}
+
+new_ruling_party = {
+	stability = 5
+}
+
+war_breaking_truce = {
+	stability = 50
+	aggressive_expansion = 25
+	war_exhaustion = 1
+}
+
+war_breaking_truce_with_guarantor = {
+	stability = 50
+	aggressive_expansion = 25
+	war_exhaustion = 1
+}
+
+war_great_relations = {
+	stability = 20
+}
+
+war_good_relations = {
+	stability = 10
+}
+
+war_when_military_acces = {
+	stability = 40
+}
+
+war_no_cb = {
+	stability = 25
+	aggressive_expansion = 5
+	war_exhaustion = 2
+}
+
+war_on_subject = {
+	stability = 40
+	aggressive_expansion = 5
+}
