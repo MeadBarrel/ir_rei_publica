@@ -1,0 +1,7 @@
+rp_ambitions_conquer_province_no_objections = {
+	not = {
+		is_friend = $TARGET$.owner.current_ruler
+		is_rival = root
+		has_trait = coward
+	}
+}

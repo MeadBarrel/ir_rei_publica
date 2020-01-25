@@ -5,6 +5,64 @@ military_party_generic = {
 			is_ai = yes
 		}
 	}
+	always_modifier = {
+		add = -0.15
+		custom_tooltip = {
+			text = "ruler_enemy_military_leader"
+			current_ruler = {
+				any_rival = {
+					is_party_leader_of = root.party:military_party
+				}
+			}
+		}
+	}	
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy"
+			current_ruler = {
+				any_rival = {
+					party = military_party
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.1
+		custom_tooltip = {
+			text = "ruler_enemy_prominent"
+			current_ruler = {
+				any_rival = {
+					party = military_party
+					prominence > 80
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy_high_finesse"
+			current_ruler = {
+				any_rival = {
+					party = military_party
+					finesse > 10
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "ruler_friend_high_charisma"
+			current_ruler = {
+				any_rival = {
+					party = military_party
+					charisma > 10
+				}
+			}
+		}
+	}	
 	modifier = {
 		add = {
 			value = var:military_senate_support_variable
@@ -12,8 +70,11 @@ military_party_generic = {
 		}		
 		custom_tooltip = {
 			text = "from_senate_support"
-		}			
-	}	
+			root = {
+				has_variable = military_senate_support_variable
+			}
+		}
+	}
 	modifier = {
 		add = 1
 		custom_tooltip = {
@@ -99,6 +160,11 @@ military_party_generic = {
 	}
 	always_modifier = {
 		add = {
+			value = -0.5
+		}
+	}
+	always_modifier = {
+		add = {
 			value = 0.05
 			multiply = root.num_of_military_ideas
 		}
@@ -119,9 +185,83 @@ military_party_generic = {
 			text = "from_war_exhaustion_diplo"
 		}
 	}
+	always_modifier = {
+		add = -0.25
+		custom_tooltip = {
+			text = "party_triumph_friend_tooltip_ruler"
+			current_ruler = {
+				any_rival = {
+					party = military_party
+					prominence > 60
+					NOT = {
+						is_party_leader = yes
+					}
+				}
+			}
+		}
+	}
 }
 
 civic_party_generic = {
+	always_modifier = {
+		add = -0.15
+		custom_tooltip = {
+			text = "ruler_enemy_military_leader"
+			current_ruler = {
+				any_rival = {
+					is_party_leader_of = root.party:civic_party
+				}
+			}
+		}
+	}	
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy"
+			current_ruler = {
+				any_rival = {
+					party = civic_party
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.1
+		custom_tooltip = {
+			text = "ruler_enemy_prominent"
+			current_ruler = {
+				any_rival = {
+					party = civic_party
+					prominence > 80
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy_high_finesse"
+			current_ruler = {
+				any_rival = {
+					party = civic_party
+					finesse > 10
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "ruler_friend_high_charisma"
+			current_ruler = {
+				any_rival = {
+					party = civic_party
+					charisma > 10
+				}
+			}
+		}
+	}	
+
 	modifier = {
 		add = {
 			value = var:civic_senate_support_variable
@@ -129,7 +269,10 @@ civic_party_generic = {
 		}		
 		custom_tooltip = {
 			text = "from_senate_support"
-		}			
+			root = {
+				has_variable = civic_senate_support_variable
+			}
+		}
 	}	
 	modifier = {
 		add = 2
@@ -245,6 +388,66 @@ civic_party_generic = {
 }
 
 religious_party_generic = {
+	always_modifier = {
+		add = -0.15
+		custom_tooltip = {
+			text = "ruler_enemy_military_leader"
+			current_ruler = {
+				any_rival = {
+					is_party_leader_of = root.party:religious_party
+				}
+			}
+		}
+	}	
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy"
+			current_ruler = {
+				any_rival = {
+					party = religious_party
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.1
+		custom_tooltip = {
+			text = "ruler_enemy_prominent"
+			current_ruler = {
+				any_rival = {
+					party = religious_party
+					prominence > 80
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy_high_finesse"
+			current_ruler = {
+				any_rival = {
+					party = religious_party
+					finesse > 10
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "ruler_friend_high_charisma"
+			current_ruler = {
+				any_rival = {
+					party = religious_party
+					charisma > 10
+				}
+			}
+		}
+	}
+
+
 	modifier = {
 		add = {
 			value = var:religious_senate_support_variable
@@ -252,7 +455,10 @@ religious_party_generic = {
 		}		
 		custom_tooltip = {
 			text = "from_senate_support"
-		}			
+			root = {
+				has_variable = religious_senate_support_variable
+			}
+		}
 	}	
 	modifier = {
 		add = 2
@@ -357,6 +563,65 @@ religious_party_generic = {
 }
 
 mercantile_party_generic = {
+	always_modifier = {
+		add = -0.15
+		custom_tooltip = {
+			text = "ruler_enemy_military_leader"
+			current_ruler = {
+				any_rival = {
+					is_party_leader_of = root.party:mercantile_party
+				}
+			}
+		}
+	}	
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy"
+			current_ruler = {
+				any_rival = {
+					party = mercantile_party
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.1
+		custom_tooltip = {
+			text = "ruler_enemy_prominent"
+			current_ruler = {
+				any_rival = {
+					party = mercantile_party
+					prominence > 80
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy_high_finesse"
+			current_ruler = {
+				any_rival = {
+					party = mercantile_party
+					finesse > 10
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "ruler_friend_high_charisma"
+			current_ruler = {
+				any_rival = {
+					party = mercantile_party
+					charisma > 10
+				}
+			}
+		}
+	}
+
 	modifier = {
 		add = {
 			value = var:mercantile_senate_support_variable
@@ -364,7 +629,10 @@ mercantile_party_generic = {
 		}		
 		custom_tooltip = {
 			text = "from_senate_support"
-		}			
+			root = {
+				has_variable = mercantile_senate_support_variable
+			}
+		}
 	}	
 	modifier = {
 		add = 2
@@ -469,6 +737,66 @@ mercantile_party_generic = {
 }
 
 populist_party_generic = {
+	always_modifier = {
+		add = -0.15
+		custom_tooltip = {
+			text = "ruler_enemy_military_leader"
+			current_ruler = {
+				any_rival = {
+					is_party_leader_of = root.party:populist_party
+				}
+			}
+		}
+	}	
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy"
+			current_ruler = {
+				any_rival = {
+					party = populist_party
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.1
+		custom_tooltip = {
+			text = "ruler_enemy_prominent"
+			current_ruler = {
+				any_rival = {
+					party = populist_party
+					prominence > 80
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "ruler_enemy_high_finesse"
+			current_ruler = {
+				any_rival = {
+					party = populist_party
+					finesse > 10
+				}
+			}
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "ruler_friend_high_charisma"
+			current_ruler = {
+				any_rival = {
+					party = populist_party
+					charisma > 10
+				}
+			}
+		}
+	}
+
+
 	modifier = {
 		add = {
 			value = var:populist_senate_support_variable
@@ -476,7 +804,10 @@ populist_party_generic = {
 		}		
 		custom_tooltip = {
 			text = "from_senate_support"
-		}			
+			root = {
+				has_variable = populist_senate_support_variable
+			}
+		}
 	}	
 	modifier = {
 		add = 2

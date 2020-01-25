@@ -1,0 +1,69 @@
+﻿
+rp_ambition_conquer_province = {
+
+	can_be_picked = {
+		always = no
+		scheme_preconditions = yes
+		is_ruler = no
+		is_mercenary = no
+		# loyalty >= 40
+		not = {
+			has_variable = ongoing_scheme_target
+		}
+		employer = {
+			any_owned_province = {
+				any_neighbor_province = {
+					has_owner = yes
+					NOT = {
+						owned_or_subject_owned = root.employer
+					}
+				}
+			}
+		}
+	}
+
+	duration = 3650
+	
+	finished_when = {
+		always = no
+	}
+	
+	skip_initial_abort = yes
+	
+	abort = {
+		OR = {
+			NOT = {
+				exists = scope:ongoing_scheme_target
+			}
+			scope:ongoing_scheme_target = {
+				has_owner = no
+			}
+		}
+	}
+	
+	chance = {
+		base = 100
+		modifier = {
+			add = prominence_ambition
+		}
+		modifier = {
+			add = 50
+			has_trait = conqueror
+		}
+		modifier = {
+			add = 100
+			is_general = yes
+		}
+	}
+	
+	#on_monthly = ambition_conquer_province_monthly
+	on_monthly = rp_ambition_conquer_province_monthly
+	on_start = rp_ambition_conquer_province_start
+	on_finish = rp_ambition_conquer_province_finish
+
+	modifier = {
+	}
+
+	
+}
+

@@ -1,0 +1,44 @@
+derival_ruler = {
+	on_other_nation = no
+	on_own_nation = no
+	message = no
+
+	potential_trigger = {
+		hidden:scope:target = {
+			custom_tooltip = {
+				text = ""
+				is_alive = yes
+				is_rival = scope:actor.current_ruler
+			}
+		}
+	}
+
+	allowed_trigger = {
+		scope:target = {
+			is_rival = scope:actor.current_ruler
+		}
+		scope:target.employer = {
+			opinion = {
+				target = scope:actor
+				value >= 0
+			}
+		}
+		scope:actor.current_ruler = {
+			NOT = {
+				has_trait = stubborn
+			}
+		}
+	}
+
+	effect = {
+		scope:actor.current_ruler = {
+			clear_ambition_effect_ci = yes
+			set_variable = {
+				name = ongoing_scheme_target
+				value = scope:target
+				days = 270
+			}
+			set_ambition = rp_scheme_derival
+		}
+	}
+}

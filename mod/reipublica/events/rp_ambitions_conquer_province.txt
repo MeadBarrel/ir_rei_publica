@@ -1,0 +1,36 @@
+namespace = rp_ambitions_conquer_province
+
+
+# Gain supporter 
+rp_ambitions_conquer_province.1 = {
+	type = character_event
+	title = "rp_ambitions_conquer_province.1.t"
+	title = "rp_ambitions_conquer_province.1.desc"
+
+	trigger = {
+		or = {
+			any_friend = {
+				rp_ambitions_conquer_province_no_objections = {
+					TARGET = root.var:ongoing_scheme_target
+				}
+				save_temporary_scope_as = chosen_target
+			}
+			family = {
+				any_family_member = {
+					rp_ambitions_conquer_province_no_objections = {
+						TARGET = root.var:ongoing_scheme_target
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		save_scope_as = chosen_target
+		scope:chosen_target = {
+			rp_ambitions_conquer_province_set_ambition = {
+				TARGET = root.var:ongoing_scheme_target
+			}
+		}
+	}
+}

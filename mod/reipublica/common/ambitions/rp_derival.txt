@@ -1,0 +1,72 @@
+rp_scheme_derival = {
+	can_be_picked = {
+		scheme_preconditions = yes
+		NOT = {
+			has_variable = ongoing_scheme_target
+		}
+		any_rival = {
+			employer = root.employer
+			OR = {
+				NOT = {
+					has_variable_list = targeted_by
+				}
+				AND = {
+					has_variable_list = targeted_by
+					variable_list_size = {
+						name = targeted_by
+						value <= 6
+					}
+				}
+			}
+		}
+		OR = {
+			title_importance_svalue > 1.25
+			power_base >= 1			
+		}
+	}
+
+	finished_when = {
+		custom_tooltip = {
+			text = "rp_derival_success_chance_tooltip"
+		}
+	}
+
+	duration = 270
+
+	skip_initial_abort = yes
+
+	abort = {
+		OR = {
+			prisoner = yes
+			NOT = {
+				exists = scope:ongoing_scheme_target
+			}
+			scope:ongoing_scheme_target = {
+				is_alive = no
+				NOT = {
+					is_rival = root
+				}
+			}
+			has_character_modifier = indisposed_charmod
+		}
+	}
+
+	chance = {
+		base = 1
+		modifier = {
+			add = 1.5
+			has_trait = forgiving
+		}
+		modifier = {
+			add = -0.5
+			OR = {
+				has_trait = vengeful
+				has_trait = stubborn
+			}
+		}
+	}
+
+	on_start = rp_scheme_derival_start
+	on_finish = rp_scheme_derival_finish
+	on_abort = scheme_abort
+}
