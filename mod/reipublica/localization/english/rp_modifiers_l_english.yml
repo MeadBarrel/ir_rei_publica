@@ -1,0 +1,8 @@
+﻿l_english:
+ from_senate_support:0 "Senate support"
+ ruler_enemy_military_leader:0 "Ruler: #Y Enemy#! of this faction leader."
+ ruler_enemy:0 "Ruler: #Y Enemy#! of one of this faction's members"
+ ruler_enemy_prominent:0 "Ruler: #Y Enemy#! of one of this faction's members with at least #Y 80#! prominence"
+ ruler_enemy_high_finesse:0 "Ruler: #Y Enemy#! of one of this faction's members with more than #Y 10#! finesse"
+ ruler_enemy_high_charisma:0 "Ruler: #Y Enemy#! of one of this faction's members with more than #Y 10#! charisma"
+ ruler_friend_high_charisma:0 "Ruler: #Y Friend#! of one of this faction's members with more than #Y 10#! charisma"
