@@ -1,0 +1,7 @@
+﻿l_russian:
+ rp_ambition_conquer_province:0 "Завоевать провинцию [SCOPE.sProvince('ongoing_scheme_target').GetName]"
+ rp_ambition_conquer_province_desc:0 "[ROOT.GetCharacter.GetName] считает, что настало время для завоевания провинции [SCOPE.sProvince('ongoing_scheme_target').GetName]!"
+ rp_scheme_derival:0 "Перестать враждовать с [SCOPE.sChar('ongoing_scheme_target').GetName]"
+ rp_scheme_derival_desc:0 "[SCOPE.GetRootScope.GetCharacter.GetName] хочет сделать так, чтобы [SCOPE.GetRootScope.GetCharacter.GetHeShe] и [SCOPE.sChar('ongoing_scheme_target').GetName] прекратили вражду."
+ rp_derival_success_chance_tooltip:0 "This scheme currently has a success chance of #Y [SCOPE.ScriptValue('rp_derival_chance_scheme')]#!%."
+ rp_derival_outcome:0 "[SCOPE.GetRootScope.GetCharacter.GetName] попытается прекратить свою вражду с персонажем [SCOPE.sChar('ongoing_scheme_target').GetName]"

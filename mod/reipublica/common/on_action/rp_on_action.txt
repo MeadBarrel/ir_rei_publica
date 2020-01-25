@@ -1,0 +1,19 @@
+derival_pulse = {
+	trigger = {
+		has_variable = currently_derivalrying
+		exists = var:currently_derivalrying 
+		var:currently_derivalrying = {
+			has_variable = being_derivalried
+		}
+	}
+	random_events = {
+		1 = derival.1
+		1 = derival.2
+		1 = derival.3
+		1 = derival.4
+		1 = derival.5
+		1 = derival.6
+	}
+
+	fallback = derival_fail
+}

@@ -1,0 +1,129 @@
+rp_derival_chance_scheme = {
+	value = 10
+	min = 0
+	max = 60
+
+	add = charisma
+	if = {
+		limit = {
+			is_ruler = yes
+		}
+		add = 5
+	}
+
+	if = {
+		limit = {
+			has_variable = scheme_adjustment
+		}
+		add = var:scheme_adjustment
+	}
+
+	if = {
+		limit = {
+			exists = var:ongoing_scheme_target
+		}
+		# Negative target trait modifiers
+		if = {
+			limit = {
+				var:ongoing_scheme_target = {
+					OR = {
+						has_trait = abrasive
+						has_trait = sceptical
+						has_trait = proud
+					}
+				}
+			}
+			add = -2
+		}
+		if = {
+			limit = {
+				var:ongoing_scheme_target = {
+					has_trait = stubborn
+				}
+			}
+			add = -4
+		}
+		if = {
+			limit = {
+				var:ongoing_scheme_target = {
+					has_trait = vengeful
+				}
+			}
+			add = -6
+		}
+
+
+		# Positive target trait modifiers
+		if = {
+			limit = {
+				var:ongoing_scheme_target = {
+					OR = {
+						has_trait = good_natured
+						has_trait = trusting
+						has_trait = wise
+						has_trait = submissive
+					}
+				}
+			}
+			add = 2
+		}
+		if = {
+			limit = {
+				var:ongoing_scheme_target = {
+					has_trait = content
+				}
+			}
+			add = 4
+		}
+		if = {
+			limit = {
+				var:ongoing_scheme_target = {
+					has_trait = forgiving
+				}
+			}
+			add = 6
+		}
+
+	}
+
+	# Negative root trait modifiers
+	if = {
+		limit = {
+			has_trait = dumb
+		}
+		add = -2
+	}
+	if = {
+		limit = {
+			has_trait = abrasive
+		}
+		add = -4
+	}
+	if = {
+		limit = {
+			has_trait = blunt
+		}
+		add = -6
+	}
+
+	# Positive root trait modifiers
+	if = {
+		limit = {
+			has_trait = intelligent
+		}
+		add = 2
+	}
+	if = {
+		limit = {
+			has_trait = good_natured
+		}
+		add = 4
+	}
+	if = {
+		limit = {
+			has_trait = silver_tongued
+		}
+		add = 6
+	}
+
+}

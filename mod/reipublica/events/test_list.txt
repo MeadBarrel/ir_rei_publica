@@ -1,0 +1,16 @@
+namespace = test_events
+
+test_events.1 = {
+	type = country_event
+
+	trigger = {
+		always = yes
+	}
+	immediate = {
+		
+		add_to_variable_list = {
+			name = 'stupid'
+			target = current_ruler
+		}
+	}
+}

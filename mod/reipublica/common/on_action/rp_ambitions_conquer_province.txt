@@ -1,0 +1,53 @@
+﻿rp_ambition_conquer_province_monthly = {
+	random_events = {
+		50 = 0
+		10 = rp_ambitions_conquer_province.1
+	}
+}
+
+
+rp_ambition_conquer_province_start = {
+	effect = {
+		if = {
+			limit = {
+				has_variable = ongoing_scheme_target
+			}
+			var:ongoing_scheme_target = {
+				save_scope_as = ongoing_scheme_target
+			}
+		}
+		else = {
+			employer = {
+				random_owned_province = {
+					limit = {
+						any_neighbor_province = {
+							has_owner = yes
+							NOT = {
+								owned_or_subject_owned = root.employer
+							}
+						}
+					}
+					random_neighbor_province = {
+						limit = {
+							has_owner = yes
+							NOT = {
+								owned_or_subject_owned = root.employer
+							}
+						}
+						save_scope_as = ongoing_scheme_target
+					}
+				}
+			}
+			set_variable = {
+				name = ongoing_scheme_target
+				value = scope:ongoing_scheme_target
+			}
+		}
+	}
+}
+
+rp_ambition_conquer_province_finish = {
+	effect = {
+		remove_scheme_variables_effect = yes
+	}
+}

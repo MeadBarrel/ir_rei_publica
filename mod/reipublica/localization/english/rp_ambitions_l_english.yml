@@ -1,0 +1,7 @@
+﻿l_english:
+ rp_ambition_conquer_province:0 "Conquer province [SCOPE.sProvince('ongoing_scheme_target').GetName]"
+ rp_ambition_conquer_province_desc:0 "[ROOT.GetCharacter.GetName] believes it is time to conquer a province of [SCOPE.sProvince('ongoing_scheme_target').GetName]!"
+ rp_scheme_derival:0 "Stop rivalry with [SCOPE.sChar('ongoing_scheme_target').GetName]"
+ rp_scheme_derival_desc:0 "[SCOPE.GetRootScope.GetCharacter.GetName] will try to stop rivalri between [SCOPE.GetRootScope.GetCharacter.GetHerHim] and [SCOPE.sChar('ongoing_scheme_target').GetName]"
+ rp_derival_success_chance_tooltip:0 "This scheme currently has a success chance of #Y [SCOPE.ScriptValue('rp_derival_chance_scheme')]#!%."
+ rp_derival_outcome:0 "[SCOPE.GetRootScope.GetCharacter.GetName] will try to stop rivalri between [SCOPE.GetRootScope.GetCharacter.GetHerHim] and [SCOPE.sChar('ongoing_scheme_target').GetName]"

@@ -1,0 +1,66 @@
+rp_scheme_derival_start = {
+	effect = {
+		if = {
+			limit = {
+				NOT = {
+					has_variable = ongoing_scheme_target
+				}
+			}
+			random_rival = {
+				limit = {
+					employer = root.employer
+					OR = {
+						NOT = {
+							has_variable_list = targeted_by
+						}
+						AND = {
+							has_variable_list = targeted_by
+							variable_list_size = {
+								name = targeted_by
+								value <= 6  
+							}
+						}
+					}
+				}
+				save_scope_as = ongoing_scheme_target
+			}
+			set_variable = {
+				name = ongoing_scheme_target
+				value = scope:ongoing_scheme_target
+				days = 290
+			}
+			scope:ongoing_scheme_target = {
+				add_to_variable_list = {
+					name = targeted_by
+					target = root
+				}
+			}
+		}
+		else = {
+			var:ongoing_scheme_target = {
+				save_scope_as = ongoing_scheme_target
+			}
+		}
+	}
+}
+
+
+rp_scheme_derival_finish = {
+	effect = {
+		custom_tooltip = "rp_derival_outcome"
+		set_variable = {
+			name = roll
+			value = { integer_range = {min = 1 max = 100} }
+		}
+		if = {
+			limit = {
+				has_variable = roll
+				var:roll <= root.rp_derival_chance_scheme
+			}
+			scope:ongoing_scheme_target = {
+				remove_rival = root
+			}
+		}
+		remove_scheme_variables_effect = yes
+	}
+}

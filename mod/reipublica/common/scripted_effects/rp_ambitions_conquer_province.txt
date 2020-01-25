@@ -1,0 +1,7 @@
+rp_ambitions_conquer_province_set_ambition = {
+	set_variable = {
+		name = ongoing_scheme_target
+		value = $TARGET$
+	}
+	set_ambition = rp_ambition_conquer_province
+}
