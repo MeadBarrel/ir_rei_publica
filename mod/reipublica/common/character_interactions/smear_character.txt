@@ -39,7 +39,7 @@ smear_character = {
 			pay_price = smear_character
 		}
 		scope:target = {
-			add_popularity = -15
+			add_popularity = -25
 		}
 		random_list = {
 			75 = {}
