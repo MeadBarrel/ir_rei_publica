@@ -1,0 +1,39 @@
+rp_scheme_ruler_befriend = {
+	can_be_picked = {
+		always = no  # Only from character interaction
+	}
+
+	finished_when = {
+		custom_tooltip = {
+			text = "rp_scheme_ruler_befriend_chance_tooltip"
+		}
+	}
+
+	duration = 270
+	skip_initial_abort = yes
+
+	abort = {
+		OR = {
+			is_ruler = no
+			can_get_friends = no
+			prisoner = yes
+			NOT = {
+				exists = scope:ongoing_scheme_target
+			}
+			scope:ongoing_scheme_target = {
+				is_alive = no
+				OR = {
+					is_friend = root
+					is_rival = root
+				}
+			}
+			has_character_modifier = indisposed_charmod
+		}
+	}
+
+	on_start = rp_scheme_ruler_befriend_start
+	on_finish = rp_scheme_ruler_befriend_finish
+	on_abort = scheme_abort
+	on_monthly = rp_scheme_ruler_befriend_monthly
+
+}

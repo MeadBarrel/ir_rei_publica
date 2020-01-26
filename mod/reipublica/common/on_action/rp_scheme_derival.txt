@@ -1,5 +1,11 @@
 rp_scheme_derival_start = {
 	effect = {
+		set_variable = {
+			name = scheme_adjustment
+			value = 0
+			days = 290
+		}
+
 		if = {
 			limit = {
 				NOT = {

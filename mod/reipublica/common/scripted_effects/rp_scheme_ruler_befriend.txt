@@ -1,0 +1,86 @@
+rp_set_befriend_progress_large_effect = {
+	custom_tooltip = rp_befriend_progress_large
+	if = {
+		limit = {
+			NOT = {
+				has_variable = scheme_adjustment
+			}
+		}
+		set_variable = {
+			name = scheme_adjustment
+			value = 6
+		}
+	}
+	else = {
+		change_variable = {
+			name = scheme_adjustment
+			add = 6
+		}
+	}
+}
+
+
+rp_set_befriend_progress_moderate_effect = {
+	custom_tooltip = rp_befriend_progress_moderate
+	if = {
+		limit = {
+			NOT = {
+				has_variable = scheme_adjustment
+			}
+		}
+		set_variable = {
+			name = scheme_adjustment
+			value = 5
+		}
+	}
+	else = {
+		change_variable = {
+			name = scheme_adjustment
+			add = 5
+		}
+	}
+}
+
+
+rp_set_befriend_progress_small_effect = {
+	custom_tooltip = rp_befriend_progress_small
+	if = {
+		limit = {
+			NOT = {
+				has_variable = scheme_adjustment
+			}
+		}
+		set_variable = {
+			name = scheme_adjustment
+			value = 4
+		}
+	}
+	else = {
+		change_variable = {
+			name = scheme_adjustment
+			add = 4
+		}
+	}
+}
+
+
+rp_remove_befriend_progress_large_effect = {
+	custom_tooltip = rp_befriend_remove_progress_large
+	if = {
+		limit = {
+			NOT = {
+				has_variable = scheme_adjustment
+			}
+		}
+		set_variable = {
+			name = scheme_adjustment
+			value = -8
+		}
+	}
+	else = {
+		change_variable = {
+			name = scheme_adjustment
+			add = -8
+		}
+	}
+}

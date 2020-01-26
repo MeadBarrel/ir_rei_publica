@@ -14,3 +14,50 @@ test_events.1 = {
 		}
 	}
 }
+
+
+test_events.2 = {
+	type = country_event
+
+	title = "test_events.2.t"
+	desc = "test_events.2.desc"
+
+	left_portrait = scope:our_friend
+	right_portrait = scope:potential_friend
+
+	trigger = {
+		always = yes
+	}
+
+	immediate = {
+		random_character = {
+			limit = {
+				not = {
+					is_ruler = yes
+				}
+			}
+			save_scope_as = our_friend
+		}
+		random_character = {
+			limit ={
+				not = {
+					is_ruler = yes
+					this = scope:our_friend
+				}
+			}
+			save_scope_as = potential_friend
+		}
+
+
+		current_ruler = {
+			add_friend = scope:our_friend
+		}
+		scope:potential_friend = {
+			add_rival = scope:our_friend
+		}
+	}
+
+	option = {
+		name = "test_events.3.a"
+	}
+}
