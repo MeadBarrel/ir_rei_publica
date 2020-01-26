@@ -1,0 +1,80 @@
+smear_character = {
+
+	on_other_nation = no
+	on_own_nation = yes
+	
+	sound = "event:/SFX/UI/Character/Unique/sfx_ui_character_smear_reputation"
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			NOT = { employer = { tag = REB } }
+			NOT = { employer = { tag = BAR } }
+			is_alive = yes
+			is_mercenary = no
+			OR = {
+				is_ruler = no
+				has_variable = dictator_holding_power
+			}
+		}
+	}
+	
+	
+	allowed_trigger = {
+		hidden:scope:actor = {
+			can_pay_price = smear_character
+		}
+		hidden:scope:target = {
+			prisoner_valid_for_country_events_trigger = yes 
+		}
+		scope:target = {
+			is_adult = yes
+			popularity > 0
+		}
+	}
+	
+
+	
+	effect = {
+		scope:actor = {
+			pay_price = smear_character
+		}
+		scope:target = {
+			add_popularity = -15
+		}
+		random_list = {
+			75 = {}
+			25 = {
+				trigger = {
+					scope:target = {
+						can_get_rivals = yes
+					}
+					scope:actor.current_ruler = {
+						can_get_rivals = yes
+					}
+				}
+				modifier = {
+					scope:target = {
+						has_trait = vengeful
+					}
+					add = { value = 15 }
+				}
+				modifier = {
+					scope:target = {
+						has_trait = forgiving
+					}
+					add = { value = -10 }
+				}
+				scope:target = {
+					add_rival = scope:actor.current_ruler
+				}
+			}
+		}
+	}
+	
+	ai_will_do = {
+		modifier = {
+			factor = 0
+		}
+	}
+	
+}	
