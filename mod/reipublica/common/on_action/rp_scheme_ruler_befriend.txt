@@ -86,6 +86,6 @@ rp_scheme_ruler_befriend_monthly = {
 		10 = rp_befriend.4
 		10 = rp_befriend.5
 		10 = rp_befriend.6
-		50 = rp_befriend.9
+		5 = rp_befriend.9
 	}
 }
