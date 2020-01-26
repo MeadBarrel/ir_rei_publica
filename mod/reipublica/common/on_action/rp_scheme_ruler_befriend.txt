@@ -1,0 +1,91 @@
+rp_scheme_ruler_befriend_start = {
+	effect = {
+
+		set_variable = {
+			name = scheme_adjustment
+			value = 0
+			days = 290
+		}
+
+		if = {
+			limit = {
+				NOT = {
+					has_variable = ongoing_scheme_target
+				}
+			}
+			country = {
+				random_living_character = {
+					limit = {
+						employer = root.employer
+						OR = {
+							NOT = { has_variable_list = targeted_by }
+							AND = {
+								has_variable_list = targetd_by
+								variable_list_size = {
+									name = targeted_by
+									value <= 6
+								}
+							}
+						}
+					save_scope_as = ongoing_scheme_target	
+					}					
+				}
+			}
+			set_variable = {
+				name = ongoing_scheme_target
+				value = scope:ongoing_scheme_target
+				days = 290
+			}
+			scope:ongoing_scheme_target = {
+				add_to_variable_list = {
+					name = targeted_by
+					target = root
+				}
+			}			
+		}
+		else = {
+			var:ongoing_scheme_target = {
+				save_scope_as = ongoing_scheme_target
+			}
+		}
+	}
+}
+
+
+rp_scheme_ruler_befriend_finish = {
+	effect = {
+		custom_tooltip = "rp_scheme_ruler_befriend_outcome"
+		set_variable = {
+			name = roll
+			value = { integer_range = {min = 1 max = 100} }
+		}
+		if = {
+			limit = {
+				has_variable = roll
+				var:roll <= root.rp_scheme_ruler_befriend_chance
+			}
+			trigger_event = {
+				id = rp_befriend.7
+			}
+		}
+		else = {
+			trigger_event = {
+				id = rp_befriend.8
+			}
+		}
+	}
+}
+
+
+rp_scheme_ruler_befriend_monthly = {
+	random_events = {
+		40 = 0
+		10 = rp_befriend.1
+		10 = rp_befriend.2
+		10 = rp_befriend.3
+		10 = rp_befriend.4
+		10 = rp_befriend.5
+		10 = rp_befriend.6
+		50 = rp_befriend.9
+	}
+}

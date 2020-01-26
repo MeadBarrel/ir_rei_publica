@@ -127,3 +127,80 @@ rp_derival_chance_scheme = {
 	}
 
 }
+
+rp_scheme_ruler_befriend_chance = {
+	value = 6
+	min = 0
+	max = 75
+
+	add = {
+		value = charisma
+		multiply = 2
+	}
+
+	if = {
+		limit = {
+			has_variable = scheme_adjustment
+		}
+		add = var:scheme_adjustment
+	}
+
+	if = {  # Enemy of my enemy
+		limit = {
+			any_rival = {
+				is_rival = scope:ongoing_scheme_target
+			}
+		}
+		add = 8
+	}
+
+	# Target traits
+	if = {
+		limit = {
+			exists = var:ongoing_scheme_target
+		}
+		# Negative target traits
+		if = {
+			limit = {
+				scope:ongoing_scheme_target = {
+					has_trait = suspicious
+				}
+			}
+			add = -5
+		}
+		if = {
+			limit = {
+				scope:ongoing_scheme_target = {
+					has_trait = abrasive
+				}
+			}
+			add = -5
+		}
+		# Positive target traits
+		if = {
+			limit = {
+				scope:ongoing_scheme_target = {
+					has_trait = trusting
+				}
+			add = 5
+			}
+		}
+		if = {
+			limit = {
+				scope:ongoing_scheme_target = {
+					has_trait = good_natured
+				}
+			}
+			add = 5
+		}
+	}
+
+	# Root traits
+	if = {
+		limit = {
+			has_trait = silver_tongued
+		}
+		add = 10
+	}
+
+}

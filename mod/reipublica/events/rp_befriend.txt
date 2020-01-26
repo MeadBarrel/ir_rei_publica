@@ -1,0 +1,843 @@
+namespace = rp_befriend
+
+
+rp_befriend.1 = {
+	type = character_event
+
+	title = "rp_befriend.1.t"
+	desc = "rp_befriend.1.desc"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+
+	picture = senate_debate
+
+	trigger = {
+		is_ruler = yes
+		NOT = {
+			has_variable = befriend_toggle_1
+		}
+		exists = scope:ongoing_scheme_target
+		scope:ongoing_scheme_target = {
+			employer = root.employer
+			has_any_office = no
+			OR = {
+				AND = {
+					employer = { is_republic = yes }
+					OR = {
+						has_ambition = ambition_become_physician_republic
+						has_ambition = ambition_become_office_censor
+						has_ambition = ambition_become_augur_republic
+						has_ambition = ambition_become_pontifex_republic
+						has_ambition = ambition_become_tribune_republic
+						has_ambition = ambition_become_tribune_of_treasury_republic
+						has_ambition = ambition_become_praetor_republic
+						has_ambition = ambition_become_aedile_republic
+					}
+				}
+				AND = {
+					employer = { is_monarchy = yes }
+					OR = {
+						has_ambition = ambition_become_physician_monarchy
+						has_ambition = ambition_become_steward_monarchy
+						has_ambition = ambition_become_philosopher_monarchy
+						has_ambition = ambition_become_high_priest_monarchy
+						has_ambition = ambition_become_master_of_the_guard_monarchy
+						has_ambition = ambition_become_marshal_monarchy
+						has_ambition = ambition_become_royal_tutor_monarchy
+						has_ambition = ambition_become_foreign_minister_monarchy
+					}
+				}
+				AND = {
+					employer = { is_tribal = yes }
+					OR = {
+						has_ambition = ambition_become_apothecary_tribal
+						has_ambition = ambition_become_magistrate_tribal
+						has_ambition = ambition_become_wise_person_tribal
+						has_ambition = ambition_become_high_priest_tribal
+						has_ambition = ambition_become_bodyguard_tribal
+						has_ambition = ambition_become_warchief_tribal
+						has_ambition = ambition_become_arbitrator_tribal
+						has_ambition = ambition_become_elder_tribal
+					}
+				}
+			}
+
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = befriend_toggle_1
+			days = 500
+		}
+	}
+
+	option = {
+		name = "rp_befriend.1.a"
+		rp_set_befriend_progress_large_effect = yes
+		if = {
+			limit = { employer = { is_republic = yes } }
+			befriend_event_give_ambition_office_republic_effect = yes
+		}
+		else_if = {
+			limit = { employer = { is_republic = yes } }
+			befriend_event_give_ambition_office_monarchy_effect = yes
+		}
+		else_if = {
+			limit = { employer = { is_tribal = yes } }
+			befriend_event_give_ambition_office_tribal_effect = yes
+		}
+		root.employer = {
+			add_political_influence = subtract_influence_small
+			add_tyranny = 5.0
+		}
+	}
+
+	option = {
+		name = "rp_befriend.1.b"
+	}
+
+}
+
+
+rp_befriend.2 = {
+	type = character_event
+	title = "rp_befriend.2.t"
+	desc = "rp_befriend.2.desc"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+
+	goto_location = scope:ongoing_scheme_target
+
+	picture = trade_port
+
+	trigger = {
+		is_ruler = yes
+		NOT = {
+			has_variable = befriend_toggle_2
+		}
+		exists = scope:ongoing_scheme_target
+	}
+
+	immediate = {
+		set_variable = {
+			name = befriend_toggle_2
+			days = 500
+		}
+	}
+
+	option = {
+		name = "rp_befriend.2.a"
+
+		rp_set_befriend_progress_large_effect = yes
+		add_gold = -100.0
+	}
+
+	option = {
+		name = "rp_befriend.2.b"
+		rp_set_befriend_progress_moderate_effect = yes
+		add_gold = -50.0
+	}
+
+	option = {
+		name = "rp_befriend.2.c"
+		rp_set_befriend_progress_small_effect = yes
+		add_gold = -15.0
+	}
+
+	option = {
+		name = "rp_befriend.2.d"
+	}
+}
+
+
+rp_befriend.3 = {
+	type = character_event
+
+	title = "rp_befriend.3.t"
+
+	picture = war_chest
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+
+	desc = {
+		first_valid = {
+			triggered_desc = { 
+				desc = "rp_befriend.3.desc_1"
+				trigger = {
+					scope:ongoing_scheme_target = {
+						NOT = { employer = root.employer }
+					}
+				}
+			}
+			triggered_desc = {
+				desc = "rp_befriend.3.desc_2"
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	trigger = {
+		is_ruler = yes
+		NOT = { has_variable = befriend_toggle_3 }
+		exists = scope:ongoing_scheme_target
+	}
+
+	immediate = {
+		set_variable = {
+			name = befriend_toggle_3
+			days = 500
+		}
+	}
+
+	option = {
+		name = "rp_befriend.3.a"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				NOT = { employer = root.employer }
+			}
+		}
+
+		ROOT.employer = {
+			add_treasury = {
+				value = has_monthly_income
+				multiply = -3
+			}
+		}
+
+		rp_set_befriend_progress_large_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.3.b"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				NOT = { employer = root.employer }
+			}
+		}
+
+		ROOT.employer = {
+			add_treasury = {
+				value = has_monthly_income
+				multiply = -2
+			}
+		}
+
+		rp_set_befriend_progress_moderate_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.3.c"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				NOT = { employer = root.employer }
+			}
+		}
+
+		ROOT.employer = {
+			add_treasury = {
+				value = has_monthly_income
+				multiply = -1
+			}
+		}
+
+		rp_set_befriend_progress_small_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.3.d"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				employer = root.employer
+			}
+		}
+
+		rp_set_befriend_progress_large_effect = yes
+
+		add_gold = -250
+		scope:ongoing_scheme_target = {
+			add_gold = 250
+		}
+	}
+
+
+	option = {
+		name = "rp_befriend.3.e"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				employer = root.employer
+			}
+		}
+
+		rp_set_befriend_progress_moderate_effect = yes
+
+		add_gold = -100
+		scope:ongoing_scheme_target = {
+			add_gold = 100
+		}
+	}
+
+
+	option = {
+		name = "rp_befriend.3.f"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				employer = root.employer
+			}
+		}
+
+		rp_set_befriend_progress_small_effect = yes
+
+		add_gold = -50
+		scope:ongoing_scheme_target = {
+			add_gold = 50
+		}
+	}
+
+	option = {
+		name = "rp_befriend.3.g"
+	}
+}
+
+
+rp_befriend.4 = {
+	type = character_event
+	title = "rp_befriend.4.t"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+
+	picture = gladiators
+
+	goto_location = scope:ongoing_scheme_target
+
+	desc = {
+		first_valid = {
+			triggered_desc = { 
+				desc = "rp_befriend.4.desc_1"
+				trigger = {
+					scope:ongoing_scheme_target = {
+						NOT = { employer = root.employer }
+					}
+				}
+			}
+			triggered_desc = {
+				desc = "rp_befriend.4.desc_2"
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	trigger = {
+		is_ruler = yes
+		NOT = {
+			has_variable = befriend_toggle_4
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = befriend_toggle_4
+			days = 500
+		}
+	}
+
+	option = {
+		name = "rp_befriend.4.a"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				not = { employer = root.employer }
+			}
+		}
+		add_popularity = subtract_popularity_small
+		rp_set_befriend_progress_moderate_effect = yes
+		ROOT.employer = {
+			add_political_influence = subtract_influence_small
+		}
+	}
+
+	option = {
+		name = "rp_befriend.4.b"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				employer = root.employer
+			}
+		}
+
+		add_popularity = subtract_popularity_small
+		ROOT.employer = {
+			add_political_influence = subtract_influence_small
+		}
+
+		rp_set_befriend_progress_moderate_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.4.c"
+
+		add_popularity = subtract_popularity_small
+
+		if = {
+			limit = {
+				scope:ongoing_scheme_target = {
+					not = { employer = root.employer }
+				}
+			}
+			root.employer = {
+				add_treasury = -25.0
+			}
+		}
+		else = {
+			add_gold = -15.0
+		}
+
+		rp_set_befriend_progress_small_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.4.d"
+	}
+
+}
+
+
+rp_befriend.5 = {
+	type = character_event
+
+	title = "rp_befriend.5.t"
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+
+	picture = senator_conversing
+
+	goto_location = scope:ongoing_scheme_target
+
+	desc = {
+		first_valid = {
+			triggered_desc = { 
+				desc = "rp_befriend.5.desc_1"
+				trigger = {
+					scope:ongoing_scheme_target = {
+						not = { employer = root.employer }
+					}
+				}
+			}
+			triggered_desc = {
+				desc = "rp_befriend.5.desc_2"
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	trigger = {
+		is_ruler = yes
+		NOT = { has_variable = befriend_toggle_5 }
+	}
+
+	immediate = {
+		set_variable = {
+			name = befriend_toggle_5
+			days = 500
+		}
+	}
+
+	option = {
+		name = "rp_befriend.5.a"
+		trigger = {
+			scope:ongoing_scheme_target = {
+				not = { employer = root.employer }
+			}
+		}
+		rp_set_befriend_progress_moderate_effect = yes
+		root.employer = {
+			add_political_influence = subtract_influence_small
+		}
+	}
+
+	option = {
+		name = "rp_befriend.5.b"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				employer = root.employer
+			}
+		}
+
+		root.employer = {
+			add_stability = -5
+		}
+
+		rp_set_befriend_progress_moderate_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.5.c"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				employer = root.employer
+			}
+		}
+
+		root.employer = {
+			add_treasury = {
+				value = {
+					integer_range = {
+						min = -30
+						max = -10
+					}
+				}
+			}
+		}
+
+		rp_set_befriend_progress_moderate_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.5.d"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				not = { employer = root.employer }
+			}
+		}
+
+		ROOT.employer = {
+			add_stability = -5
+		}
+		rp_set_befriend_progress_moderate_effect = yes
+	}
+
+	option = {
+		name = "rp_befried.5.e"
+		trigger = {
+			scope:ongoing_scheme_target = {
+				not = { employer = root.employer }
+			}
+		}
+
+		root.employer = {
+			add_political_influence = subtract_influence_medium
+		}
+
+		rp_set_befriend_progress_moderate_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.5.f"
+
+		trigger = {
+			is_ruler = yes
+			scope:ongoing_scheme_target = {
+				not = { employer = root.employer }
+			}
+		}
+
+		ROOT.employer = {
+			add_manpower = -10
+		}
+
+		rp_set_befriend_progress_moderate_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.5.g"
+	}
+}
+
+
+rp_befriend.6 = {
+	type = character_event
+
+	title = "rp_befriend.6.t"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+
+	picture = crucifixion
+
+	goto_location = scope:ongoing_scheme_target
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = "rp_befriend.6.desc_1"
+				trigger = {
+					scope:ongoing_scheme_target = {
+						not = { employer = root.employer }
+					}
+				}
+			}
+			triggered_desc = {
+				desc = "rp_befriend.6.desc_2"
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	trigger = {
+		is_ruler = yes
+		not = { has_variable = befriend_toggle_6 }
+	}
+
+	immediate = {
+		set_variable = {
+			name = befriend_toggle_6
+			days = 500
+		}
+	}
+
+	option = {
+		name = "rp_befriend.6.a"
+		trigger = {
+			scope:ongoing_scheme_target = {
+				not = { employer = root.employer }
+			}
+		}
+
+		ROOT.employer = {
+			add_tyranny = 5
+			add_political_influence = subtract_influence_small
+		}
+
+		rp_set_befriend_progress_moderate_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.6.b"
+
+		trigger = {
+			scope:ongoing_scheme_target = {
+				employer = root.employer
+			}
+		}
+
+		add_gold = -30
+
+		ROOT.employer = {
+			add_tyranny = 5
+		}
+
+		rp_set_befriend_progress_small_effect = yes
+
+	}
+
+	option = {
+		name = "rp_befriend.6.c"
+	}
+}
+
+
+rp_befriend.7 = {  # Make friend!
+	type = character_event
+	title = "rp_befriend.7.t"
+	desc = "rp_befriend.7.desc"
+
+	picture = greek_philosophers
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+
+	goto_location = scope:ongoing_scheme_target
+
+	immediate = {
+		add_friend = scope:ongoing_scheme_target
+		remove_scheme_variables_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.7.a"		
+	}
+}
+
+
+rp_befriend.8 = { # You failed
+	type = character_event
+	title = "rp_befriend.8.t"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+
+	picture = senator_conversing
+
+	goto_location = scope:ongoing_scheme_target
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				desc = "befriend.8.desc_1"
+				trigger = {
+					is_ruler = yes
+					scope:ongoing_scheme_target = { 
+						not = { employer = root.employer }	
+					}
+				}
+			}
+			triggered_desc = {
+				desc = "befriend.8.desc_2"
+				trigger = { always = yes }
+			}
+		}
+	}
+
+	immediate = {
+		remove_scheme_variables_effect = yes
+	}	
+
+	option = {
+		name = "rp_befriend.8.a"
+	}
+}
+
+
+rp_befriend.9 = {  # Him or me
+	type = character_event
+
+	title = "rp_befriend.9.t"
+	desc = "rp_befriend.9.desc"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+	right_portrait = scope:target_rival
+
+	trigger = {
+		not = {
+			has_variable = befriend_toggle_9
+		}
+		any_friend = {
+			is_rival = scope:ongoing_scheme_target
+			NOR = {
+				prisoner = yes
+				has_character_modifier = indisposed_charmod
+			}
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = befriend_toggle_9
+			days = 290
+		}
+		random_friend = {
+			limit = {
+				is_rival = scope:ongoing_scheme_target
+				NOR = {
+					prisoner = yes
+					has_character_modifier = indisposed_charmod
+				}
+			}
+			save_scope_as = target_rival
+		}
+	}
+
+	option = {  # Try to reconcile
+		name = "rp_befriend.9.a"
+		random_list = {
+			50 = {
+				custom_tooltip = "rp_befriend.9.a.tt.1"
+				trigger_event = {
+					id = rp_befriend.10
+				}
+			}
+			25 = {
+				custom_tooltip = "rp_befriend.9.a.tt.2"
+				trigger_event = {
+					id = rp_befriend.11
+				}
+			}
+			25 = {
+				custom_tooltip = "rp_befriend.9.a.tt.3"
+				trigger_event = {
+					id = rp_befriend.12
+				}
+			}
+		}
+	}
+
+	option = {  # Stop friendship
+		name = "rp_befriend.9.b"
+		remove_friend = scope:target_rival
+		rp_set_befriend_progress_small_effect = yes
+	}
+
+	option = {  # Do nothing
+		name = "rp_befriend.9.c"
+		rp_remove_befriend_progress_large_effect = yes
+	}
+}
+
+
+rp_befriend.10 = {  # Reconciled successfully
+	type = character_event
+
+	title = "rp_befriend.10.t"
+	desc = "rp_befriend.10.desc"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+	right_portrait = scope:target_rival
+
+	immediate = {
+		rp_set_befriend_progress_small_effect = yes
+		scope:target_rival = {
+			remove_rival = scope:ongoing_scheme_target
+		}
+	}
+
+	option = {
+		name = "rp_befriend.10.a"
+	}
+}
+
+
+rp_befriend.11 = {  # Reconcilation failed
+	type = character_event
+
+	title = "rp_befriend.11.t"
+	desc = "rp_befriend.11.desc"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+	right_portrait = scope:target_rival
+	
+	immediate = {
+		rp_remove_befriend_progress_large_effect = yes
+	}
+
+	option = {
+		name = "rp_befriend.11.a"
+	}
+}
+
+
+rp_befriend.12 = {  # Friendship lost
+	type = character_event
+
+	title = "rp_befriend.12.t"
+	desc = "rp_befriend.12.desc"
+
+	left_portrait = root
+	right_portrait = scope:ongoing_scheme_target
+	right_portrait = scope:target_rival
+	
+	immediate = {
+		rp_remove_befriend_progress_large_effect = yes
+		remove_friend = scope:target_rival
+	}
+
+	option = {
+		name = "rp_befriend.12.a"
+	}
+
+}
