@@ -1,0 +1,72 @@
+rp_character_power_base = {
+	value = power_base
+
+	add = {
+		value = prominence
+		divide = 4
+	}
+
+	add = {
+		value = popularity
+		divide = 4
+	}
+}
+
+
+rp_character_scaled_power_base = {
+	value = rp_character_power_base
+
+	if = {
+		limit = { rp_character_power_base < 10 }
+		multiply = 0.215
+		add = 1
+	}
+	else_if = {
+		limit = { rp_character_power_base  < 40 }
+		multiply = 0.115
+		add = 2
+	}
+	else_if = {
+		limit = { rp_character_power_base < 150 }
+		multiply = 0.065
+		add = 4
+	}
+	else = {
+		multiply = 0.025
+		add = 10
+	}
+
+	#if = {
+#		limit = { power_base < 60 }
+#		multiply = {
+#			value = power_base
+#			multiply = 0.115
+#			add = 0.8
+#			divide = 10
+#		}
+#	}
+
+#	if = {
+#		limit = {
+#			power_base < 150
+#			power_base >= 60
+#		}
+#		multiply = {
+#			value = power_base
+#			multiply = 0.055
+#			add = 4.45
+#			divide = 10
+#		}
+#	}
+
+#	if = {
+#		limit = { power_base >= 150 }
+#		multiply = {
+#			value = power_base
+#			multiply = 0.025
+#			add = 8.95
+#			divide = 10
+#		}
+#	}
+
+}

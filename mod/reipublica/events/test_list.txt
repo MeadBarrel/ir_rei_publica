@@ -61,3 +61,23 @@ test_events.2 = {
 		name = "test_events.3.a"
 	}
 }
+
+
+test_events.3 = {
+	type = country_event
+
+	title = "test_event.3.t"
+	desc = "test_event.3.desc"
+
+	left_portrait = scope:another_character
+	right_portrait = current_ruler
+
+	immediate = {
+		random_character = {
+			limit = {
+				is_ruler = no
+			}
+			save_scope_as = another_character
+		}
+	}
+}

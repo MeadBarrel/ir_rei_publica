@@ -1,0 +1,46 @@
+# Declare War
+
+rp_civic_party_declare_war_support_ruler_decision_pro = {	
+	value = 0
+
+	every_character = {
+		limit = {
+			party = civic_party
+			rp_character_declare_war_support_ruler_decision > 0
+		}
+
+		add = {
+			value = 1
+			multiply = rp_character_scaled_power_base
+		}
+	}
+
+	divide = rp_civic_party_scaled_power_base
+}
+
+
+rp_civic_party_declare_war_support_ruler_decision_contra = {	
+	value = 0
+
+	every_character = {
+		limit = {
+			party = civic_party
+			rp_character_declare_war_support_ruler_decision < 0
+		}
+
+		add = {
+			value = 1
+			multiply = rp_character_scaled_power_base
+		}
+	}
+
+	divide = rp_civic_party_scaled_power_base
+}
+
+
+rp_civic_party_declare_war_support_ruler_decision = {
+	value = 0
+
+	add = rp_civic_party_declare_war_support_ruler_decision_pro
+	subtract = rp_civic_party_declare_war_support_ruler_decision_contra
+}

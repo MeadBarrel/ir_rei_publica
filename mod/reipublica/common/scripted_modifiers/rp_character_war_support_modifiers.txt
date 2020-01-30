@@ -1,0 +1,82 @@
+rp_character_war_support_modifiers_personal = {
+	always_modifier = {
+		custom_tooltip = {
+			text = "from_martial"
+		}
+		add = {
+			value = $CHARACTER$.martial
+			subtract = 5
+			multiply = 2
+		}
+	}
+
+	modifier = {
+		$CHARACTER$ = {
+			martial > 10
+		}
+		add = 10
+	}
+
+	modifier = {
+		$CHARACTER$ = {
+			has_trait = conqueror
+		}
+		add = 10
+	}
+
+	modifier = {
+		$CHARACTER$ = {
+			has_trait = coward
+		}
+		add = -15
+	}
+
+	modifier = {
+		$CHARACTER$ = {
+			has_trait = cautious
+		}
+		add = -10
+	}
+
+	modifier = {
+		custom_tooltip = {
+			text = "ambitious_soldier"
+			$CHARACTER$ = {
+				has_trait = ambitious
+				martial > 7
+			}
+		}
+		add = 10
+	}
+
+	modifier = {
+		$CHARACTER$ = {
+			has_trait = good_natured
+		}
+		add = -5
+	}
+
+	modifier = {
+		$CHARACTER$ = { has_trait = abrasive }
+		add = 5
+	}
+
+	modifier = {
+		$CHARACTER$ = {
+			OR = {
+				has_trait = pious
+				has_trait = zealous
+			}
+			NOT = {
+				has_same_religion_as = scope:target.current_ruler
+			}
+		}
+		add = 20
+	}
+
+	modifier = {
+		$CHARACTER$ = { is_general = yes }
+		add = 10
+	}
+
+}

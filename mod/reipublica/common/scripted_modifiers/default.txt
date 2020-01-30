@@ -1,68 +1,14 @@
 military_party_generic = {
 	modifier = {
+		
+	}
+
+	modifier = {
 		add = 2
 		root = {
 			is_ai = yes
 		}
 	}
-	always_modifier = {
-		add = -0.15
-		custom_tooltip = {
-			text = "ruler_enemy_military_leader"
-			current_ruler = {
-				any_rival = {
-					is_party_leader_of = root.party:military_party
-				}
-			}
-		}
-	}	
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy"
-			current_ruler = {
-				any_rival = {
-					party = military_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.1
-		custom_tooltip = {
-			text = "ruler_enemy_prominent"
-			current_ruler = {
-				any_rival = {
-					party = military_party
-					prominence > 80
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy_high_finesse"
-			current_ruler = {
-				any_rival = {
-					party = military_party
-					finesse > 10
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.05
-		custom_tooltip = {
-			text = "ruler_friend_high_charisma"
-			current_ruler = {
-				any_rival = {
-					party = military_party
-					charisma > 10
-				}
-			}
-		}
-	}	
 	modifier = {
 		add = {
 			value = var:military_senate_support_variable
@@ -87,7 +33,7 @@ military_party_generic = {
 	always_modifier = {
 		add = {
 			value = root.tyranny
-			divide = 100
+			divide = 200
 		}
 		custom_tooltip = {
 			text = "party_tyranny_tooltip"
@@ -97,7 +43,7 @@ military_party_generic = {
 		}
 	}
 	modifier = { 
-		factor = 1.5
+		factor = 1.25
 		custom_tooltip = {
 			text = "party_ruling_tooltip"
 			has_co_ruler_government = no
@@ -107,41 +53,6 @@ military_party_generic = {
 		}
 	}
 	military_party_co_ruler_country_modifier = yes
-	always_modifier = { 
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_popularity_tooltip_ruler"
-			current_ruler = {
-				popularity > 80
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "ruler_friend_military_leader"
-			current_ruler = {
-				any_friend = {
-					is_party_leader_of = root.party:military_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_friend_tooltip_ruler"
-			current_ruler = {
-				any_friend = {
-					party = military_party
-					prominence > 80
-					NOT = {
-						is_party_leader = yes
-					}
-				}
-			}
-		}
-	}
 	always_modifier = {
 		add = 0.1
 		custom_tooltip = {
@@ -160,12 +71,7 @@ military_party_generic = {
 	}
 	always_modifier = {
 		add = {
-			value = -0.5
-		}
-	}
-	always_modifier = {
-		add = {
-			value = 0.05
+			value = 0.025
 			multiply = root.num_of_military_ideas
 		}
 		custom_tooltip = {
@@ -176,7 +82,7 @@ military_party_generic = {
 	}
 	always_modifier = {
 		add = {
-			value = 20
+			value = 10
 			subtract = root.has_war_exhaustion
 			divide = 100 
 			max = 0.2
@@ -185,82 +91,10 @@ military_party_generic = {
 			text = "from_war_exhaustion_diplo"
 		}
 	}
-	always_modifier = {
-		add = -0.25
-		custom_tooltip = {
-			text = "party_triumph_friend_tooltip_ruler"
-			current_ruler = {
-				any_rival = {
-					party = military_party
-					prominence > 60
-					NOT = {
-						is_party_leader = yes
-					}
-				}
-			}
-		}
-	}
+
 }
 
 civic_party_generic = {
-	always_modifier = {
-		add = -0.15
-		custom_tooltip = {
-			text = "ruler_enemy_military_leader"
-			current_ruler = {
-				any_rival = {
-					is_party_leader_of = root.party:civic_party
-				}
-			}
-		}
-	}	
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy"
-			current_ruler = {
-				any_rival = {
-					party = civic_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.1
-		custom_tooltip = {
-			text = "ruler_enemy_prominent"
-			current_ruler = {
-				any_rival = {
-					party = civic_party
-					prominence > 80
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy_high_finesse"
-			current_ruler = {
-				any_rival = {
-					party = civic_party
-					finesse > 10
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.05
-		custom_tooltip = {
-			text = "ruler_friend_high_charisma"
-			current_ruler = {
-				any_rival = {
-					party = civic_party
-					charisma > 10
-				}
-			}
-		}
-	}	
 
 	modifier = {
 		add = {
@@ -292,7 +126,7 @@ civic_party_generic = {
 	always_modifier = {
 		add = {
 			value = root.tyranny
-			divide = 100
+			divide = 200
 		}
 		custom_tooltip = {
 			text = "party_tyranny_tooltip"
@@ -302,7 +136,7 @@ civic_party_generic = {
 		}
 	}
 	modifier = { 
-		factor = 1.5
+		factor = 1.25
 		custom_tooltip = {
 			text = "party_ruling_tooltip"
 			has_co_ruler_government = no
@@ -312,41 +146,7 @@ civic_party_generic = {
 		}
 	}
 	civic_party_co_ruler_country_modifier = yes
-	always_modifier = { 
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_popularity_tooltip_ruler"
-			current_ruler = {
-				popularity > 80
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "ruler_friend_military_leader"
-			current_ruler = {
-				any_friend = {
-					is_party_leader_of = root.party:civic_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_friend_tooltip_ruler"
-			current_ruler = {
-				any_friend = {
-					party = civic_party
-					prominence > 80
-					NOT = {
-						is_party_leader = yes
-					}
-				}
-			}
-		}
-	}
+
 	always_modifier = {
 		add = -0.5
 		custom_tooltip = {
@@ -365,7 +165,7 @@ civic_party_generic = {
 	}
 	always_modifier = {
 		add = {
-			value = 0.05
+			value = 0.025
 			multiply = root.num_of_civic_ideas
 		}
 		custom_tooltip = {
@@ -376,7 +176,7 @@ civic_party_generic = {
 	}
 	always_modifier = {
 		add = {
-			value = 20
+			value = 10
 			subtract = root.has_war_exhaustion
 			divide = 50
 			max = 0.1
@@ -388,66 +188,6 @@ civic_party_generic = {
 }
 
 religious_party_generic = {
-	always_modifier = {
-		add = -0.15
-		custom_tooltip = {
-			text = "ruler_enemy_military_leader"
-			current_ruler = {
-				any_rival = {
-					is_party_leader_of = root.party:religious_party
-				}
-			}
-		}
-	}	
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy"
-			current_ruler = {
-				any_rival = {
-					party = religious_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.1
-		custom_tooltip = {
-			text = "ruler_enemy_prominent"
-			current_ruler = {
-				any_rival = {
-					party = religious_party
-					prominence > 80
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy_high_finesse"
-			current_ruler = {
-				any_rival = {
-					party = religious_party
-					finesse > 10
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.05
-		custom_tooltip = {
-			text = "ruler_friend_high_charisma"
-			current_ruler = {
-				any_rival = {
-					party = religious_party
-					charisma > 10
-				}
-			}
-		}
-	}
-
-
 	modifier = {
 		add = {
 			value = var:religious_senate_support_variable
@@ -478,7 +218,7 @@ religious_party_generic = {
 	always_modifier = {
 		add = {
 			value = root.tyranny
-			divide = 100
+			divide = 200
 		}
 		custom_tooltip = {
 			text = "party_tyranny_tooltip"
@@ -488,7 +228,7 @@ religious_party_generic = {
 		}
 	}
 	modifier = { 
-		factor = 1.5
+		factor = 1.25
 		custom_tooltip = {
 			text = "party_ruling_tooltip"
 			has_co_ruler_government = no
@@ -498,41 +238,8 @@ religious_party_generic = {
 		}
 	}
 	religious_party_co_ruler_country_modifier = yes
-	always_modifier = { 
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_popularity_tooltip_ruler"
-			current_ruler = {
-				popularity > 80
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "ruler_friend_military_leader"
-			current_ruler = {
-				any_friend = {
-					is_party_leader_of = root.party:religious_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_friend_tooltip_ruler"
-			current_ruler = {
-				any_friend = {
-					party = religious_party
-					prominence > 80
-					NOT = {
-						is_party_leader = yes
-					}
-				}
-			}
-		}
-	}
+
+
 	always_modifier = {
 		add = -0.5
 		custom_tooltip = {
@@ -551,7 +258,7 @@ religious_party_generic = {
 	}
 	always_modifier = {
 		add = {
-			value = 0.05
+			value = 0.025
 			multiply = root.num_of_religious_ideas
 		}
 		custom_tooltip = {
@@ -563,64 +270,6 @@ religious_party_generic = {
 }
 
 mercantile_party_generic = {
-	always_modifier = {
-		add = -0.15
-		custom_tooltip = {
-			text = "ruler_enemy_military_leader"
-			current_ruler = {
-				any_rival = {
-					is_party_leader_of = root.party:mercantile_party
-				}
-			}
-		}
-	}	
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy"
-			current_ruler = {
-				any_rival = {
-					party = mercantile_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.1
-		custom_tooltip = {
-			text = "ruler_enemy_prominent"
-			current_ruler = {
-				any_rival = {
-					party = mercantile_party
-					prominence > 80
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy_high_finesse"
-			current_ruler = {
-				any_rival = {
-					party = mercantile_party
-					finesse > 10
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.05
-		custom_tooltip = {
-			text = "ruler_friend_high_charisma"
-			current_ruler = {
-				any_rival = {
-					party = mercantile_party
-					charisma > 10
-				}
-			}
-		}
-	}
 
 	modifier = {
 		add = {
@@ -652,7 +301,7 @@ mercantile_party_generic = {
 	always_modifier = {
 		add = {
 			value = root.tyranny
-			divide = 100
+			divide = 200
 		}
 		custom_tooltip = {
 			text = "party_tyranny_tooltip"
@@ -662,7 +311,7 @@ mercantile_party_generic = {
 		}
 	}
 	modifier = { 
-		factor = 1.5
+		factor = 1.25
 		custom_tooltip = {
 			text = "party_ruling_tooltip"
 			has_co_ruler_government = no
@@ -672,41 +321,8 @@ mercantile_party_generic = {
 		}
 	}
 	mercantile_party_co_ruler_country_modifier = yes
-	always_modifier = { 
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_popularity_tooltip_ruler"
-			current_ruler = {
-				popularity > 80
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "ruler_friend_military_leader"
-			current_ruler = {
-				any_friend = {
-					is_party_leader_of = root.party:mercantile_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_friend_tooltip_ruler"
-			current_ruler = {
-				any_friend = {
-					party = mercantile_party
-					prominence > 80
-					NOT = {
-						is_party_leader = yes
-					}
-				}
-			}
-		}
-	}
+
+
 	always_modifier = {
 		add = -0.5
 		custom_tooltip = {
@@ -725,7 +341,7 @@ mercantile_party_generic = {
 	}
 	always_modifier = {
 		add = {
-			value = 20
+			value = 10
 			subtract = root.has_war_exhaustion
 			divide = 100
 			max = 0.1
@@ -737,66 +353,6 @@ mercantile_party_generic = {
 }
 
 populist_party_generic = {
-	always_modifier = {
-		add = -0.15
-		custom_tooltip = {
-			text = "ruler_enemy_military_leader"
-			current_ruler = {
-				any_rival = {
-					is_party_leader_of = root.party:populist_party
-				}
-			}
-		}
-	}	
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy"
-			current_ruler = {
-				any_rival = {
-					party = populist_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.1
-		custom_tooltip = {
-			text = "ruler_enemy_prominent"
-			current_ruler = {
-				any_rival = {
-					party = populist_party
-					prominence > 80
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = -0.05
-		custom_tooltip = {
-			text = "ruler_enemy_high_finesse"
-			current_ruler = {
-				any_rival = {
-					party = populist_party
-					finesse > 10
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.05
-		custom_tooltip = {
-			text = "ruler_friend_high_charisma"
-			current_ruler = {
-				any_rival = {
-					party = populist_party
-					charisma > 10
-				}
-			}
-		}
-	}
-
-
 	modifier = {
 		add = {
 			value = var:populist_senate_support_variable
@@ -827,7 +383,7 @@ populist_party_generic = {
 	always_modifier = {
 		add = {
 			value = root.tyranny
-			divide = 50
+			divide = 100
 		}
 		custom_tooltip = {
 			text = "party_tyranny_tooltip"
@@ -837,7 +393,7 @@ populist_party_generic = {
 		}
 	}
 	modifier = { 
-		factor = 1.5
+		factor = 1.25
 		custom_tooltip = {
 			text = "party_ruling_tooltip"
 			has_co_ruler_government = no
@@ -847,41 +403,7 @@ populist_party_generic = {
 		}
 	}
 	populist_party_co_ruler_country_modifier = yes
-	always_modifier = { 
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_popularity_tooltip_ruler"
-			current_ruler = {
-				popularity > 80
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "ruler_friend_military_leader"
-			current_ruler = {
-				any_friend = {
-					is_party_leader_of = root.party:populist_party
-				}
-			}
-		}
-	}
-	always_modifier = {
-		add = 0.25
-		custom_tooltip = {
-			text = "party_triumph_friend_tooltip_ruler"
-			current_ruler = {
-				any_friend = {
-					party = populist_party
-					prominence > 80
-					NOT = {
-						is_party_leader = yes
-					}
-				}
-			}
-		}
-	}
+
 }
 
 military_party_ruler_character_modifier = {

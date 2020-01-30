@@ -1,0 +1,14 @@
+namespace = precalc
+
+precalc.1 = {
+	type = country_event
+	hidden = yes
+
+	trigger = {
+		is_ai = no
+	}
+
+	immediate = {
+		senate_support_precalc = yes
+	}
+}
