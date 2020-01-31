@@ -92,45 +92,25 @@ alliance = {
 	
 		military_party = { 
 			base = 0
-			#lower_mil_tech_modifier = yes
-			target_is_military_modifier = yes
-			#######generic
-			military_party_generic = yes
+			rp_senate_approval_alliance_military_party = yes
 		}
 		
 		civic_party = {
-			base = 0.2
-			has_orator_trait_modifier = yes
-			is_a_republic_modifier = yes
-			is_same_culture_and_group_modifier = yes
-			#lower_civ_tech_modifier = yes
-			target_is_in_civil_war_modifier = yes
-			target_is_civic_modifier = yes
-			#######generic
-			civic_party_generic = yes
+			base = 0.1
+			rp_senate_approval_alliance_civic_party = yes
 		}
 		
 		religious_party = {
-			base = 0.1
-			same_ruler_religion_modifier = yes
-			target_ruler_is_religious_modifier = yes
-			target_is_theocratic_modifier = yes
-			#######generic
-			religious_party_generic = yes
+			base = 0
+			rp_senate_approval_alliance_religious_party = yes
 		}
 		mercantile_party = {
-			base = 0.4
-			target_imports_from_modifier = yes
-			makes_less_money_modifier = yes
-			target_is_mercantile_modifier = yes
-			#######Generic
-			mercantile_party_generic = yes
+			base = 0.1
+			rp_senate_approval_alliance_mercantile_party = yes
 		}
 		populist_party = {
-			base = 0.2
-			target_is_monarchy_modifier = yes
-			#######generic
-			populist_party_generic = yes
+			base = 0.1
+			rp_senate_approval_alliance_populist_party = yes
 		}
 	}
 

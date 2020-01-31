@@ -1,8 +1,9 @@
 rp_voting_support = {
 	always_modifier = {
 		add = {
-			value = rp_voting_wardec_$PARTY$_ruler
+			value = rp_voting_$MATTER$_$PARTY$_ruler
 			divide = rp_$PARTY$_total_voting_power
+			multiply = $MULTIPLIER$
 		}
 
 		trigger_if = {

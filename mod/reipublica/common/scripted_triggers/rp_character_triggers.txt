@@ -19,3 +19,14 @@ can_vote = {
 		has_character_modifier = foreign_citizen
 	}
 }
+
+
+is_kinda_smart = {
+	OR = {
+		has_trait = wise
+		has_trait = intelligent
+		has_trait = scholar
+		has_trait = polymath
+		finesse >= 10
+	}
+}

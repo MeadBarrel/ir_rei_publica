@@ -1,0 +1,216 @@
+rp_is_a_republic_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "is_also_republic_diplo"
+			scope:target = {
+				is_republic = yes
+			}
+		}
+	}
+}
+
+rp_is_same_culture_and_group_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "same_culture_diplo"
+			current_ruler = { has_same_culture_as = scope:target.current_ruler }
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "same_culture_group_diplo"
+			current_ruler = { has_same_culture_group_as = scope:target.current_ruler }
+		}
+	}
+}
+
+rp_is_not_same_culture_and_group_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "not_same_culture_diplo"
+			current_ruler = { NOT = { has_same_culture_as = scope:target.current_ruler } }
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "not_same_culture_group_diplo"
+			current_ruler = { NOT = { has_same_culture_group_as = scope:target.current_ruler } }
+		}
+	}
+}
+
+rp_has_orator_trait_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "has_orator_diplo"
+			scope:target.current_ruler = {
+				has_trait = orator
+			}
+		}
+	}
+}
+
+rp_target_is_in_civil_war_modifier = {
+	always_modifier = {
+		add = -0.25
+		custom_tooltip = {
+			text = "target_in_civil_war_diplo"
+			scope:target = {
+				has_civil_war = yes
+			}
+		}
+	}
+}
+
+rp_same_ruler_religion_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "same_ruler_religion_diplo"
+			current_ruler = { has_same_religion_as = scope:target.current_ruler }
+		}
+	}
+}
+
+rp_target_ruler_is_religious_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "target_ruler_religious_diplo"
+			scope:target.current_ruler  = {
+				OR = {
+					has_trait = pious
+					has_trait = devout
+				}
+			}
+		}
+	}
+}
+
+rp_target_is_theocratic_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "target_is_theocratic_diplo"
+			scope:target  = {
+				OR = {
+					government = theocratic_republic
+					government = theocratic_monarchy
+				}
+			}
+		}
+	}
+}
+
+rp_target_imports_from_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "import_from_diplo"
+			imports_from = scope:target
+		}
+	}
+}
+
+rp_target_not_imports_from_modifier = {
+	always_modifier = {
+		add = -0.05
+		custom_tooltip = {
+			text = "import_from_diplo"
+			imports_from = scope:target
+		}
+	}
+}
+
+rp_makes_less_money_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "makes_less_money_diplo"
+			root.has_monthly_income < scope:target.has_monthly_income
+		}
+	}
+}
+
+rp_target_is_mercantile_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "target_is_plutocratic_diplo"
+			scope:target = {
+				OR = {
+					government = plutocratic_republic
+					government = plutocratic_monarchy
+				}
+			}
+		}
+	}
+}
+
+rp_target_is_military_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "target_is_military_diplo"
+			scope:target = {
+				OR = {
+					government = aristocratic_republic
+					government = stratocratic_monarchy
+				}
+			}
+		}
+	}
+}
+
+rp_target_is_civic_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "target_is_civic_diplo"
+			scope:target = {
+				OR = {
+					government = oligarchic_republic
+					government = aristocratic_monarchy
+				}
+			}
+		}
+	}
+}
+
+rp_target_is_monarchy_modifier = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "target_is_monarchy_diplo"
+			scope:target = {
+				is_monarchy = yes
+			}
+		}
+	}
+}
+
+rp_target_ruler_is_different_religion = {
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = "target_wrong_religion_diplo"
+			NOT = { current_ruler = { has_same_religion_as = scope:target.current_ruler } }
+		}
+	}
+}
+
+rp_has_negative_monthly_balance_modifier = {
+	always_modifier = {
+		add = 1
+		custom_tooltip = {
+			text = "negative_balance_diplo"
+			root.has_monthly_balance < 0
+		}
+	}
+}
