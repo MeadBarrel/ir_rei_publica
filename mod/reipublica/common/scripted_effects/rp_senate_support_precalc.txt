@@ -5,7 +5,7 @@ senate_support_precalc_military_party_list = {
 			party = military_party
 			can_vote = yes
 		}
-		order_by = rp_character_power_base
+		order_by = rp_character_voting_power
 		min = 0
 		root = { add_to_variable_list = {name=military_party_members target=prev}}
 	}
@@ -19,7 +19,7 @@ senate_support_precalc_civic_party_list = {
 			party = civic_party
 			can_vote = yes
 		}
-		order_by = rp_character_power_base
+		order_by = rp_character_voting_power
 		min = 0
 		root = { add_to_variable_list = {name=civic_party_members target=prev}}
 	}
@@ -33,7 +33,7 @@ senate_support_precalc_religious_party_list = {
 			party = religious_party
 			can_vote = yes
 		}
-		order_by = rp_character_power_base
+		order_by = rp_character_voting_power
 		min = 0
 		root = { add_to_variable_list = {name=religious_party_members target=prev}}
 	}
@@ -47,7 +47,7 @@ senate_support_precalc_mercantile_party_list = {
 			party = mercantile_party
 			can_vote = yes
 		}
-		order_by = rp_character_power_base
+		order_by = rp_character_voting_power
 		min = 0
 		root = { add_to_variable_list = {name=mercantile_party_members target=prev}}
 	}
@@ -60,7 +60,7 @@ senate_support_precalc_populist_party_list = {
 			party = populist_party
 			can_vote = yes
 		}
-		order_by = rp_character_power_base
+		order_by = rp_character_voting_power
 		min = 0
 		root = { add_to_variable_list = {name=populist_party_members target=prev}}
 	}
@@ -160,9 +160,25 @@ senate_support_precalc = {
 
 senate_support_init_character = {
 	set_variable = {
-		name = senate_support_base_wardec
-		value = { integer_range = { min = -10 max = 10 } }
+		name = rp_political_ideology_development_expansion
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
 	}
+	set_variable = {
+		name = rp_political_ideology_cooperation_oppression
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}
+	set_variable = {
+		name = rp_political_ideology_elitarian_egalitarian
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}
+	set_variable = {
+		name = rp_political_ideology_openness_isolation
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}	
+	set_variable = {
+		name = rp_political_ideology_conservative_progressive
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}		
 }
 
 

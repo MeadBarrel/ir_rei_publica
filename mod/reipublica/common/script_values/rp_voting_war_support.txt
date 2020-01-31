@@ -1,52 +1,9 @@
 rp_voting_wardec_personal = {
-	value = var:senate_support_base_wardec
+	value = rp_pi_pref_warlike_scaled
 
-	#add = var:rp_character_war_support_base
-
-	add = {  # From martial
-		value = martial
-		subtract = 5
-	}
+	add = rp_svp_warlike
 
 	# From traits
-
-	if = {  # Is a conqueror
-		limit = { has_trait = conqueror }
-		add = 5
-	}
-
-	if = {  # Is a coward
-		limit = { has_trait = coward }
-		add = -10
-	}
-
-	if = {  # Is cautious
-		limit = { has_trait = cautious } 
-		add = -3
-	}
-
-	if = {  # Is reckless
-		limit = { has_trait = reckless }
-		add = 3
-	}
-
-	if = {  # Ambitious with high martial
-		limit = { 
-			has_trait = ambitious 
-			martial > 7
-		}
-		add = 5
-	}
-
-	if = {  # Is good natured
-		limit = { has_trait = good_natured }
-		add = -3
-	}
-
-	if = {  # Is abrasive
-		limit = { has_trait = abrasive }
-		add = 3
-	}
 
 	if = {  # Zealous/pious and they have wrong religion
 		limit = {
@@ -97,12 +54,6 @@ rp_voting_wardec_personal = {
 		add = -10
 	}
 
-	if = {  # Is general
-		limit = { is_general = yes }
-		add = 3
-	}
-
-	add = num_loyal_cohorts  # From loyal cohorts
 
 	if = {  # Has loyal rival in their country
 		limit = {
@@ -121,29 +72,35 @@ rp_voting_wardec_personal = {
 		add = 20
 	}
 
-#	if = {  # Our holdings in danger of being occupied
-#		limit = {
-#			any_holdings = {
-#				province = {
-#					OR = {
-#						any_neighbor_province = {
-#							owner = scope:target
-#						}
-#						NOT = {
-#							OR = {
-#								fort_level > 0
-#								any_neighbor_province ={
-#									owner = employer
-#									fort_level > 0 
-#								}
-#							}
-#						}
-#					}
-#				}
-#			}
-#		}
-#		add = -5
-#	}
+	if = {  # We are not of the main culture and the target's ruler has the same culture as ours
+		limit = {
+			not = { has_same_culture_as = employer.current_ruler }
+			has_same_culture_as = scope:target.current_ruler
+		}
+		add = -3
+	}
+
+	if = {  # Our holdings in danger of being occupied
+		limit = {
+			any_holdings = {
+				OR = {
+					any_neighbor_province = {
+						owner = scope:target
+					}
+					NOT = {
+						OR = {
+							fort_level > 0
+							any_neighbor_province ={
+								owner = employer
+								fort_level > 0 
+							}
+						}
+					}
+				}
+			}
+		}
+		add = -5
+	}
 }
 
 rp_voting_wardec_ruler = {
@@ -154,36 +111,87 @@ rp_voting_wardec_ruler = {
 
 rp_voting_wardec_military_party_ruler = {
 	value = 0
-	every_in_list = { variable = military_party_members limit={ can_vote=yes rp_voting_wardec_ruler>0 } add=1 }
-	every_in_list = { variable = military_party_members limit={ can_vote=yes rp_voting_wardec_ruler<0 } add=-1 }
+	every_in_list = {
+		variable = military_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+	multiply = 0.75
 }
-
 
 
 rp_voting_wardec_civic_party_ruler = {
 	value = 0
-	every_in_list = { variable = civic_party_members limit={ can_vote=yes rp_voting_wardec_ruler>0 } add=1 }
-	every_in_list = { variable = civic_party_members limit={ can_vote=yes rp_voting_wardec_ruler<0 } add=-1 }
+	every_in_list = {
+		variable = civic_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+	multiply = 0.75
 }
-
 
 
 rp_voting_wardec_religious_party_ruler = {
 	value = 0
-	every_in_list = { variable = religious_party_members limit={ can_vote=yes rp_voting_wardec_ruler>0 } add=1 }
-	every_in_list = { variable = religious_party_members limit={ can_vote=yes rp_voting_wardec_ruler<0 } add=-1 }
+	every_in_list = {
+		variable = religious_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+	multiply = 0.75
 }
 
 
 rp_voting_wardec_mercantile_party_ruler = {
 	value = 0
-	every_in_list = { variable = mercantile_party_members limit={ can_vote=yes rp_voting_wardec_ruler>0 } add=1 }
-	every_in_list = { variable = mercantile_party_members limit={ can_vote=yes rp_voting_wardec_ruler<0 } add=-1 }
+	every_in_list = {
+		variable = mercantile_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+	multiply = 0.75
 }
 
 
 rp_voting_wardec_populist_party_ruler = {
 	value = 0
-	every_in_list = { variable = populist_party_members limit={ can_vote=yes rp_voting_wardec_ruler>0 } add=1 }
-	every_in_list = { variable = populist_party_members limit={ can_vote=yes rp_voting_wardec_ruler<0 } add=-1 }
+	every_in_list = {
+		variable = populist_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+	multiply = 0.75
+}
+
+
+rp_voting_wardec_opinion_value = {
+	if = {
+		limit = { opinion = { target = scope:target value > 150 } }
+		value = -0.09
+	}
+	else_if = {
+		limit = { opinion = { target = scope:target value > 100 } }
+		value = -0.06
+	}
+	else_if = {
+		limit = { opinion = { target = scope:target value > 50 } }
+		value = -0.03
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -150 } }
+		value = 0.09
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -100 } }
+		value = 0.06
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -50 } }
+		value = 0.03
+	}	
 }

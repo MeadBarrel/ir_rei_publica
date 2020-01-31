@@ -1,51 +1,44 @@
-rp_military_party_scaled_power_base = {
+rp_military_party_total_voting_power = {
 	value = 0
-
-	every_character = {
-		limit = { party = military_party }
-		add = rp_character_scaled_power_base
+	every_in_list = {
+		variable = military_party_members
+		add = rp_character_voting_power
 	}
 }
 
 
-rp_civic_party_scaled_power_base = {
+rp_civic_party_total_voting_power = {
 	value = 0
-
-	every_character = {
-		limit = { party = civic_party }
-		add = rp_character_scaled_power_base
+	every_in_list = {
+		variable = civic_party_members
+		add = rp_character_voting_power
 	}
 }
 
 
-rp_religious_party_scaled_power_base = {
+rp_religious_party_total_voting_power = {
 	value = 0
-
-	every_character = {
-		limit = { party = religious_party }
-		add = rp_character_scaled_power_base
+	every_in_list = {
+		variable = religious_party_members
+		add = rp_character_voting_power
 	}
 }
 
 
-
-rp_mercantile_party_scaled_power_base = {
+rp_mercantile_party_total_voting_power = {
 	value = 0
-
-	every_character = {
-		limit = { party = mercantile_party }
-		add = rp_character_scaled_power_base
+	every_in_list = {
+		variable = mercantile_party_members
+		add = rp_character_voting_power
 	}
 }
 
 
-
-rp_populist_party_scaled_power_base = {
+rp_populist_party_total_voting_power = {
 	value = 0
-
-	every_character = {
-		limit = { party = populist_party }
-		add = rp_character_scaled_power_base
+	every_in_list = {
+		variable = populist_party_members
+		add = rp_character_voting_power
 	}
 }
 

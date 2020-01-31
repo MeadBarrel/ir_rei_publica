@@ -1,3 +1,25 @@
+rp_character_voting_power_raw = {
+	value = prominence
+	add = popularity
+	divide = 2
+
+	if = {
+		limit = { is_party_leader = yes }
+		multiply = 2
+	}
+
+}
+
+
+rp_character_voting_power = {
+	value = rp_character_voting_power_raw
+	divide = {
+		value = rp_character_voting_power_raw
+		multiply = 0.01
+		add = 0.5
+	}
+}
+
 rp_character_power_base = {
 	value = power_base
 

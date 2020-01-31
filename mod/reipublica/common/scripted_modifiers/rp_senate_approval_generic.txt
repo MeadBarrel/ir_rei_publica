@@ -1,0 +1,174 @@
+# From Support
+rp_senate_approval_from_support = {
+	modifier = {
+		add = {
+			value = var:$PARTY$_senate_support_variable
+			divide = 150
+		}		
+		custom_tooltip = {
+			text = "from_senate_support"
+			root = {
+				has_variable = $PARTY$_senate_support_variable
+			}
+		}
+	}
+}
+
+
+# Generic
+rp_senate_approval_generic = {
+	modifier = {  # AI
+		is_ai = yes
+		add = 2
+	}
+
+	modifier = {  # Dictatorship
+		add = 1
+		custom_tooltip = {
+			text = "dictatorship_passed"
+			root = {
+				has_variable = dictatorship_enabled
+			}
+		}
+	}
+
+	always_modifier = {  # Tyranny
+		add = {
+			value = root.tyranny
+			divide = 200
+		}
+		custom_tooltip = {
+			text = "party_tyranny_tooltip"
+			root = {
+				tyranny > 0
+			}
+		}
+	}
+
+	always_modifier = {
+		add = {
+			value = 10
+			subtract = root.has_war_exhaustion
+			divide = 50
+			max = 0.1
+		}
+		custom_tooltip = {
+			text = "from_war_exhaustion_diplo"
+		}
+	}	
+
+	always_modifier = {
+		add = -0.5
+		custom_tooltip = {
+			text = civil_war_diplo_impact
+			has_civil_war = yes
+		}
+	}
+	
+}
+
+
+# Military party =======================================================================================================
+rp_senate_approval_military_party_generic = {
+	rp_senate_approval_generic = yes
+	rp_senate_approval_from_support = { PARTY = "military" }
+
+	always_modifier = {
+		add = 0.1
+		custom_tooltip = {
+			text = we_are_weaker_than_them
+			max_manpower < scope:target.max_manpower
+		}
+	}
+
+	always_modifier = {
+		add = {
+			value = 0.01
+			multiply = root.current_ruler.martial
+		}
+		custom_tooltip = {
+			text = from_ruler_martial_diplo
+		}
+	}
+}
+
+
+# Civic Party ==========================================================================================================
+rp_senate_approval_civic_party_generic = {
+	rp_senate_approval_generic = yes
+	rp_senate_approval_from_support = { PARTY = "civic" }
+	
+	always_modifier = {
+		add = {
+			value = 0.01
+			multiply = root.current_ruler.finesse
+		}
+		custom_tooltip = {
+			text = from_ruler_finesse_diplo
+		}
+	}
+
+	always_modifier = {
+		add = {
+			value = 0.025
+			multiply = root.num_of_civic_ideas
+		}
+		custom_tooltip = {
+			text = "party_civic_idea_tooltip"
+			always = yes
+			num_of_civic_ideas >= 1
+		}
+	}
+
+}
+
+
+# Religious Party ======================================================================================================
+rp_senate_approval_religious_party_generic = {
+	rp_senate_approval_generic = yes
+	rp_senate_approval_from_support = { PARTY = "religious" }
+
+	always_modifier = {
+		add = {
+			value = 0.01
+			multiply = root.current_ruler.zeal
+		}
+		custom_tooltip = {
+			text = "ruler_zeal_diplo"
+		}
+	}
+	always_modifier = {
+		add = {
+			value = 0.025
+			multiply = root.num_of_religious_ideas
+		}
+		custom_tooltip = {
+			text = "party_religious_idea_tooltip"
+			always = yes
+			num_of_religious_ideas >= 1
+		}
+	}
+}
+
+
+# Mercantile Party =====================================================================================================
+rp_senate_approval_mercantile_party_generic = {
+	rp_senate_approval_generic = yes
+	rp_senate_approval_from_support = { PARTY = "mercantile" }
+
+	always_modifier = {
+		add = {
+			value = 0.01
+			multiply = root.current_ruler.charisma
+		}
+		custom_tooltip = {
+			text = "ruler_charisma_diplo"
+		}
+	}
+}
+
+# Populist Party =======================================================================================================
+rp_senate_approval_populist_party_generic = {
+	rp_senate_approval_generic = yes
+	rp_senate_approval_from_support = { PARTY = "populist" }
+}

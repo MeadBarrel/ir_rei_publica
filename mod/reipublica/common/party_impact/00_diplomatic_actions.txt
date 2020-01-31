@@ -8,204 +8,28 @@ declare_war = {
 	approval = {
 		military_party = {
 			base = 0
-
-			rp_party_war_support_military = yes
- 
-			rp_voting_support = { PARTY=military_party MATTER=wardec }
-
-			#always_modifier = {
-			#	custom_tooltip = {
-			#		text = "rp_military_party_declare_war_support_ruler_decision"
-			#	}
-			#	add = { 
-			#		value = rp_military_party_declare_war_support_ruler_decision
-			#		divide = 2
-			#	}
-			#}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_agrees"
-					any_character = {
-						is_party_leader_of = root.party:military_party
-						rp_character_declare_war_support_ruler_decision > 0
-					}
-				}
-				add = 0.1
-			}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_opposes"
-					any_character = {
-						is_party_leader_of = root.party:military_party
-						rp_character_declare_war_support_ruler_decision < 0
-					}
-				}
-				add = -0.1
-			}		
+			rp_senate_approval_wardec_military_party = yes
 		}
 
 		civic_party = {
 			base = 0
-
-			rp_party_war_support_civic = yes
-
-			rp_voting_support = { PARTY=civic_party MATTER=wardec }
-
-			always_modifier = {
-				custom_tooltip = {
-					text = "rp_civic_party_declare_war_support_ruler_decision"
-				}
-				add = {
-					value = rp_civic_party_declare_war_support_ruler_decision
-					divide = 2
-				}
-			}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_agrees"
-					any_character = {
-						is_party_leader_of = root.party:civic_party
-						rp_character_declare_war_support_ruler_decision > 0
-					}
-				}
-				add = 0.1
-			}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_opposes"
-					any_character = {
-						is_party_leader_of = root.party:civic_party
-						rp_character_declare_war_support_ruler_decision < 0
-					}
-				}
-				add = -0.1
-			}
+			rp_senate_approval_wardec_civic_party = yes
 		}		
 
 		religious_party = {
 			base = 0
-
-			rp_party_war_support_religious = yes
-
-			rp_voting_support = { PARTY=religious_party MATTER=wardec }
-
-			always_modifier = {
-				custom_tooltip = {
-					text = "rp_religious_party_declare_war_support_ruler_decision"
-				}
-				add = { 
-					value = rp_religious_party_declare_war_support_ruler_decision
-					divide = 2
-				}
-			}
-
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_agrees"
-					any_character = {
-						is_party_leader_of = root.party:religious_party
-						rp_character_declare_war_support_ruler_decision > 0
-					}
-				}
-				add = 0.1
-			}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_opposes"
-					any_character = {
-						is_party_leader_of = root.party:religious_party
-						rp_character_declare_war_support_ruler_decision < 0
-					}
-				}
-				add = -0.1
-			}			
+			rp_senate_approval_wardec_religious_party = yes
 		}		
 
 
 		mercantile_party = {
 			base = 0 
-
-			rp_party_war_support_mercantile = yes
-
-			rp_voting_support = { PARTY=mercantile_party MATTER=wardec }
-
-			always_modifier = {
-				custom_tooltip = {
-					text = "rp_mercantile_party_declare_war_support_ruler_decision"
-				}
-				add = {
-					value = rp_mercantile_party_declare_war_support_ruler_decision
-					divide = 2
-				}
-			}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_agrees"
-					any_character = {
-						is_party_leader_of = root.party:mercantile_party
-						rp_character_declare_war_support_ruler_decision > 0
-					}
-				}
-				add = 0.1
-			}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_opposes"
-					any_character = {
-						is_party_leader_of = root.party:mercantile_party
-						rp_character_declare_war_support_ruler_decision < 0
-					}
-				}
-				add = -0.1
-			}			
+			rp_senate_approval_wardec_mercantile_party = yes
 		}		
 
 		populist_party = {
 			base = 0
-
-			rp_party_war_support_populist = yes
-
-			rp_voting_support = { PARTY=populist_party MATTER=wardec }
-
-			always_modifier = {
-				custom_tooltip = {
-					text = "rp_populist_party_declare_war_support_ruler_decision"
-				}
-				add = { 
-					value = rp_populist_party_declare_war_support_ruler_decision 
-					divide = 2
-				}
-			}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_agrees"
-					any_character = {
-						is_party_leader_of = root.party:populist_party
-						rp_character_declare_war_support_ruler_decision > 0
-					}
-				}
-				add = 0.1
-			}
-
-			modifier = {
-				custom_tooltip = {
-					text = "party_leader_opposes"
-					any_character = {
-						is_party_leader_of = root.party:populist_party
-						rp_character_declare_war_support_ruler_decision < 0
-					}
-				}
-				add = -0.1
-			}			
+			rp_senate_approval_wardec_populist_party = yes
 		}		
 	}
 
