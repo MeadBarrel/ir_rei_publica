@@ -163,6 +163,15 @@ window = {
 				text = "[CharacterWindow.GetCharacter.GetName]"
 				margin_top = 2
 			}
+
+			widget = {
+				size = { 34 40 }
+				icon = {
+					texture = "gfx/interface/icons/shared_icons/stability.dds"
+					datacontext = "[GetScriptedGui('character_window_political_ideology')]"
+					tooltip = "[ScriptedGui.BuildTooltip( GuiScope.SetRoot( CharacterWindow.GetCharacter.MakeScope ).End )]"
+				}
+			}
 		}
 		
 		textbox = {
@@ -758,7 +767,7 @@ window = {
 					}
 					
 					portrait_button = {
-						visible = "[And(Not(CharacterWindow.GetCharacter.MakeScope.HasVariable('target_province')), CharacterWindow.GetCharacter.HasCheckedAmbition, GreaterThan_int32(CharacterWindow.GetCharacter.GetAge, '(int32)15'))]" 
+						visible = "[And(CharacterWindow.GetCharacter.HasCheckedAmbition, GreaterThan_int32(CharacterWindow.GetCharacter.GetAge, '(int32)15'))]" 
 						using = portrait_50_no_pop_no_party_small_prison
 						size = { 45 65 }
 						position = { 4 20 }
@@ -766,8 +775,6 @@ window = {
 						
 						datacontext = "[CharacterWindow.GetCharacter.MakeScope.GetVariable('ongoing_scheme_target').GetCharacter]"
 					}
-
-					
 					
 					flowcontainer = {
 						position = { 48 24 }

@@ -1,0 +1,19 @@
+rp_pi_pref_warlike = {
+	value = 0
+	add = rp_get_political_ideology_expansion
+	subtract = rp_get_political_ideology_development
+	add = rp_get_political_ideology_oppression
+	subtract = rp_get_political_ideology_cooperation
+}
+
+rp_pi_pref_warlike_scaled = {
+	if = {
+		limit = { rp_pi_pref_warlike > 0 }
+		value = rp_pi_pref_warlike
+		divide = { value = rp_pi_pref_warlike multiply = rp_im add = rp_ia }	
+	} 
+	else = {
+		value = rp_pi_pref_warlike
+		divide = { value = rp_pi_pref_warlike multiply = rp_im_neg add = rp_ia }	
+	}
+}

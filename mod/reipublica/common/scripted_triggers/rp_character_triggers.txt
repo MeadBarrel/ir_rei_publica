@@ -1,0 +1,21 @@
+is_senator = {
+	is_adult = yes
+
+	trigger_if = {
+		limit = { 
+			employer = { gender_equality = no }
+		}
+		is_female = no
+	}
+}
+
+
+can_vote = {
+	is_senator = yes
+	prisoner = no
+	is_mercenary = no
+	NOR = {
+		has_character_modifier = indisposed_charmod
+		has_character_modifier = foreign_citizen
+	}
+}

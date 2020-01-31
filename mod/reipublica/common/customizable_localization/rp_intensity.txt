@@ -1,0 +1,41 @@
+get_pi_intensity = {
+	type = character
+
+	text = {
+		localization_key = rp_pi_very_low
+		trigger = {
+			local_var:intensity <= 2
+		}
+	}
+
+	text = {
+		localization_key = rp_pi_low
+		trigger ={
+			local_var:intensity > 2
+			local_var:intensity <= 4
+		}
+	}
+
+	text = {
+		localization_key = rp_pi_moderate
+		trigger ={
+			local_var:intensity > 4
+			local_var:intensity <= 6
+		}
+	}
+
+	text = {
+		localization_key = rp_pi_high
+		trigger ={
+			local_var:intensity > 6
+			local_var:intensity <= 8
+		}
+	}
+
+	text = {
+		localization_key = rp_pi_very_high
+		trigger ={
+			local_var:intensity > 8
+		}
+	}
+}

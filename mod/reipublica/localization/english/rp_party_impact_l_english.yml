@@ -1,0 +1,5 @@
+﻿l_english:
+    rp_vote_pro:0 "#Y YES#!"
+    rp_vote_contra:0 "#R NO#!"
+    rp_vote_absolve:0 "ABSTAIN"
+    rp_senate_approval_wardec_opinion_of_them:0 "Our opinion of them"

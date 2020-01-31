@@ -1,0 +1,132 @@
+
+rp_senate_approval_wardec_generic = {
+	modifier = {  # Carthage sentate hates Rome
+		factor = 1.5
+		custom_tooltip = {
+			text = "carthage_senate_hates_rome"
+			tag = CAR
+			scope:target = {
+				tag = ROM
+			}
+			has_completed_mission_task = carthaginian_rome_expansion_mission_task_13
+		}		
+	}
+
+	always_modifier = {  # Already at war
+		war = yes
+
+		add = -0.15
+	}
+
+	always_modifier = {  # Opinion of them
+		add = rp_voting_wardec_opinion_value		
+		custom_tooltip = {
+			text = "rp_senate_approval_wardec_opinion_of_them"
+		}
+	}
+
+}
+
+
+# Military Party =======================================================================================================
+rp_senate_approval_wardec_military_party = {
+	rp_voting_support = { PARTY=military_party MATTER=wardec }
+
+	modifier = {
+		add = 0.1
+		custom_tooltip = {
+			text = "base"
+		}
+	}
+
+	rp_senate_approval_wardec_generic = yes
+	rp_senate_approval_military_party_generic = yes
+}
+
+
+# Civic Party ==========================================================================================================
+rp_senate_approval_wardec_civic_party = {
+	rp_voting_support = { PARTY=civic_party MATTER=wardec }
+
+	always_modifier = {   # They are tribal
+		add = 0.05
+		custom_tooltip = {
+			text = "target_tribal_diplo"
+			scope:target = {
+				is_tribal = yes
+			}
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = their_ruler_is_same_culture_group
+			NOT = { current_ruler = { has_same_culture_group_as = scope:target.current_ruler } }
+		}
+	}
+	always_modifier = {
+		add = 0.05
+		custom_tooltip = {
+			text = their_ruler_is_same_culture
+			NOT = { current_ruler = { has_same_culture_as = scope:target.current_ruler } }
+		}
+	}
+
+	rp_senate_approval_wardec_generic = yes
+	rp_senate_approval_civic_party_generic = yes
+
+}
+
+
+# Religious Party ======================================================================================================
+rp_senate_approval_wardec_religious_party = {
+	rp_voting_support = { PARTY=religious_party MATTER=wardec }
+
+	always_modifier = {
+		add = 0.2
+		custom_tooltip = {
+			text = "target_religion_diplo_not"
+			NOT = { current_ruler = { has_same_religion_as = scope:target.current_ruler } }
+		}
+	}	
+
+	rp_senate_approval_wardec_generic = yes
+	rp_senate_approval_religious_party_generic = yes
+
+}
+
+
+# Mercantile Party =====================================================================================================
+rp_senate_approval_wardec_mercantile_party = {
+	rp_voting_support = { PARTY=mercantile_party MATTER=wardec }
+
+	always_modifier = {
+		add = -0.35
+		custom_tooltip = {
+			text = "import_from_diplo"
+			imports_from = scope:target
+		}
+	}
+
+	rp_senate_approval_wardec_generic = yes
+	rp_senate_approval_mercantile_party_generic = yes
+}
+
+
+# Populist Party =======================================================================================================
+rp_senate_approval_wardec_populist_party = {
+	rp_voting_support = { PARTY=populist_party MATTER=wardec }
+
+	always_modifier = {
+		add = 0.1
+		custom_tooltip = {
+			text = "target_high_tyranny_diplo"
+			scope:target = {
+				tyranny >= 10
+			}
+		}
+	}
+
+	rp_senate_approval_wardec_generic = yes
+	rp_senate_approval_populist_party_generic = yes
+}

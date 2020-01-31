@@ -1,0 +1,67 @@
+rp_voting_support_ruler = {
+	value = 0
+
+	if = {
+		limit = {
+			is_ruler = yes
+		}
+		add = 1000
+	}
+
+	if = {
+		limit = {
+			is_friend = employer.current_ruler
+		}
+		add = 10
+	}
+
+	if = {
+		limit = {
+			is_rival = employer.current_ruler
+		}
+		add = -10
+	}
+
+	if = {  # Our friend is a rival of a ruler
+		limit = {
+			any_friend = {
+				is_rival = employer.current_ruler
+			}
+		}
+		add = -5
+	}
+
+	if = {
+		limit = {
+			any_friend = {
+				charisma > prev.charisma
+				rp_character_declare_war_support_ruler_decision > 0
+			}
+		}
+		add = 5
+	}
+
+	if = {
+		limit = {
+			any_friend = {
+				charisma > prev.charisma
+				rp_character_declare_war_support_ruler_decision < 0
+			}
+		}
+		add = -5
+	}
+
+	if = {  # Low loyalty
+		limit = {
+			loyalty < 60
+		}
+		add = {
+			value = -60
+			add = loyalty
+			divide = 3
+		}
+	}
+
+}
+
+

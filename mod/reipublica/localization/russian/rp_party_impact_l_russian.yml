@@ -1,0 +1,5 @@
+﻿l_russian:
+    rp_vote_pro:0 "#Y За#!"
+    rp_vote_contra:0 "#R Против#!"
+    rp_vote_absolve:0 "Воздерживаюсь"
+    rp_senate_approval_wardec_opinion_of_them:0 "Наше мнение о них"

@@ -1,0 +1,108 @@
+# Formula for ideology value scaling is: x/(rp_im*x+rp_ia)
+
+rp_im = 0.09
+rp_im_neg = -0.09
+rp_ia = 0.8
+
+# Ideologies:
+
+# Development <-> Expansion
+# Cooperation <-> Oppression
+# Elitarian <-> Egalitarian
+# Openness <-> Isolation
+# Conservative <-> Progressive
+
+rp_political_ideology_min = -10
+rp_political_ideology_max = 10
+
+# Development <-> Expansion
+rp_get_political_ideology_development_expansion = {
+	value = var:rp_political_ideology_development_expansion
+}
+
+# Development
+rp_get_political_ideology_development = {
+	value = rp_get_political_ideology_development_expansion
+	multiply = -1
+	min = 0
+}
+
+# Expansion
+rp_get_political_ideology_expansion = {
+	value = rp_get_political_ideology_development_expansion
+	min = 0
+}
+
+# Cooperation <-> oppression
+rp_get_political_ideology_cooperation_oppression = {
+	value = var:rp_political_ideology_cooperation_oppression
+}
+
+# Cooperation
+rp_get_political_ideology_cooperation = {
+	value = rp_get_political_ideology_cooperation_oppression	
+	multiply = -1
+	min  = 0	
+}
+
+# oppression
+rp_get_political_ideology_oppression = {
+	value = rp_get_political_ideology_cooperation_oppression
+	min  = 0
+}
+
+# Elitarian <-> Egalitarian
+rp_get_political_ideology_elitarian_egalitarian = {
+	value = var:rp_political_ideology_elitarian_egalitarian
+}
+
+# Elitarian
+rp_get_political_ideology_elitarian = {
+	value = rp_get_political_ideology_elitarian_egalitarian
+	min = 0
+	multiply = -1	
+}
+
+# Egalitarian
+rp_get_political_ideology_egalitarian = {
+	value = rp_get_political_ideology_elitarian_egalitarian
+	min = 0
+}
+
+# Openness <-> Isolation
+rp_get_political_ideology_openness_isolation = {
+	value = var:rp_political_ideology_openness_isolation
+}
+
+# Openness
+rp_get_political_ideology_openness = {
+	value = rp_get_political_ideology_openness_isolation
+	multiply = -1
+	min = 0
+}
+
+# Isolation
+rp_get_political_ideology_isolation = {
+	value = rp_get_political_ideology_openness_isolation
+	min = 0
+}
+
+
+# Conservative <-> Agressive
+rp_get_political_ideology_conservative_progressive = {
+	value = var:rp_political_ideology_conservative_progressive
+}
+
+
+# Conservative
+rp_get_political_ideology_conservative = {
+	value = rp_get_political_ideology_conservative_progressive
+	multiply = -1
+	min = 0
+}
+
+
+rp_get_political_ideology_progressive = {
+	value = rp_get_political_ideology_conservative_progressive
+	min = 0
+}

@@ -1,0 +1,189 @@
+senate_support_precalc_military_party_list = {
+	clear_variable_list = military_party_members
+	ordered_character = {
+		limit = {
+			party = military_party
+			can_vote = yes
+		}
+		order_by = rp_character_voting_power
+		min = 0
+		root = { add_to_variable_list = {name=military_party_members target=prev}}
+	}
+}
+
+
+senate_support_precalc_civic_party_list = {
+	clear_variable_list = civic_party_members
+	ordered_character = {
+		limit = {
+			party = civic_party
+			can_vote = yes
+		}
+		order_by = rp_character_voting_power
+		min = 0
+		root = { add_to_variable_list = {name=civic_party_members target=prev}}
+	}
+}
+
+
+senate_support_precalc_religious_party_list = {
+	clear_variable_list = religious_party_members
+	ordered_character = {
+		limit = {
+			party = religious_party
+			can_vote = yes
+		}
+		order_by = rp_character_voting_power
+		min = 0
+		root = { add_to_variable_list = {name=religious_party_members target=prev}}
+	}
+}
+
+
+senate_support_precalc_mercantile_party_list = {
+	clear_variable_list = mercantile_party_members
+	ordered_character = {
+		limit = {
+			party = mercantile_party
+			can_vote = yes
+		}
+		order_by = rp_character_voting_power
+		min = 0
+		root = { add_to_variable_list = {name=mercantile_party_members target=prev}}
+	}
+}
+
+senate_support_precalc_populist_party_list = {
+	clear_variable_list = populist_party_members
+	ordered_character = {
+		limit = {
+			party = populist_party
+			can_vote = yes
+		}
+		order_by = rp_character_voting_power
+		min = 0
+		root = { add_to_variable_list = {name=populist_party_members target=prev}}
+	}
+}
+
+
+
+senate_support_precalc_party = {
+	set_local_variable = {
+		name = senate_support_precalc_index
+		value = 0
+	}
+	# Somehow $PARTY$ doesn't work with variable lists...
+	ordered_character = {
+		
+
+		limit = {
+			party = $PARTY$
+			can_vote = yes
+		}
+		order_by = rp_character_power_base
+		min = 0
+
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 0 } 
+			root = {set_variable = { name=$PARTY$_member_0 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 1 } 
+			root = {set_variable = { name=$PARTY$_member_1 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 2 } 
+			root = {set_variable = { name=$PARTY$_member_2 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 3 } 
+			root = {set_variable = { name=$PARTY$_member_3 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 4 } 
+			root = {set_variable = { name=$PARTY$_member_4 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 5 } 
+			root = {set_variable = { name=$PARTY$_member_5 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 6 } 
+			root = {set_variable = { name=$PARTY$_member_6 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 7 } 
+			root = {set_variable = { name=$PARTY$_member_7 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 8 } 
+			root = {set_variable = { name=$PARTY$_member_8 value=prev }} 
+		}
+		if = { 
+			limit = { local_var:senate_support_precalc_index = 9 } 
+			root = {set_variable = { name=$PARTY$_member_9 value=prev }} 
+		}																
+
+
+		change_local_variable = {
+			name = senate_support_precalc_index
+			add = 1
+		}
+	}
+}
+
+
+
+
+senate_support_precalc = {
+	if = {
+		limit = {
+			is_ai = no
+		}
+
+		senate_support_precalc_military_party_list = yes
+		senate_support_precalc_civic_party_list = yes
+		senate_support_precalc_religious_party_list = yes
+		senate_support_precalc_mercantile_party_list = yes
+		senate_support_precalc_populist_party_list = yes
+
+		senate_support_precalc_party = { PARTY = military_party }
+		senate_support_precalc_party = { PARTY = civic_party }
+		senate_support_precalc_party = { PARTY = religious_party }
+		senate_support_precalc_party = { PARTY = mercantile_party }
+		senate_support_precalc_party = { PARTY = populist_party }
+
+	}
+}
+
+
+senate_support_init_character = {
+	set_variable = {
+		name = rp_political_ideology_development_expansion
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}
+	set_variable = {
+		name = rp_political_ideology_cooperation_oppression
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}
+	set_variable = {
+		name = rp_political_ideology_elitarian_egalitarian
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}
+	set_variable = {
+		name = rp_political_ideology_openness_isolation
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}	
+	set_variable = {
+		name = rp_political_ideology_conservative_progressive
+		value = { integer_range = { min = rp_political_ideology_min max = rp_political_ideology_max } }
+	}		
+}
+
+
+senate_support_init_country_characters = {
+	every_character = {
+		senate_support_init_character = yes
+	}
+}

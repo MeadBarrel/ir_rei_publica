@@ -1,0 +1,52 @@
+rp_svp_warlike = {  # How much a character likes war
+	add = {  # From martial
+		value = martial
+		subtract = 5
+	}	
+
+	if = {  # Is a conqueror
+		limit = { has_trait = conqueror }
+		add = 5
+	}
+
+	if = {  # Is a coward
+		limit = { has_trait = coward }
+		add = -10
+	}
+
+	if = {  # Is cautious
+		limit = { has_trait = cautious } 
+		add = -3
+	}
+
+	if = {  # Is reckless
+		limit = { has_trait = reckless }
+		add = 3
+	}
+
+	if = {  # Ambitious with high martial
+		limit = { 
+			has_trait = ambitious 
+			martial > 7
+		}
+		add = 5
+	}
+
+	if = {  # Is good natured
+		limit = { has_trait = good_natured }
+		add = -3
+	}
+
+	if = {  # Is abrasive
+		limit = { has_trait = abrasive }
+		add = 3
+	}
+
+	if = {  # Is general
+		limit = { is_general = yes }
+		add = 3
+	}
+
+	add = num_loyal_cohorts  # From loyal cohorts
+
+}
