@@ -30,7 +30,7 @@ rp_senate_approval_wardec_generic = {
 
 # Military Party =======================================================================================================
 rp_senate_approval_wardec_military_party = {
-	rp_voting_support = { PARTY=military_party MATTER=wardec }
+	rp_voting_support = { PARTY=military_party MATTER=wardec MULTIPLIER=0.75}
 
 	modifier = {
 		add = 0.1
@@ -46,7 +46,7 @@ rp_senate_approval_wardec_military_party = {
 
 # Civic Party ==========================================================================================================
 rp_senate_approval_wardec_civic_party = {
-	rp_voting_support = { PARTY=civic_party MATTER=wardec }
+	rp_voting_support = { PARTY=civic_party MATTER=wardec MULTIPLIER=0.75}
 
 	always_modifier = {   # They are tribal
 		add = 0.05
@@ -80,7 +80,7 @@ rp_senate_approval_wardec_civic_party = {
 
 # Religious Party ======================================================================================================
 rp_senate_approval_wardec_religious_party = {
-	rp_voting_support = { PARTY=religious_party MATTER=wardec }
+	rp_voting_support = { PARTY=religious_party MATTER=wardec MULTIPLIER=0.75}
 
 	always_modifier = {
 		add = 0.2
@@ -98,7 +98,7 @@ rp_senate_approval_wardec_religious_party = {
 
 # Mercantile Party =====================================================================================================
 rp_senate_approval_wardec_mercantile_party = {
-	rp_voting_support = { PARTY=mercantile_party MATTER=wardec }
+	rp_voting_support = { PARTY=mercantile_party MATTER=wardec MULTIPLIER=0.75}
 
 	always_modifier = {
 		add = -0.35
@@ -115,7 +115,7 @@ rp_senate_approval_wardec_mercantile_party = {
 
 # Populist Party =======================================================================================================
 rp_senate_approval_wardec_populist_party = {
-	rp_voting_support = { PARTY=populist_party MATTER=wardec }
+	rp_voting_support = { PARTY=populist_party MATTER=wardec MULTIPLIER=0.75}
 
 	always_modifier = {
 		add = 0.1

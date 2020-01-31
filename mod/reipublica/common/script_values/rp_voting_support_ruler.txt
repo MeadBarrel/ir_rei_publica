@@ -31,26 +31,6 @@ rp_voting_support_ruler = {
 		add = -5
 	}
 
-	if = {
-		limit = {
-			any_friend = {
-				charisma > prev.charisma
-				rp_character_declare_war_support_ruler_decision > 0
-			}
-		}
-		add = 5
-	}
-
-	if = {
-		limit = {
-			any_friend = {
-				charisma > prev.charisma
-				rp_character_declare_war_support_ruler_decision < 0
-			}
-		}
-		add = -5
-	}
-
 	if = {  # Low loyalty
 		limit = {
 			loyalty < 60

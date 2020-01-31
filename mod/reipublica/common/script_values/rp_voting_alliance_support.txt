@@ -1,9 +1,29 @@
-rp_voting_wardec_personal = {
-	value = rp_pi_pref_warlike_scaled
+rp_pref_pi_alliance = {
+	value = 0
+	add = rp_get_political_ideology_cooperation
+	subtract = rp_get_political_ideology_oppression
+	add = rp_get_political_ideology_openness 
+	subtract = rp_get_political_ideology_isolation
+}
 
-	add = rp_svp_warlike
 
-	# From traits
+rp_pref_pi_alliance_scaled = {
+	if = {
+		limit = { rp_pi_pref_alliance > 0 }
+		value = rp_pi_pref_alliance
+		divide = { value = rp_pi_pref_alliance multiply = rp_im add = rp_ia }	
+	} 
+	else = {
+		value = rp_pi_pref_alliance
+		divide = { value = rp_pi_pref_alliance multiply = rp_im_neg add = rp_ia }	
+	}
+}
+
+
+rp_voting_alliance_personal = {
+	value = rp_pref_pi_alliance_scaled
+
+	add = 1  # Alliance is always good, no?
 
 	if = {  # Zealous/pious and they have wrong religion
 		limit = {
@@ -13,31 +33,7 @@ rp_voting_wardec_personal = {
 			}
 			not = { has_same_religion_as = scope:target.current_ruler }
 		}
-		add = 5
-	}
-
-	if = {
-		limit = { # Has no holdings
-			num_holdings_owned = 0 
-			employer = { possible_holdings <= total_holdings }
-		}
-		add = 3
-	}
-
-	if = {  # Still have space for more holdings
-		limit = { 
-			num_holdings_owned > 0
-			num_holdings_owned < max_holdings_owned 
-			employer = { possible_holdings <= total_holdings }
-		}
-		add = 2
-	}
-
-	if = {  # We have enough holdings
-		limit = {
-			num_holdings_owned = max_holdings_owned
-		}
-		add = -2
+		add = -5
 	}
 
 	if = {  # Has loyal friend in their country
@@ -47,12 +43,12 @@ rp_voting_wardec_personal = {
 				loyalty >= 70
 			}
 		}
-		add = -5
+		add = 5
 	}
 
 	if = {  # Is friend of their ruler
 		limit = { is_friend = scope:target.current_ruler }
-		add = -10
+		add = 10
 	}
 
 
@@ -63,14 +59,14 @@ rp_voting_wardec_personal = {
 				loyalty > 70
 			}
 		}
-		add = 5
+		add = -5
 	}
 
 	if = {  # Their ruler is our rival
 		limit = {
 			is_rival = scope:target.current_ruler
 		}
-		add = 20
+		add = -20
 	}
 
 	if = {  # We are not of the main culture and the target's ruler has the same culture as ours
@@ -78,116 +74,102 @@ rp_voting_wardec_personal = {
 			not = { has_same_culture_as = employer.current_ruler }
 			has_same_culture_as = scope:target.current_ruler
 		}
-		add = -3
+		add = 3
 	}
 
-	if = {  # Our holdings in danger of being occupied
-		limit = {
-			any_holdings = {
-				OR = {
-					any_neighbor_province = {
-						owner = scope:target
-					}
-					NOT = {
-						OR = {
-							fort_level > 0
-							any_neighbor_province ={
-								owner = employer
-								fort_level > 0 
-							}
-						}
-					}
-				}
-			}
-		}
-		add = -5
-	}
+
+	# From traits ======================================================================================================
+	if = { limit = { has_trait = proud } add = -4 }  # Aren't we ourselves strong enough?
+	if = { limit = { has_trait = suspicious } add = -4 }  # We shouldn't trust them!
+
 }
 
-rp_voting_wardec_ruler = {
-	value = rp_voting_wardec_personal
+
+
+rp_voting_alliance_ruler = {
+	value = rp_voting_alliance_personal
 	add = rp_voting_support_ruler
 }
 
 
-rp_voting_wardec_military_party_ruler = {
+rp_voting_alliance_military_party_ruler = {
 	value = 0
 	every_in_list = {
 		variable = military_party_members
 		limit = { can_vote = yes }
-		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
 		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
 
-rp_voting_wardec_civic_party_ruler = {
+rp_voting_alliance_civic_party_ruler = {
 	value = 0
 	every_in_list = {
 		variable = civic_party_members
 		limit = { can_vote = yes }
-		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
 		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
 
-rp_voting_wardec_religious_party_ruler = {
+rp_voting_alliance_religious_party_ruler = {
 	value = 0
 	every_in_list = {
 		variable = religious_party_members
 		limit = { can_vote = yes }
-		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
 		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
 
-rp_voting_wardec_mercantile_party_ruler = {
+rp_voting_alliance_mercantile_party_ruler = {
 	value = 0
 	every_in_list = {
 		variable = mercantile_party_members
 		limit = { can_vote = yes }
-		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
 		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
 
-rp_voting_wardec_populist_party_ruler = {
+rp_voting_alliance_populist_party_ruler = {
 	value = 0
 	every_in_list = {
 		variable = populist_party_members
 		limit = { can_vote = yes }
-		if = { limit={ rp_voting_wardec_ruler>0 } add=rp_character_voting_power }
+		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
 		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
 
-rp_voting_wardec_opinion_value = {
+rp_voting_alliance_opinion_value = {
 	if = {
 		limit = { opinion = { target = scope:target value > 150 } }
-		value = -0.09
+		value = 0.09
 	}
 	else_if = {
 		limit = { opinion = { target = scope:target value > 100 } }
-		value = -0.06
+		value = 0.06
 	}
 	else_if = {
 		limit = { opinion = { target = scope:target value > 50 } }
-		value = -0.03
+		value = 0.03
 	}	
 	else_if = {
 		limit = { opinion = { target = scope:target value < -150 } }
-		value = 0.09
+		value = -0.09
 	}	
 	else_if = {
 		limit = { opinion = { target = scope:target value < -100 } }
-		value = 0.06
+		value = -0.06
 	}	
 	else_if = {
 		limit = { opinion = { target = scope:target value < -50 } }
-		value = 0.03
+		value = -0.03
 	}	
 }

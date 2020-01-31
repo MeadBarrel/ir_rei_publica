@@ -32,6 +32,16 @@ rp_senate_approval_generic = {
 		}
 	}
 
+	always_modifier = { 
+		add = 0.1
+		custom_tooltip = {
+			text = "party_triumph_popularity_tooltip_ruler"
+			current_ruler = {
+				popularity > 80
+			}
+		}
+	}	
+
 	always_modifier = {  # Tyranny
 		add = {
 			value = root.tyranny
