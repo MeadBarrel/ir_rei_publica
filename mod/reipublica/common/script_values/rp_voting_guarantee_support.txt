@@ -1,0 +1,96 @@
+rp_pref_pi_guarantee = {
+	value = 0
+	add = rp_get_political_ideology_cooperation
+	subtract = rp_get_political_ideology_oppression
+}
+
+
+rp_pref_pi_guarantee_scaled = {
+	if = {
+		limit = { rp_pi_pref_guarantee > 0 }
+		value = rp_pi_pref_guarantee
+		divide = { value = rp_pi_pref_guarantee multiply = rp_im add = rp_ia }	
+	} 
+	else = {
+		value = rp_pi_pref_guarantee
+		divide = { value = rp_pi_pref_guarantee multiply = rp_im_neg add = rp_ia }	
+	}
+}
+
+
+rp_voting_guarantee_personal = {
+	value = rp_pref_pi_guarantee_scaled
+
+	add = rp_svp_personal_opinion_of_target_country
+	add = rp_svp_warlike
+	add = {
+		value = rp_svp_wants_expansion
+		divide = 2
+	}
+
+	# From traits ======================================================================================================
+
+}
+
+
+
+rp_voting_guarantee_ruler = {
+	value = rp_voting_guarantee_personal
+	add = rp_voting_support_ruler
+}
+
+
+
+rp_voting_guarantee_military_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = military_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_guarantee_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}
+
+
+rp_voting_guarantee_civic_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = civic_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_guarantee_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}
+
+
+rp_voting_guarantee_religious_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = religious_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_guarantee_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = mercantile_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_guarantee_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}
+
+
+rp_voting_guarantee_populist_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = populist_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_guarantee_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}

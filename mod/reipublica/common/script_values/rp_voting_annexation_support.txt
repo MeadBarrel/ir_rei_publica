@@ -1,0 +1,96 @@
+rp_pi_pref_annexation = {
+	value = 0
+	add = rp_get_political_ideology_expansion
+	subtract = rp_get_political_ideology_development
+	add = rp_get_political_ideology_oppression
+	subtract = rp_get_political_ideology_cooperation
+	add = {
+		value = rp_get_political_ideology_openness
+		subtract = rp_get_political_ideology_isolation
+		divide = 2
+	}
+}
+
+
+rp_pref_pi_annexation_scaled = {
+	if = {
+		limit = { rp_pi_pref_annexation > 0 }
+		value = rp_pi_pref_annexation
+		divide = { value = rp_pi_pref_annexation multiply = rp_im add = rp_ia }	
+	} 
+	else = {
+		value = rp_pi_pref_annexation
+		divide = { value = rp_pi_pref_annexation multiply = rp_im_neg add = rp_ia }	
+	}
+}
+
+
+
+rp_voting_annexation_personal = {
+	value = rp_pref_pi_annexation_scaled
+
+	add = rp_svp_wants_expansion
+	subtract = {value = rp_svp_personal_opinion_of_target_country divide=2}
+}
+
+
+
+rp_voting_annexation_ruler = {
+	value = rp_voting_annexation_personal
+	add = rp_voting_support_ruler
+}
+
+
+rp_voting_annexation_military_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = military_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_annexation_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}
+
+
+rp_voting_annexation_civic_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = civic_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_annexation_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}
+
+
+rp_voting_annexation_religious_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = religious_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_annexation_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}
+
+
+rp_voting_annexation_mercantile_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = mercantile_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_annexation_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}
+
+
+rp_voting_annexation_populist_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = populist_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_annexation_ruler>0 } add=rp_character_voting_power }
+		else = { add={value=rp_character_voting_power multiply=-1} }
+	}
+}

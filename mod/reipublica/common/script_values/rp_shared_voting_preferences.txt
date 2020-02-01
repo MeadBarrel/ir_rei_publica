@@ -50,3 +50,124 @@ rp_svp_warlike = {  # How much a character likes war
 	add = num_loyal_cohorts  # From loyal cohorts
 
 }
+
+
+rp_svp_has_loyal_friend_in_target_country = {
+	value = 0
+	if = {  # Has loyal friend in their country
+		limit = {
+			any_friend = {
+				employer = scope:target
+				loyalty >= 70
+			}
+		}
+		value = 5
+	}
+}
+
+
+rp_svp_is_friend_of_target_ruler = {
+	value = 0
+	if = {  # Is friend of their ruler
+		limit = { is_friend = scope:target.current_ruler }
+		value = 10
+	}
+}
+
+
+rp_svp_has_loyal_rival_in_target_country = {
+	value = 0
+
+	if = {  # Has loyal rival in their country
+		limit = {
+			any_rival = {
+				employer = scope:target
+				loyalty > 70
+			}
+		}
+		value = 5
+	}
+}
+
+rp_svp_is_rival_of_target_ruler = {
+	value = 0
+	if = {  # Their ruler is our rival
+		limit = {
+			is_rival = scope:target.current_ruler
+		}
+		value = 20
+	}	
+}
+
+rp_svp_outlander_same_culture_as_target = {
+	value = 0
+	if = {  # We are not of the main culture and the target's ruler has the same culture as ours
+		limit = {
+			not = { has_same_culture_as = employer.current_ruler }
+			has_same_culture_as = scope:target.current_ruler
+		}
+		value = 3
+	}
+}
+
+
+rp_svp_zealous_and_target_have_wrong_religion = {
+	value = 0
+	if = {  # Zealous/pious and they have wrong religion
+		limit = {
+			or = {
+				has_trait = zealous
+				has_trait = pious
+			}
+			not = { has_same_religion_as = scope:target.current_ruler }
+		}
+		value = 5
+	}
+
+}
+
+
+rp_svp_personal_opinion_of_target_country = {
+	value = 0
+	add = rp_svp_has_loyal_friend_in_target_country
+	add = rp_svp_is_friend_of_target_ruler
+	add = rp_svp_outlander_same_culture_as_target
+	subtract = rp_svp_has_loyal_rival_in_target_country
+	subtract = rp_svp_is_rival_of_target_ruler
+	subtract = rp_svp_zealous_and_target_have_wrong_religion
+}
+
+
+rp_svp_wants_expansion = {
+	if = {
+		limit = { # Has no holdings
+			num_holdings_owned = 0 
+			employer = { possible_holdings <= total_holdings }
+		}
+		add = 3
+	}
+
+	if = {  # Still have space for more holdings
+		limit = { 
+			num_holdings_owned > 0
+			num_holdings_owned < max_holdings_owned 
+			employer = { possible_holdings <= total_holdings }
+		}
+		add = 2
+	}
+
+	if = {  # We have enough holdings
+		limit = {
+			num_holdings_owned = max_holdings_owned
+		}
+		add = -2
+	}
+}
+
+
+rp_svp_our_holdings_endangered_by_them = {
+	if = {  # Our holdings in danger of being occupied by them
+		limit = { rp_svp_trigger_our_holdings_endangered_by_target = yes }
+		add = 5
+	}
+}

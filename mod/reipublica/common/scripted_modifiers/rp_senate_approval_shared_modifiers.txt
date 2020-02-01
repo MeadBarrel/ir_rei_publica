@@ -1,3 +1,32 @@
+rp_senate_approval_positive_opinion_of_them = {
+	always_modifier = {  # Opinion of them
+		add = rp_senate_approval_opinion_value_positive
+		custom_tooltip = {
+			text = "rp_senate_approval_alliance_opinion_of_them"
+		}
+	}
+}
+
+
+rp_senate_approval_negative_opinion_of_them = {
+	always_modifier = {  # Opinion of them
+		add = rp_senate_approval_opinion_value_negative
+		custom_tooltip = {
+			text = "rp_senate_approval_alliance_opinion_of_them"
+		}
+	}
+}
+
+
+rp_senate_approval_already_at_war = {
+	always_modifier = {  # Already at war
+		war = yes
+
+		add = -0.15
+	}	
+}
+
+
 rp_is_a_republic_modifier = {
 	always_modifier = {
 		add = 0.05
@@ -117,6 +146,7 @@ rp_target_imports_from_modifier = {
 		}
 	}
 }
+
 
 rp_target_not_imports_from_modifier = {
 	always_modifier = {

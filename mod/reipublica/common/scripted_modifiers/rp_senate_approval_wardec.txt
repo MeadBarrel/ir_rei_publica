@@ -12,18 +12,8 @@ rp_senate_approval_wardec_generic = {
 		}		
 	}
 
-	always_modifier = {  # Already at war
-		war = yes
-
-		add = -0.15
-	}
-
-	always_modifier = {  # Opinion of them
-		add = rp_voting_wardec_opinion_value		
-		custom_tooltip = {
-			text = "rp_senate_approval_wardec_opinion_of_them"
-		}
-	}
+	rp_senate_approval_already_at_war = yes
+	rp_senate_approval_negative_opinion_of_them = yes
 
 }
 
@@ -101,7 +91,7 @@ rp_senate_approval_wardec_mercantile_party = {
 	rp_voting_support = { PARTY=mercantile_party MATTER=wardec MULTIPLIER=0.75}
 
 	always_modifier = {
-		add = -0.35
+		add = -0.25
 		custom_tooltip = {
 			text = "import_from_diplo"
 			imports_from = scope:target
