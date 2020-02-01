@@ -1,0 +1,32 @@
+rp_senate_approval_opinion_value_positive = {
+	if = {
+		limit = { opinion = { target = scope:target value > 150 } }
+		value = 0.09
+	}
+	else_if = {
+		limit = { opinion = { target = scope:target value > 100 } }
+		value = 0.06
+	}
+	else_if = {
+		limit = { opinion = { target = scope:target value > 50 } }
+		value = 0.03
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -150 } }
+		value = -0.09
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -100 } }
+		value = -0.06
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -50 } }
+		value = -0.03
+	}	
+}
+
+
+rp_senate_approval_opinion_value_negative = {
+	value = rp_senate_approval_opinion_value_positive
+	multiply = -1
+}

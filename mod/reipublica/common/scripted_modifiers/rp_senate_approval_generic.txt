@@ -1,4 +1,4 @@
-# From Support
+# From Support =========================================================================================================
 rp_senate_approval_from_support = {
 	modifier = {
 		add = {
@@ -15,7 +15,7 @@ rp_senate_approval_from_support = {
 }
 
 
-# Generic
+# Generic ==============================================================================================================
 rp_senate_approval_generic = {
 	modifier = {  # AI
 		is_ai = yes

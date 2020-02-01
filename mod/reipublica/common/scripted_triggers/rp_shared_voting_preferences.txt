@@ -1,0 +1,19 @@
+rp_svp_trigger_our_holdings_endangered_by_target = {
+	any_holdings = {
+		OR = {
+			any_neighbor_province = {
+				owner = scope:target
+			}
+			NOT = {
+				OR = {
+					fort_level > 0
+					any_neighbor_province = {
+						owner = prev.owner
+						fort_level > 0
+					}
+				}
+			}
+		}
+	}
+
+}

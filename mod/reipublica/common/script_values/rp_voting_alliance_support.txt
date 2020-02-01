@@ -25,58 +25,16 @@ rp_voting_alliance_personal = {
 
 	add = 1  # Alliance is always good, no?
 
-	if = {  # Zealous/pious and they have wrong religion
-		limit = {
-			or = {
-				has_trait = zealous
-				has_trait = pious
-			}
-			not = { has_same_religion_as = scope:target.current_ruler }
-		}
-		add = -5
+	add = rp_svp_personal_opinion_of_target_country
+
+	add = {
+		value = rp_svp_warlike
+		divide = 2
 	}
-
-	if = {  # Has loyal friend in their country
-		limit = {
-			any_friend = {
-				employer = scope:target
-				loyalty >= 70
-			}
-		}
-		add = 5
+	add = {
+		value = rp_svp_wants_expansion
+		divide = 2
 	}
-
-	if = {  # Is friend of their ruler
-		limit = { is_friend = scope:target.current_ruler }
-		add = 10
-	}
-
-
-	if = {  # Has loyal rival in their country
-		limit = {
-			any_rival = {
-				employer = scope:target
-				loyalty > 70
-			}
-		}
-		add = -5
-	}
-
-	if = {  # Their ruler is our rival
-		limit = {
-			is_rival = scope:target.current_ruler
-		}
-		add = -20
-	}
-
-	if = {  # We are not of the main culture and the target's ruler has the same culture as ours
-		limit = {
-			not = { has_same_culture_as = employer.current_ruler }
-			has_same_culture_as = scope:target.current_ruler
-		}
-		add = 3
-	}
-
 
 	# From traits ======================================================================================================
 	if = { limit = { has_trait = proud } add = -4 }  # Aren't we ourselves strong enough?
@@ -146,30 +104,3 @@ rp_voting_alliance_populist_party_ruler = {
 	}
 }
 
-
-rp_voting_alliance_opinion_value = {
-	if = {
-		limit = { opinion = { target = scope:target value > 150 } }
-		value = 0.09
-	}
-	else_if = {
-		limit = { opinion = { target = scope:target value > 100 } }
-		value = 0.06
-	}
-	else_if = {
-		limit = { opinion = { target = scope:target value > 50 } }
-		value = 0.03
-	}	
-	else_if = {
-		limit = { opinion = { target = scope:target value < -150 } }
-		value = -0.09
-	}	
-	else_if = {
-		limit = { opinion = { target = scope:target value < -100 } }
-		value = -0.06
-	}	
-	else_if = {
-		limit = { opinion = { target = scope:target value < -50 } }
-		value = -0.03
-	}	
-}
