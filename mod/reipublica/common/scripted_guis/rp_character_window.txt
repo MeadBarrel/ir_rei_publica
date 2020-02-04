@@ -8,87 +8,87 @@ character_window_political_ideology = {
 		#custom_tooltip = "character_political_ideologies_tooltip"
 		if = {
 			limit = { rp_get_political_ideology_expansion > 0 }
-			if = { limit = { rp_get_political_ideology_expansion > 8 } custom_tooltip = rp_pi_expansion_very_high }
-			else_if = { limit = { rp_get_political_ideology_expansion > 6 } custom_tooltip = rp_pi_expansion_high }
-			else_if = { limit = { rp_get_political_ideology_expansion > 4 } custom_tooltip = rp_pi_expansion_moderate }
-			else_if = { limit = { rp_get_political_ideology_expansion > 2 } custom_tooltip = rp_pi_expansion_low }
+			if = { limit = { rp_get_political_ideology_expansion > 80 } custom_tooltip = rp_pi_expansion_very_high }
+			else_if = { limit = { rp_get_political_ideology_expansion > 60 } custom_tooltip = rp_pi_expansion_high }
+			else_if = { limit = { rp_get_political_ideology_expansion > 40 } custom_tooltip = rp_pi_expansion_moderate }
+			else_if = { limit = { rp_get_political_ideology_expansion > 20 } custom_tooltip = rp_pi_expansion_low }
 			else_if = { limit = { rp_get_political_ideology_expansion > 0 } custom_tooltip = rp_pi_expansion_very_low }
 		}
 		if = {
 			limit = { rp_get_political_ideology_development > 0 }
-			if = { limit = { rp_get_political_ideology_development > 8 } custom_tooltip = rp_pi_development_very_high }
-			else_if = { limit = { rp_get_political_ideology_development > 6 } custom_tooltip = rp_pi_development_high }
-			else_if = { limit = { rp_get_political_ideology_development > 4 } custom_tooltip = rp_pi_development_moderate }
-			else_if = { limit = { rp_get_political_ideology_development > 2 } custom_tooltip = rp_pi_development_low }
+			if = { limit = { rp_get_political_ideology_development > 80 } custom_tooltip = rp_pi_development_very_high }
+			else_if = { limit = { rp_get_political_ideology_development > 60 } custom_tooltip = rp_pi_development_high }
+			else_if = { limit = { rp_get_political_ideology_development > 40 } custom_tooltip = rp_pi_development_moderate }
+			else_if = { limit = { rp_get_political_ideology_development > 20 } custom_tooltip = rp_pi_development_low }
 			else_if = { limit = { rp_get_political_ideology_development > 0 } custom_tooltip = rp_pi_development_very_low }
 		}
 
 		if = {
 			limit = { rp_get_political_ideology_oppression > 0 }
-			if = { limit = { rp_get_political_ideology_oppression > 8 } custom_tooltip = rp_pi_oppression_very_high }
-			else_if = { limit = { rp_get_political_ideology_oppression > 6 } custom_tooltip = rp_pi_oppression_high }
-			else_if = { limit = { rp_get_political_ideology_oppression > 4 } custom_tooltip = rp_pi_oppression_moderate }
-			else_if = { limit = { rp_get_political_ideology_oppression > 2 } custom_tooltip = rp_pi_oppression_low }
+			if = { limit = { rp_get_political_ideology_oppression > 80 } custom_tooltip = rp_pi_oppression_very_high }
+			else_if = { limit = { rp_get_political_ideology_oppression > 60 } custom_tooltip = rp_pi_oppression_high }
+			else_if = { limit = { rp_get_political_ideology_oppression > 40 } custom_tooltip = rp_pi_oppression_moderate }
+			else_if = { limit = { rp_get_political_ideology_oppression > 20 } custom_tooltip = rp_pi_oppression_low }
 			else_if = { limit = { rp_get_political_ideology_oppression > 0 } custom_tooltip = rp_pi_oppression_very_low }
 		}
 		if = {
 			limit = { rp_get_political_ideology_cooperation > 0 }
-			if = { limit = { rp_get_political_ideology_cooperation > 8 } custom_tooltip = rp_pi_cooperation_very_high }
-			else_if = { limit = { rp_get_political_ideology_cooperation > 6 } custom_tooltip = rp_pi_cooperation_high }
-			else_if = { limit = { rp_get_political_ideology_cooperation > 4 } custom_tooltip = rp_pi_cooperation_moderate }
-			else_if = { limit = { rp_get_political_ideology_cooperation > 2 } custom_tooltip = rp_pi_cooperation_low }
+			if = { limit = { rp_get_political_ideology_cooperation > 80 } custom_tooltip = rp_pi_cooperation_very_high }
+			else_if = { limit = { rp_get_political_ideology_cooperation > 60 } custom_tooltip = rp_pi_cooperation_high }
+			else_if = { limit = { rp_get_political_ideology_cooperation > 40 } custom_tooltip = rp_pi_cooperation_moderate }
+			else_if = { limit = { rp_get_political_ideology_cooperation > 20 } custom_tooltip = rp_pi_cooperation_low }
 			else_if = { limit = { rp_get_political_ideology_cooperation > 0 } custom_tooltip = rp_pi_cooperation_very_low }
 		}
 
 		if = {
 			limit = { rp_get_political_ideology_elitarian > 0 }
-			if = { limit = { rp_get_political_ideology_elitarian > 8 } custom_tooltip = rp_pi_elitarian_very_high }
-			else_if = { limit = { rp_get_political_ideology_elitarian > 6 } custom_tooltip = rp_pi_elitarian_high }
-			else_if = { limit = { rp_get_political_ideology_elitarian > 4 } custom_tooltip = rp_pi_elitarian_moderate }
-			else_if = { limit = { rp_get_political_ideology_elitarian > 2 } custom_tooltip = rp_pi_elitarian_low }
+			if = { limit = { rp_get_political_ideology_elitarian > 80 } custom_tooltip = rp_pi_elitarian_very_high }
+			else_if = { limit = { rp_get_political_ideology_elitarian > 60 } custom_tooltip = rp_pi_elitarian_high }
+			else_if = { limit = { rp_get_political_ideology_elitarian > 40 } custom_tooltip = rp_pi_elitarian_moderate }
+			else_if = { limit = { rp_get_political_ideology_elitarian > 20 } custom_tooltip = rp_pi_elitarian_low }
 			else_if = { limit = { rp_get_political_ideology_elitarian > 0 } custom_tooltip = rp_pi_elitarian_very_low }
 		}
 		if = {
 			limit = { rp_get_political_ideology_egalitarian > 0 }
-			if = { limit = { rp_get_political_ideology_egalitarian > 8 } custom_tooltip = rp_pi_egalitarian_very_high }
-			else_if = { limit = { rp_get_political_ideology_egalitarian > 6 } custom_tooltip = rp_pi_egalitarian_high }
-			else_if = { limit = { rp_get_political_ideology_egalitarian > 4 } custom_tooltip = rp_pi_egalitarian_moderate }
-			else_if = { limit = { rp_get_political_ideology_egalitarian > 2 } custom_tooltip = rp_pi_egalitarian_low }
+			if = { limit = { rp_get_political_ideology_egalitarian > 80 } custom_tooltip = rp_pi_egalitarian_very_high }
+			else_if = { limit = { rp_get_political_ideology_egalitarian > 60 } custom_tooltip = rp_pi_egalitarian_high }
+			else_if = { limit = { rp_get_political_ideology_egalitarian > 40 } custom_tooltip = rp_pi_egalitarian_moderate }
+			else_if = { limit = { rp_get_political_ideology_egalitarian > 20 } custom_tooltip = rp_pi_egalitarian_low }
 			else_if = { limit = { rp_get_political_ideology_egalitarian > 0 } custom_tooltip = rp_pi_egalitarian_very_low }
 		}
 
 
 		if = {
 			limit = { rp_get_political_ideology_openness > 0 }
-			if = { limit = { rp_get_political_ideology_openness > 8 } custom_tooltip = rp_pi_openness_very_high }
-			else_if = { limit = { rp_get_political_ideology_openness > 6 } custom_tooltip = rp_pi_openness_high }
-			else_if = { limit = { rp_get_political_ideology_openness > 4 } custom_tooltip = rp_pi_openness_moderate }
-			else_if = { limit = { rp_get_political_ideology_openness > 2 } custom_tooltip = rp_pi_openness_low }
+			if = { limit = { rp_get_political_ideology_openness > 80 } custom_tooltip = rp_pi_openness_very_high }
+			else_if = { limit = { rp_get_political_ideology_openness > 60 } custom_tooltip = rp_pi_openness_high }
+			else_if = { limit = { rp_get_political_ideology_openness > 40 } custom_tooltip = rp_pi_openness_moderate }
+			else_if = { limit = { rp_get_political_ideology_openness > 20 } custom_tooltip = rp_pi_openness_low }
 			else_if = { limit = { rp_get_political_ideology_openness > 0 } custom_tooltip = rp_pi_openness_very_low }
 		}
 		if = {
 			limit = { rp_get_political_ideology_isolation > 0 }
-			if = { limit = { rp_get_political_ideology_isolation > 8 } custom_tooltip = rp_pi_isolation_very_high }
-			else_if = { limit = { rp_get_political_ideology_isolation > 6 } custom_tooltip = rp_pi_isolation_high }
-			else_if = { limit = { rp_get_political_ideology_isolation > 4 } custom_tooltip = rp_pi_isolation_moderate }
-			else_if = { limit = { rp_get_political_ideology_isolation > 2 } custom_tooltip = rp_pi_isolation_low }
+			if = { limit = { rp_get_political_ideology_isolation > 80 } custom_tooltip = rp_pi_isolation_very_high }
+			else_if = { limit = { rp_get_political_ideology_isolation > 60 } custom_tooltip = rp_pi_isolation_high }
+			else_if = { limit = { rp_get_political_ideology_isolation > 40 } custom_tooltip = rp_pi_isolation_moderate }
+			else_if = { limit = { rp_get_political_ideology_isolation > 20 } custom_tooltip = rp_pi_isolation_low }
 			else_if = { limit = { rp_get_political_ideology_isolation > 0 } custom_tooltip = rp_pi_isolation_very_low }
 		}
 
 		if = {
 			limit = { rp_get_political_ideology_conservative > 0 }
-			if = { limit = { rp_get_political_ideology_conservative > 8 } custom_tooltip = rp_pi_conservative_very_high }
-			else_if = { limit = { rp_get_political_ideology_conservative > 6 } custom_tooltip = rp_pi_conservative_high }
-			else_if = { limit = { rp_get_political_ideology_conservative > 4 } custom_tooltip = rp_pi_conservative_moderate }
-			else_if = { limit = { rp_get_political_ideology_conservative > 2 } custom_tooltip = rp_pi_conservative_low }
+			if = { limit = { rp_get_political_ideology_conservative > 80 } custom_tooltip = rp_pi_conservative_very_high }
+			else_if = { limit = { rp_get_political_ideology_conservative > 60 } custom_tooltip = rp_pi_conservative_high }
+			else_if = { limit = { rp_get_political_ideology_conservative > 40 } custom_tooltip = rp_pi_conservative_moderate }
+			else_if = { limit = { rp_get_political_ideology_conservative > 20 } custom_tooltip = rp_pi_conservative_low }
 			else_if = { limit = { rp_get_political_ideology_conservative > 0 } custom_tooltip = rp_pi_conservative_very_low }
 		}
 		if = {
 			limit = { rp_get_political_ideology_progressive > 0 }
-			if = { limit = { rp_get_political_ideology_progressive > 8 } custom_tooltip = rp_pi_progressive_very_high }
-			else_if = { limit = { rp_get_political_ideology_progressive > 6 } custom_tooltip = rp_pi_progressive_high }
-			else_if = { limit = { rp_get_political_ideology_progressive > 4 } custom_tooltip = rp_pi_progressive_moderate }
-			else_if = { limit = { rp_get_political_ideology_progressive > 2 } custom_tooltip = rp_pi_progressive_low }
+			if = { limit = { rp_get_political_ideology_progressive > 80 } custom_tooltip = rp_pi_progressive_very_high }
+			else_if = { limit = { rp_get_political_ideology_progressive > 60 } custom_tooltip = rp_pi_progressive_high }
+			else_if = { limit = { rp_get_political_ideology_progressive > 40 } custom_tooltip = rp_pi_progressive_moderate }
+			else_if = { limit = { rp_get_political_ideology_progressive > 20 } custom_tooltip = rp_pi_progressive_low }
 			else_if = { limit = { rp_get_political_ideology_progressive > 0 } custom_tooltip = rp_pi_progressive_very_low }
 		}
 

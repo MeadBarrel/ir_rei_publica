@@ -1,0 +1,132 @@
+# ============================ CONFIG ==================================================================================
+
+rp_voting_demand_tribute_multiplier = 1.0
+
+
+rp_pref_pi_demand_tribute = {
+	value = 0
+	# Cooperation <-> Oppression
+	subtract = rp_get_political_ideology_cooperation
+	add = rp_get_political_ideology_oppression
+
+	# Elitarian <-> Egalitarian
+	add = rp_get_political_ideology_elitarian
+	subtract = rp_get_political_ideology_egalitarian
+
+}
+
+
+rp_pref_pi_demand_tribute_scaled = {
+	if = {
+		limit = { rp_pref_pi_demand_tribute > 0 }
+		value = rp_pref_pi_demand_tribute
+		divide = { value = rp_pref_pi_demand_tribute multiply = rp_im add = rp_ia }	
+	} 
+	else = {
+		value = rp_pref_pi_demand_tribute
+		divide = { value = rp_pref_pi_demand_tribute multiply = rp_im_neg add = rp_ia }	
+	}
+}
+
+# PERSONAL REASONS =====================================================================================================
+rp_voting_demand_tribute_personal = {
+	value = rp_pref_pi_demand_tribute_scaled
+}
+
+
+# PARTY REASONS ========================================================================================================
+rp_voting_demand_tribute_military_party = {
+	value = 25
+}
+
+
+rp_voting_demand_tribute_civic_party = {
+	value = 25
+	employer = {
+		add = rp_svp_we_have_negative_balance
+	}
+}
+
+rp_voting_demand_tribute_religious_party = {
+	value = 25
+}
+
+rp_voting_demand_tribute_mercantile_party = {
+	value = 25
+}
+
+rp_voting_demand_tribute_populist_party = {
+	value = 35
+}
+
+
+rp_voting_demand_tribute_patriotic = {
+	value = 0
+	if = {limit = { party=military_party } add=rp_voting_demand_tribute_military_party }
+	if = {limit = { party=civic_party } add=rp_voting_demand_tribute_civic_party }
+	if = {limit = { party=religious_party } add=rp_voting_demand_tribute_religious_party }
+	if = {limit = { party=mercantile_party } add=rp_voting_demand_tribute_mercantile_party }
+	if = {limit = { party=populist_party } add=rp_voting_demand_tribute_populist_party }
+}
+
+
+# COMBINED =============================================================================================================
+rp_voting_demand_tribute_general = {
+	value = rp_voting_demand_tribute_personal
+	add = rp_voting_demand_tribute_patriotic
+}
+
+rp_voting_demand_tribute_ruler = {
+	value = rp_voting_demand_tribute_general
+	add = rp_voting_support_ruler
+}
+
+# ============================ DO NOT TOUCH ============================================================================
+rp_voting_demand_tribute_military_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = military_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_tribute_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_demand_tribute_civic_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = civic_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_tribute_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_demand_tribute_religious_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = religious_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_tribute_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_demand_tribute_mercantile_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = mercantile_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_tribute_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_demand_tribute_populist_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = populist_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_tribute_ruler>0 } add=rp_character_voting_power }
+	}
+}

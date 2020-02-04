@@ -1,12 +1,10 @@
 rp_senate_approval_alliance_generic = {
-	rp_senate_approval_positive_opinion_of_them = yes
 }
 
 
 # Military Party =======================================================================================================
 rp_senate_approval_alliance_military_party = {
-	rp_voting_support = { PARTY=military_party MATTER=alliance MULTIPLIER=0.5 }
-	rp_target_is_military_modifier = yes
+	rp_voting_support = { PARTY=military_party MATTER=alliance MULTIPLIER=rp_voting_alliance_multiplier }
 
 	rp_senate_approval_alliance_generic = yes
 	rp_senate_approval_military_party_generic = yes
@@ -14,13 +12,7 @@ rp_senate_approval_alliance_military_party = {
 
 # Civic Party ==========================================================================================================
 rp_senate_approval_alliance_civic_party = {
-	rp_voting_support = { PARTY=civic_party MATTER=alliance MULTIPLIER=0.5}
-
-	rp_has_orator_trait_modifier = yes
-	rp_is_a_republic_modifier = yes
-	rp_is_same_culture_and_group_modifier = yes
-	rp_target_is_in_civil_war_modifier = yes
-	rp_target_is_civic_modifier = yes
+	rp_voting_support = { PARTY=civic_party MATTER=alliance MULTIPLIER=rp_voting_alliance_multiplier}
 
 	rp_senate_approval_alliance_generic = yes
 	rp_senate_approval_civic_party_generic = yes
@@ -28,11 +20,7 @@ rp_senate_approval_alliance_civic_party = {
 
 # Religious Party ======================================================================================================
 rp_senate_approval_alliance_religious_party = {
-	rp_voting_support = { PARTY=religious_party MATTER=alliance MULTIPLIER=0.5}
-
-	rp_same_ruler_religion_modifier = yes
-	rp_target_ruler_is_religious_modifier = yes
-	rp_target_is_theocratic_modifier = yes
+	rp_voting_support = { PARTY=religious_party MATTER=alliance MULTIPLIER=rp_voting_alliance_multiplier}
 
 	rp_senate_approval_alliance_generic = yes
 	rp_senate_approval_religious_party_generic = yes
@@ -40,11 +28,7 @@ rp_senate_approval_alliance_religious_party = {
 
 # Mercantile Party ======================================================================================================
 rp_senate_approval_alliance_mercantile_party = {
-	rp_voting_support = { PARTY=mercantile_party MATTER=alliance MULTIPLIER=0.5}
-
-	rp_target_imports_from_modifier = yes
-	rp_makes_less_money_modifier = yes
-	rp_target_is_mercantile_modifier = yes
+	rp_voting_support = { PARTY=mercantile_party MATTER=alliance MULTIPLIER=rp_voting_alliance_multiplier}
 
 	rp_senate_approval_alliance_generic = yes
 	rp_senate_approval_mercantile_party_generic = yes
@@ -53,9 +37,7 @@ rp_senate_approval_alliance_mercantile_party = {
 
 # Populist Party ======================================================================================================
 rp_senate_approval_alliance_populist_party = {
-	rp_voting_support = { PARTY=populist_party MATTER=alliance MULTIPLIER=0.5}
-
-	rp_target_is_monarchy_modifier = yes
+	rp_voting_support = { PARTY=populist_party MATTER=alliance MULTIPLIER=rp_voting_alliance_multiplier}
 
 	rp_senate_approval_alliance_generic = yes
 	rp_senate_approval_populist_party_generic = yes

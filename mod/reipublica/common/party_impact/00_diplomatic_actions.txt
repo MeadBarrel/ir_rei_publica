@@ -7,29 +7,29 @@ declare_war = {
 
 	approval = {
 		military_party = {
-			base = 0
-			rp_senate_approval_wardec_military_party = yes
+			base = -0.1
+			rp_senate_approval_declare_war_military_party = yes
 		}
 
 		civic_party = {
-			base = 0
-			rp_senate_approval_wardec_civic_party = yes
+			base = -0.2
+			rp_senate_approval_declare_war_civic_party = yes 
 		}		
 
 		religious_party = {
-			base = 0
-			rp_senate_approval_wardec_religious_party = yes
+			base = -0.1
+			rp_senate_approval_declare_war_religious_party = yes
 		}		
 
 
 		mercantile_party = {
-			base = 0 
-			rp_senate_approval_wardec_mercantile_party = yes
+			base = -0.2
+			rp_senate_approval_declare_war_mercantile_party = yes
 		}		
 
 		populist_party = {
-			base = 0
-			rp_senate_approval_wardec_populist_party = yes
+			base = -0.1
+			rp_senate_approval_declare_war_populist_party = yes
 		}		
 	}
 
@@ -91,25 +91,25 @@ alliance = {
 	approval = {
 	
 		military_party = { 
-			base = 0
+			base = -0.1
 			rp_senate_approval_alliance_military_party = yes
 		}
 		
 		civic_party = {
-			base = 0.1
+			base = 0
 			rp_senate_approval_alliance_civic_party = yes
 		}
 		
 		religious_party = {
-			base = 0
+			base = -0.1
 			rp_senate_approval_alliance_religious_party = yes
 		}
 		mercantile_party = {
-			base = 0.1
+			base = 0
 			rp_senate_approval_alliance_mercantile_party = yes
 		}
 		populist_party = {
-			base = 0
+			base = -0.1
 			rp_senate_approval_alliance_populist_party = yes
 		}
 	}
@@ -130,24 +130,25 @@ guarantee = {
 	approval = {
 	
 		military_party = { 
-			base = 0
+			base = -0.1
 			rp_senate_approval_guarantee_military_party = yes			
 		}
 		
 		civic_party = {
-			base = 0.1
+			base = 0
 			rp_senate_approval_guarantee_civic_party = yes
 		}
 		
 		religious_party = {
-			base = 0
+			base = -0.1
 			rp_senate_approval_guarantee_religious_party = yes
 		}
 		mercantile_party = {
-			base = 0.1
+			base = 0
 			rp_senate_approval_guarantee_mercantile_party = yes
 		}
 		populist_party = {
+			base = -0.1
 			rp_senate_approval_guarantee_populist_party = yes			
 		}
 	}
@@ -172,25 +173,25 @@ demand_annexation = {
 	approval = {
 	
 		military_party = {
-			base = 0.1
-			rp_senate_approval_annexation_military_party = yes			
+			base = 0
+			rp_senate_approval_demand_annexation_military_party = yes			
 		}
 		
 		civic_party = {
-			base = 0
-			rp_senate_approval_annexation_civic_party = yes			
+			base = -0.1
+			rp_senate_approval_demand_annexation_civic_party = yes			
 		}
 		religious_party = {
-			base = 0
-			rp_senate_approval_annexation_religious_party = yes
+			base = -0.1
+			rp_senate_approval_demand_annexation_religious_party = yes
 		}
 		mercantile_party = {
-			base = 0
-			rp_senate_approval_annexation_mercantile_party = yes
+			base = -0.1
+			rp_senate_approval_demand_annexation_mercantile_party = yes
 		}
 		populist_party = {
-			base = 0.1
-			rp_senate_approval_annexation_populist_party = yes
+			base = 0
+			rp_senate_approval_demand_annexation_populist_party = yes
 		}
 	}
 
@@ -220,25 +221,25 @@ demand_tribute = {
 	approval = {
 	
 		military_party = {
-			base = 0.1
-			rp_senate_approval_tribute_military_party = yes
+			base = 0
+			rp_senate_approval_demand_tribute_military_party = yes
 		}
 		
 		civic_party = {
-			base = 0.1
-			rp_senate_approval_tribute_civic_party = yes			
+			base = 0
+			rp_senate_approval_demand_tribute_civic_party = yes			
 		}
 		religious_party = {
-			base = 0
-			rp_senate_approval_tribute_religious_party = yes			
+			base = -0.1
+			rp_senate_approval_demand_tribute_religious_party = yes			
 		}
 		mercantile_party = {
-			base = 0
-			rp_senate_approval_tribute_mercantile_party = yes			
+			base = -0.1
+			rp_senate_approval_demand_tribute_mercantile_party = yes			
 		}
 		populist_party = {
-			base = 0.2
-			rp_senate_approval_tribute_populist_party = yes
+			base = 0.1
+			rp_senate_approval_demand_tribute_populist_party = yes
 		}
 	}
 

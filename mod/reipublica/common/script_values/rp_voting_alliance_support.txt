@@ -1,62 +1,106 @@
+# ============================ CONFIG ==================================================================================
+
+rp_voting_alliance_multiplier = 1.0
+
+
 rp_pref_pi_alliance = {
 	value = 0
+
+	# Cooperation <-> Oppression
 	add = rp_get_political_ideology_cooperation
 	subtract = rp_get_political_ideology_oppression
+
+	# Openness <-> Isolation
 	add = rp_get_political_ideology_openness 
 	subtract = rp_get_political_ideology_isolation
+
 }
 
 
 rp_pref_pi_alliance_scaled = {
 	if = {
-		limit = { rp_pi_pref_alliance > 0 }
-		value = rp_pi_pref_alliance
-		divide = { value = rp_pi_pref_alliance multiply = rp_im add = rp_ia }	
+		limit = { rp_pref_pi_alliance > 0 }
+		value = rp_pref_pi_alliance
+		divide = { value = rp_pref_pi_alliance multiply = rp_im add = rp_ia }	
 	} 
 	else = {
-		value = rp_pi_pref_alliance
-		divide = { value = rp_pi_pref_alliance multiply = rp_im_neg add = rp_ia }	
+		value = rp_pref_pi_alliance
+		divide = { value = rp_pref_pi_alliance multiply = rp_im_neg add = rp_ia }	
 	}
 }
 
-
+# PERSONAL REASONS =====================================================================================================
 rp_voting_alliance_personal = {
 	value = rp_pref_pi_alliance_scaled
 
-	add = 1  # Alliance is always good, no?
-
 	add = rp_svp_personal_opinion_of_target_country
-
-	add = {
-		value = rp_svp_warlike
-		divide = 2
-	}
 	add = {
 		value = rp_svp_wants_expansion
 		divide = 2
 	}
 
 	# From traits ======================================================================================================
-	if = { limit = { has_trait = proud } add = -4 }  # Aren't we ourselves strong enough?
-	if = { limit = { has_trait = suspicious } add = -4 }  # We shouldn't trust them!
-
+	if = { limit = { has_trait = proud } add = -15 }  # Aren't we ourselves strong enough?
+	if = { limit = { has_trait = suspicious } add = -25 }  # We shouldn't trust them!
 }
 
 
+# PARTY REASONS ========================================================================================================
+rp_voting_alliance_military_party = {
+	value = 10
+	add = rp_svp_military_party_opinion_of_target
+}
+
+
+rp_voting_alliance_civic_party = {
+	value = 0
+	add = rp_svp_civic_party_opinion_of_target
+}
+
+rp_voting_alliance_religious_party = {
+	value = 0
+	add = rp_svp_religious_party_opinion_of_target
+}
+
+rp_voting_alliance_mercantile_party = {
+	value = 10
+	add = rp_svp_mercantile_party_opinion_of_target
+}
+
+rp_voting_alliance_populist_party = {
+	value = 0
+	add = rp_svp_populist_party_opinion_of_target
+}
+
+
+rp_voting_alliance_patriotic = {
+	value = 0
+	if = {limit = { party=military_party } add=rp_voting_alliance_military_party }
+	if = {limit = { party=civic_party } add=rp_voting_alliance_civic_party }
+	if = {limit = { party=religious_party } add=rp_voting_alliance_religious_party }
+	if = {limit = { party=mercantile_party } add=rp_voting_alliance_mercantile_party }
+	if = {limit = { party=populist_party } add=rp_voting_alliance_populist_party }
+}
+
+
+# COMBINED =============================================================================================================
+rp_voting_alliance_general = {
+	value = rp_voting_alliance_personal
+	add = rp_voting_alliance_patriotic
+}
 
 rp_voting_alliance_ruler = {
-	value = rp_voting_alliance_personal
+	value = rp_voting_alliance_general
 	add = rp_voting_support_ruler
 }
 
-
+# ============================ DO NOT TOUCH ============================================================================
 rp_voting_alliance_military_party_ruler = {
 	value = 0
 	every_in_list = {
 		variable = military_party_members
 		limit = { can_vote = yes }
 		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
-		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
@@ -67,7 +111,6 @@ rp_voting_alliance_civic_party_ruler = {
 		variable = civic_party_members
 		limit = { can_vote = yes }
 		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
-		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
@@ -78,7 +121,6 @@ rp_voting_alliance_religious_party_ruler = {
 		variable = religious_party_members
 		limit = { can_vote = yes }
 		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
-		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
@@ -89,7 +131,6 @@ rp_voting_alliance_mercantile_party_ruler = {
 		variable = mercantile_party_members
 		limit = { can_vote = yes }
 		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
-		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
 
@@ -100,7 +141,5 @@ rp_voting_alliance_populist_party_ruler = {
 		variable = populist_party_members
 		limit = { can_vote = yes }
 		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
-		else = { add={value=rp_character_voting_power multiply=-1} }
 	}
 }
-

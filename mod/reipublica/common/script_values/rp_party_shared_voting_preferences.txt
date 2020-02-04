@@ -1,0 +1,483 @@
+rp_svp_opinion_of_them = {
+	if = {
+		limit = { opinion = { target = scope:target value > 150 } }
+		value = 9
+	}
+	else_if = {
+		limit = { opinion = { target = scope:target value > 100 } }
+		value = 6
+	}
+	else_if = {
+		limit = { opinion = { target = scope:target value > 50 } }
+		value = 3
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -150 } }
+		value = -9
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -100 } }
+		value = -6
+	}	
+	else_if = {
+		limit = { opinion = { target = scope:target value < -50 } }
+		value = -3
+	}			
+}
+
+
+
+rp_svp_target_is_republic = {
+	value = 0
+	if = { limit = {scope:target = {is_republic=yes}} value=20 }
+}
+
+
+rp_svp_target_is_tribal = {
+	value = 0
+	if = { limit = {scope:target = {is_tribal=yes}} value=20 }
+}
+
+
+
+rp_svp_target_is_same_culture_and_group = {
+	value = 0
+	if = {
+		limit = {
+			current_ruler = {
+				has_same_culture_as = scope:target.current_ruler
+			}
+		}
+		add = 5
+	}
+	if = {
+		limit = {
+			current_ruler = {
+				has_same_culture_group_as = scope:target.current_ruler
+			}
+		}
+		add = 5
+	}	
+}
+
+
+
+rp_svp_target_ruler_is_orator = {
+	value = 0
+	if = {
+		limit = {
+			scope:target.current_ruler = { has_trait=orator }
+		}
+		add = 10
+	}
+}
+
+
+rp_svp_target_in_civil_war = {
+	value = 0
+	if = {
+		limit = { scope:target = {has_civil_war = yes} }
+		add = 25
+	}
+}
+
+
+rp_target_has_same_religion = {
+	if = {
+		limit = {
+			current_ruler = {
+				has_same_religion_as = scope:target.current_ruler
+			}
+		}
+		add = 15
+	}
+}
+
+
+rp_target_has_different_religion = {
+	if = {
+		limit = {
+			current_ruler = {
+				not = { has_same_religion_as = scope:target.current_ruler }
+			}
+		}
+		add = 15
+	}	
+}
+
+
+rp_target_ruler_is_religious = {
+	if = {
+		limit = {
+			scope:target.current_ruler = {
+				OR = {
+					has_trait = pious
+					has_trait = devout
+				}
+			}
+		}
+		add = 5
+	}
+}
+
+
+rp_svp_target_is_theocratic = {
+	if = {
+		limit = {
+			scope:target = {
+				OR = {
+					government = theocratic_republic
+					government = theocratic_monarchy
+				}
+			}
+		}
+		add = 15
+	}
+}
+
+
+rp_svp_trading_with_target = {
+	if = {
+		limit = {
+			OR = {
+				imports_from = scope:target
+				scope:target = {
+					imports_from = prev
+				}	
+			}
+		}
+		add = 25
+	}
+}
+
+
+rp_svp_target_makes_less_money = {
+	if = {
+		limit = {
+			has_monthly_income > scope:target.has_monthly_income
+		}
+	}
+	add = 5
+}
+
+
+rp_svp_target_is_mercantile = {
+	if = {
+		limit = {
+			scope:target = {
+				OR = {
+					government = plutocratic_republic
+					government = plutocratic_monarchy
+				}
+			}
+		}
+		add = 15
+	}
+}
+
+
+rp_svp_target_is_military = {
+	if = {
+		limit = {
+			scope:target = {
+				OR = {
+					government = aristocratic_republic
+					government = stratocratic_monarchy
+				}
+			}
+		}
+		add = 15
+	}
+
+}
+
+
+rp_svp_target_is_civic = {
+	if = {
+		limit = {
+			scope:target = {
+				OR = {
+					government = oligarchic_republic
+					government = aristocratic_monarchy
+				}
+			}
+		}
+		add = 15
+	}
+}
+
+
+
+rp_svp_target_is_monarchy = {
+	if = {
+		limit = {
+			scope:target = {
+				OR = {
+					is_monarchy = yes					
+				}
+			}
+		}
+		add = 20
+	}
+}
+
+
+rp_svp_we_have_negative_balance = {
+	if = {
+		limit = {
+			has_monthly_balance < 0 
+		}
+		add = 15
+	}
+}
+
+
+rp_svp_they_are_stronger = {
+	if = {
+		limit = {
+			max_manpower < scope:target.max_manpower
+		}
+		add = 10
+	}
+}
+
+
+rp_svp_at_war_with_our_friend = {
+	if = {  # Are at war against 
+		limit = {
+			scope:target = {
+				any_countries_at_war_with = {
+					prev.prev = {
+						if = {
+							limit = {
+								opinion = { target = prev value > 150 }
+							} 
+							add = 5
+						}
+						if = {
+							limit = {
+								opinion = { target = prev value > 100 }
+							} 
+							add = 5
+						}
+						if = {
+							limit = {
+								opinion = { target = prev value > 50 }
+							} 
+							add = 5
+						}
+						if = {
+							limit = {
+								opinion = { target = prev value > 0 }
+							} 
+							add = 5
+						}												
+					}										
+				}
+			}
+		}
+	}
+}
+
+
+rp_svp_at_war_with_our_ally = {
+	if = {
+		limit = {
+			scope:target = {
+				any_countries_at_war_with = {
+					alliance_with = prev.prev
+				}
+			}
+		}
+		add = 35
+	}
+}
+
+
+rp_svp_at_war_with_trading_partner = {
+	if = {
+		limit = {
+			scope:target = {
+				any_countries_at_war_with = {
+					OR = {
+						imports_from = prev.prev
+						prev.prev = {
+							imports_from = prev
+						}
+					}
+				}
+			}
+		}
+		add = 15
+	}
+}
+
+
+rp_svp_at_war_with_our_religion = {
+	if = {
+		limit = {
+			not = { current_ruler = { has_same_religion_as = scope:target.current_ruler } }
+			scope:target = {
+				any_countries_at_war_with = {
+					current_ruler = {
+						has_same_religion_as = prev.prev.prev.current_ruler
+					}
+				}
+			}
+		}
+		add = 10
+	}
+}
+
+
+rp_svp_at_war_with_our_culture_group = {
+	if = {		
+		limit = {
+			not = { current_ruler = { has_same_culture_group_as = scope:target.current_ruler } }
+			scope:target = {
+				any_countries_at_war_with = {
+					current_ruler = {
+						has_same_culture_group_as = prev.prev.prev.current_ruler
+					}
+				}
+			}
+		}
+		add = 15
+	}
+}
+
+
+rp_svp_at_war_with_our_culture = {
+	if = {		
+		limit = {
+			not = { current_ruler = { has_same_culture_as = scope:target.current_ruler } }
+			scope:target = {
+				any_countries_at_war_with = {
+					current_ruler = {
+						has_same_culture_as = prev.prev.prev.current_ruler
+					}
+				}
+			}
+		}
+		add = 10
+	}
+}
+
+
+rp_svp_has_same_culture = {
+	if = {
+		limit = { current_ruler = { has_same_culture_as = scope:target.current_ruler } }
+		add = 10
+	}
+}
+
+
+rp_svp_has_same_culture_group = {
+	if = {
+		limit = { current_ruler = { has_same_culture_group_as = scope:target.current_ruler } }
+		add = 15
+	}
+}
+
+
+rp_svp_has_same_religion = {
+	if = {
+		limit = { current_ruler = { has_same_religion_as = scope:target.current_ruler } }
+		add = 15
+	}
+}
+
+rp_svp_has_different_culture_group = {
+	if = {
+		limit = { not = { current_ruler = { has_same_culture_group_as = scope:target.current_ruler } } }
+		add = 15
+	}	
+}
+
+
+rp_svp_has_different_culture = {
+	if = {
+		limit = { not = { current_ruler = { has_same_culture_as = scope:target.current_ruler } } }
+		add = 10
+	}	
+}
+
+
+rp_svp_has_different_religion = {
+	if = {
+		limit = { not = { current_ruler = { has_same_religion_as = scope:target.current_ruler } } }
+		add = 15
+	}	
+}
+
+
+rp_svp_military_party_opinion_of_target = {
+	value = 0
+	employer = {
+		add =rp_svp_opinion_of_them
+		add = rp_svp_target_ruler_is_orator
+		add = rp_svp_target_is_military
+		add = rp_svp_they_are_stronger
+		subtract = rp_svp_at_war_with_our_ally
+		subtract = rp_ai_target_threat_level
+	}
+}
+
+
+rp_svp_civic_party_opinion_of_target = {
+	value = 0
+	employer = {
+		add = rp_svp_opinion_of_them
+		add = rp_svp_target_ruler_is_orator
+		add = rp_svp_target_is_civic
+		add = rp_svp_has_same_culture
+		add = rp_svp_has_same_culture_group
+		subtract = rp_svp_has_different_culture
+		subtract = rp_svp_has_different_culture_group
+		subtract = rp_svp_target_is_tribal
+		subtract = rp_svp_target_is_monarchy
+		subtract = rp_svp_at_war_with_our_ally
+		subtract = rp_svp_at_war_with_our_culture
+		subtract = rp_svp_at_war_with_our_culture_group
+	}
+}
+
+
+rp_svp_religious_party_opinion_of_target = {
+	value = 0	
+	employer = {
+
+		add = rp_svp_opinion_of_them
+		add = rp_svp_target_ruler_is_orator
+		add = rp_svp_target_is_theocratic
+		add = rp_target_ruler_is_religious
+		add = rp_svp_has_same_religion
+		subtract = rp_svp_has_different_religion
+		subtract = rp_svp_at_war_with_our_religion
+	}
+}
+
+
+rp_svp_mercantile_party_opinion_of_target = {
+	value = 0
+	emplyer = {
+		add = rp_svp_opinion_of_them
+		add = rp_svp_target_ruler_is_orator
+		add = rp_svp_trading_with_target
+		add = rp_svp_target_is_mercantile
+		subtract = rp_svp_target_is_military
+		subtract = rp_svp_at_war_with_trading_partner
+	}
+
+}
+
+
+rp_svp_populist_party_opinion_of_target = {
+	value = 0
+	employer = {
+		add = rp_svp_opinion_of_them
+		add = rp_svp_target_ruler_is_orator
+		add = scope:target.tyranny
+		subtract = rp_ai_target_threat_level
+	}
+}

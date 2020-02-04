@@ -2,26 +2,27 @@ rp_svp_warlike = {  # How much a character likes war
 	add = {  # From martial
 		value = martial
 		subtract = 5
+		multiply = 2.5
 	}	
 
 	if = {  # Is a conqueror
 		limit = { has_trait = conqueror }
-		add = 5
+		add = 25
 	}
 
 	if = {  # Is a coward
 		limit = { has_trait = coward }
-		add = -10
+		add = -25
 	}
 
 	if = {  # Is cautious
 		limit = { has_trait = cautious } 
-		add = -3
+		add = -25
 	}
 
 	if = {  # Is reckless
 		limit = { has_trait = reckless }
-		add = 3
+		add = 25
 	}
 
 	if = {  # Ambitious with high martial
@@ -29,25 +30,25 @@ rp_svp_warlike = {  # How much a character likes war
 			has_trait = ambitious 
 			martial > 7
 		}
-		add = 5
+		add = 30
 	}
 
 	if = {  # Is good natured
 		limit = { has_trait = good_natured }
-		add = -3
+		add = -10
 	}
 
 	if = {  # Is abrasive
 		limit = { has_trait = abrasive }
-		add = 3
+		add = 10
 	}
 
 	if = {  # Is general
 		limit = { is_general = yes }
-		add = 3
+		add = 20
 	}
 
-	add = num_loyal_cohorts  # From loyal cohorts
+	add = { value = num_loyal_cohorts  divide = 30 } # From loyal cohorts
 
 }
 
@@ -61,7 +62,7 @@ rp_svp_has_loyal_friend_in_target_country = {
 				loyalty >= 70
 			}
 		}
-		value = 5
+		value = 15
 	}
 }
 
@@ -70,7 +71,7 @@ rp_svp_is_friend_of_target_ruler = {
 	value = 0
 	if = {  # Is friend of their ruler
 		limit = { is_friend = scope:target.current_ruler }
-		value = 10
+		value = 30
 	}
 }
 
@@ -85,7 +86,7 @@ rp_svp_has_loyal_rival_in_target_country = {
 				loyalty > 70
 			}
 		}
-		value = 5
+		value = 15
 	}
 }
 
@@ -95,7 +96,7 @@ rp_svp_is_rival_of_target_ruler = {
 		limit = {
 			is_rival = scope:target.current_ruler
 		}
-		value = 20
+		value = 30
 	}	
 }
 
@@ -106,7 +107,7 @@ rp_svp_outlander_same_culture_as_target = {
 			not = { has_same_culture_as = employer.current_ruler }
 			has_same_culture_as = scope:target.current_ruler
 		}
-		value = 3
+		value = 15
 	}
 }
 
@@ -121,7 +122,7 @@ rp_svp_zealous_and_target_have_wrong_religion = {
 			}
 			not = { has_same_religion_as = scope:target.current_ruler }
 		}
-		value = 5
+		value = 30
 	}
 
 }
@@ -135,6 +136,14 @@ rp_svp_personal_opinion_of_target_country = {
 	subtract = rp_svp_has_loyal_rival_in_target_country
 	subtract = rp_svp_is_rival_of_target_ruler
 	subtract = rp_svp_zealous_and_target_have_wrong_religion
+
+	if = {  # Carthage senate hates Rome
+		limit = {
+			employer = { tag = CAR has_completed_mission_task = carthaginian_rome_expansion_mission_task_13 }
+			scope:target = { tag = ROM }
+		}
+		subtract = 15
+	}
 }
 
 
@@ -144,7 +153,7 @@ rp_svp_wants_expansion = {
 			num_holdings_owned = 0 
 			employer = { possible_holdings <= total_holdings }
 		}
-		add = 3
+		add = 25
 	}
 
 	if = {  # Still have space for more holdings
@@ -153,14 +162,14 @@ rp_svp_wants_expansion = {
 			num_holdings_owned < max_holdings_owned 
 			employer = { possible_holdings <= total_holdings }
 		}
-		add = 2
+		add = 10
 	}
 
 	if = {  # We have enough holdings
 		limit = {
 			num_holdings_owned = max_holdings_owned
 		}
-		add = -2
+		add = -15
 	}
 }
 
@@ -168,6 +177,7 @@ rp_svp_wants_expansion = {
 rp_svp_our_holdings_endangered_by_them = {
 	if = {  # Our holdings in danger of being occupied by them
 		limit = { rp_svp_trigger_our_holdings_endangered_by_target = yes }
-		add = 5
+		add = 25
 	}
 }
+

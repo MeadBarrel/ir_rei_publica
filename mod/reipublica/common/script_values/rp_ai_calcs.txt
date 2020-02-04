@@ -1,0 +1,33 @@
+rp_ai_is_nearby = {
+
+}
+
+
+rp_ai_target_threat_level = {
+	value = 0
+
+	add = {
+		value = scope:target.manpower
+		divide = manpower
+		multiply = 5
+	}
+
+	add = {
+		value = scope:target.has_aggressive_expansion
+		divide = 2
+	}
+
+	if = {  # Is nearby
+		limit = {
+			any_neighbour_country = {
+				this = scope:target
+			}
+		}
+		multiply = 1.5
+	}
+
+	if = {
+		limit = { rank > scope:target.rank }
+		multiply = 0.75
+	}
+}

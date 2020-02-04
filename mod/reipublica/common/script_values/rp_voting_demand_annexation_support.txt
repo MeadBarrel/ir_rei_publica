@@ -1,0 +1,157 @@
+# ============================ CONFIG ==================================================================================
+
+rp_voting_demand_annexation_multiplier = 1.0
+
+
+rp_pref_pi_demand_annexation = {
+	value = 0
+	# Development <-> Expansion
+	add = rp_get_political_ideology_expansion
+	subtract = rp_get_political_ideology_development
+
+	# Openness <-> Isolation
+	add = rp_get_political_ideology_openness 
+	subtract = rp_get_political_ideology_isolation
+}
+
+
+rp_pref_pi_demand_annexation_scaled = {
+	if = {
+		limit = { rp_pref_pi_demand_annexation > 0 }
+		value = rp_pref_pi_demand_annexation
+		divide = { value = rp_pref_pi_demand_annexation multiply = rp_im add = rp_ia }	
+	} 
+	else = {
+		value = rp_pref_pi_demand_annexation
+		divide = { value = rp_pref_pi_demand_annexation multiply = rp_im_neg add = rp_ia }	
+	}
+}
+
+# PERSONAL REASONS =====================================================================================================
+rp_voting_demand_annexation_personal = {
+	value = rp_pref_pi_demand_annexation_scaled
+	subtract = {
+		value = rp_svp_personal_opinion_of_target_country
+		divide = 2
+	}
+	add = rp_svp_wants_expansion
+}
+
+
+# PARTY REASONS ========================================================================================================
+rp_voting_demand_annexation_military_party = {
+	value = 0
+	employer = {
+		subtract = rp_svp_target_ruler_is_orator
+	}
+}
+
+
+rp_voting_demand_annexation_civic_party = {
+	value = 0
+	employer = {
+		subtract = rp_svp_target_ruler_is_orator
+		subtract = rp_svp_target_is_tribal
+		add = rp_svp_has_same_culture
+		add = rp_svp_has_same_culture_group
+		subtract = rp_svp_has_different_culture
+		subtract = rp_svp_has_different_culture_group
+	}
+}
+
+rp_voting_demand_annexation_religious_party = {
+	value = 0
+	employer = {
+		subtract = rp_svp_target_ruler_is_orator
+		add = rp_svp_has_same_religion
+		subtract = rp_svp_has_different_religion
+	}
+}
+
+rp_voting_demand_annexation_mercantile_party = {
+	value = 0
+	employer = {
+		subtract = rp_svp_target_ruler_is_orator
+		subtract = rp_svp_trading_with_target
+	}
+}
+
+rp_voting_demand_annexation_populist_party = {
+	value = 0
+	employer = {
+		subtract = rp_svp_target_ruler_is_orator
+		add = scope:target.tyranny
+	}
+}
+
+
+rp_voting_demand_annexation_patriotic = {
+	value = 0
+	if = {limit = { party=military_party } add=rp_voting_demand_annexation_military_party }
+	if = {limit = { party=civic_party } add=rp_voting_demand_annexation_civic_party }
+	if = {limit = { party=religious_party } add=rp_voting_demand_annexation_religious_party }
+	if = {limit = { party=mercantile_party } add=rp_voting_demand_annexation_mercantile_party }
+	if = {limit = { party=populist_party } add=rp_voting_demand_annexation_populist_party }
+}
+
+
+# COMBINED =============================================================================================================
+rp_voting_demand_annexation_general = {
+	value = rp_voting_demand_annexation_personal
+	add = rp_voting_demand_annexation_patriotic
+}
+
+rp_voting_demand_annexation_ruler = {
+	value = rp_voting_demand_annexation_general
+	add = rp_voting_support_ruler
+}
+
+# ============================ DO NOT TOUCH ============================================================================
+rp_voting_demand_annexation_military_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = military_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_annexation_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_demand_annexation_civic_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = civic_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_annexation_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_demand_annexation_religious_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = religious_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_annexation_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_demand_annexation_mercantile_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = mercantile_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_annexation_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_demand_annexation_populist_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = populist_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_demand_annexation_ruler>0 } add=rp_character_voting_power }
+	}
+}

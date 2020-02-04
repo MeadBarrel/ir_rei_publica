@@ -1,0 +1,44 @@
+rp_senate_approval_{{ MATTER }}_generic = {
+}
+
+
+# Military Party =======================================================================================================
+rp_senate_approval_{{ MATTER }}_military_party = {
+	rp_voting_support = { PARTY=military_party MATTER={{ MATTER }} MULTIPLIER=rp_voting_{{ MATTER }}_multiplier }
+
+	rp_senate_approval_{{ MATTER }}_generic = yes
+	rp_senate_approval_military_party_generic = yes
+}
+
+# Civic Party ==========================================================================================================
+rp_senate_approval_{{ MATTER }}_civic_party = {
+	rp_voting_support = { PARTY=civic_party MATTER={{ MATTER }} MULTIPLIER=rp_voting_{{ MATTER }}_multiplier}
+
+	rp_senate_approval_{{ MATTER }}_generic = yes
+	rp_senate_approval_civic_party_generic = yes
+}
+
+# Religious Party ======================================================================================================
+rp_senate_approval_{{ MATTER }}_religious_party = {
+	rp_voting_support = { PARTY=religious_party MATTER={{ MATTER }} MULTIPLIER=rp_voting_{{ MATTER }}_multiplier}
+
+	rp_senate_approval_{{ MATTER }}_generic = yes
+	rp_senate_approval_religious_party_generic = yes
+}
+
+# Mercantile Party ======================================================================================================
+rp_senate_approval_{{ MATTER }}_mercantile_party = {
+	rp_voting_support = { PARTY=mercantile_party MATTER={{ MATTER }} MULTIPLIER=rp_voting_{{ MATTER }}_multiplier}
+
+	rp_senate_approval_{{ MATTER }}_generic = yes
+	rp_senate_approval_mercantile_party_generic = yes
+}
+
+
+# Populist Party ======================================================================================================
+rp_senate_approval_{{ MATTER }}_populist_party = {
+	rp_voting_support = { PARTY=populist_party MATTER={{ MATTER }} MULTIPLIER=rp_voting_{{ MATTER }}_multiplier}
+
+	rp_senate_approval_{{ MATTER }}_generic = yes
+	rp_senate_approval_populist_party_generic = yes
+}
