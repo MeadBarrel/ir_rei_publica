@@ -32,15 +32,15 @@ rp_senate_approval_generic = {
 		}
 	}
 
-	always_modifier = { 
-		add = 0.1
-		custom_tooltip = {
-			text = "party_triumph_popularity_tooltip_ruler"
-			current_ruler = {
-				popularity > 80
-			}
-		}
-	}	
+	#always_modifier = { 
+	#	add = 0.1
+	#	custom_tooltip = {
+	#		text = "party_triumph_popularity_tooltip_ruler"
+	#		current_ruler = {
+	#			popularity > 80
+	#		}
+	#	}
+	#}	
 
 	always_modifier = {  # Tyranny
 		add = {
@@ -82,14 +82,6 @@ rp_senate_approval_generic = {
 rp_senate_approval_military_party_generic = {
 	rp_senate_approval_generic = yes
 	rp_senate_approval_from_support = { PARTY = "military" }
-
-	always_modifier = {
-		add = 0.1
-		custom_tooltip = {
-			text = we_are_weaker_than_them
-			max_manpower < scope:target.max_manpower
-		}
-	}
 
 	always_modifier = {
 		add = {

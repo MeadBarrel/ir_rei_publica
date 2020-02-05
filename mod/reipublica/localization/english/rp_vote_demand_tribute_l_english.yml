@@ -1,0 +1,144 @@
+﻿l_english:
+    rp_vote_yes:0 "#Y Да#!"
+    rp_vote_no:0 "#R Нет#!"
+
+    rp_vote_demand_tribute_military_party_member_0_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_0')]"
+    rp_vote_demand_tribute_military_party_member_1_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_1')]"
+    rp_vote_demand_tribute_military_party_member_2_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_2')]"
+    rp_vote_demand_tribute_military_party_member_3_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_3')]"
+    rp_vote_demand_tribute_military_party_member_4_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_4')]"
+    rp_vote_demand_tribute_military_party_member_5_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_5')]"
+    rp_vote_demand_tribute_military_party_member_6_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_6')]"
+    rp_vote_demand_tribute_military_party_member_7_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_7')]"
+    rp_vote_demand_tribute_military_party_member_8_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_8')]"                   
+    rp_vote_demand_tribute_military_party_member_9_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_9')]"                 
+
+
+    
+    rp_vote_demand_tribute_civic_party_member_0_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_0')]"
+    rp_vote_demand_tribute_civic_party_member_1_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_1')]"
+    rp_vote_demand_tribute_civic_party_member_2_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_2')]"
+    rp_vote_demand_tribute_civic_party_member_3_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_3')]"
+    rp_vote_demand_tribute_civic_party_member_4_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_4')]"
+    rp_vote_demand_tribute_civic_party_member_5_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_5')]"
+    rp_vote_demand_tribute_civic_party_member_6_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_6')]"
+    rp_vote_demand_tribute_civic_party_member_7_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_7')]"
+    rp_vote_demand_tribute_civic_party_member_8_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_8')]"                   
+    rp_vote_demand_tribute_civic_party_member_9_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_9')]"                 
+    
+    
+    
+    rp_vote_demand_tribute_religious_party_member_0_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_0')]"
+    rp_vote_demand_tribute_religious_party_member_1_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_1')]"
+    rp_vote_demand_tribute_religious_party_member_2_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_2')]"
+    rp_vote_demand_tribute_religious_party_member_3_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_3')]"
+    rp_vote_demand_tribute_religious_party_member_4_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_4')]"
+    rp_vote_demand_tribute_religious_party_member_5_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_5')]"
+    rp_vote_demand_tribute_religious_party_member_6_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_6')]"
+    rp_vote_demand_tribute_religious_party_member_7_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_7')]"
+    rp_vote_demand_tribute_religious_party_member_8_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_8')]"                   
+    rp_vote_demand_tribute_religious_party_member_9_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_9')]"                 
+    
+    
+    
+    rp_vote_demand_tribute_mercantile_party_member_0_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_0')]"
+    rp_vote_demand_tribute_mercantile_party_member_1_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_1')]"
+    rp_vote_demand_tribute_mercantile_party_member_2_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_2')]"
+    rp_vote_demand_tribute_mercantile_party_member_3_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_3')]"
+    rp_vote_demand_tribute_mercantile_party_member_4_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_4')]"
+    rp_vote_demand_tribute_mercantile_party_member_5_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_5')]"
+    rp_vote_demand_tribute_mercantile_party_member_6_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_6')]"
+    rp_vote_demand_tribute_mercantile_party_member_7_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_7')]"
+    rp_vote_demand_tribute_mercantile_party_member_8_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_8')]"                   
+    rp_vote_demand_tribute_mercantile_party_member_9_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_9')]"                 
+    
+    
+    
+    rp_vote_demand_tribute_populist_party_member_0_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_0')]"
+    rp_vote_demand_tribute_populist_party_member_1_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_1')]"
+    rp_vote_demand_tribute_populist_party_member_2_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_2')]"
+    rp_vote_demand_tribute_populist_party_member_3_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_3')]"
+    rp_vote_demand_tribute_populist_party_member_4_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_4')]"
+    rp_vote_demand_tribute_populist_party_member_5_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_5')]"
+    rp_vote_demand_tribute_populist_party_member_6_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_6')]"
+    rp_vote_demand_tribute_populist_party_member_7_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_7')]"
+    rp_vote_demand_tribute_populist_party_member_8_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_8')]"                   
+    rp_vote_demand_tribute_populist_party_member_9_pro:0 "$rp_vote_yes$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_9')]"                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    rp_vote_demand_tribute_military_party_member_0_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_0')]"
+    rp_vote_demand_tribute_military_party_member_1_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_1')]"
+    rp_vote_demand_tribute_military_party_member_2_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_2')]"
+    rp_vote_demand_tribute_military_party_member_3_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_3')]"
+    rp_vote_demand_tribute_military_party_member_4_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_4')]"
+    rp_vote_demand_tribute_military_party_member_5_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_5')]"
+    rp_vote_demand_tribute_military_party_member_6_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_6')]"
+    rp_vote_demand_tribute_military_party_member_7_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_7')]"
+    rp_vote_demand_tribute_military_party_member_8_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_8')]"                   
+    rp_vote_demand_tribute_military_party_member_9_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_military_party_member_9')]"                 
+
+
+    
+    rp_vote_demand_tribute_civic_party_member_0_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_0')]"
+    rp_vote_demand_tribute_civic_party_member_1_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_1')]"
+    rp_vote_demand_tribute_civic_party_member_2_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_2')]"
+    rp_vote_demand_tribute_civic_party_member_3_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_3')]"
+    rp_vote_demand_tribute_civic_party_member_4_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_4')]"
+    rp_vote_demand_tribute_civic_party_member_5_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_5')]"
+    rp_vote_demand_tribute_civic_party_member_6_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_6')]"
+    rp_vote_demand_tribute_civic_party_member_7_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_7')]"
+    rp_vote_demand_tribute_civic_party_member_8_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_8')]"                   
+    rp_vote_demand_tribute_civic_party_member_9_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_civic_party_member_9')]"                 
+    
+    
+    
+    rp_vote_demand_tribute_religious_party_member_0_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_0')]"
+    rp_vote_demand_tribute_religious_party_member_1_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_1')]"
+    rp_vote_demand_tribute_religious_party_member_2_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_2')]"
+    rp_vote_demand_tribute_religious_party_member_3_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_3')]"
+    rp_vote_demand_tribute_religious_party_member_4_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_4')]"
+    rp_vote_demand_tribute_religious_party_member_5_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_5')]"
+    rp_vote_demand_tribute_religious_party_member_6_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_6')]"
+    rp_vote_demand_tribute_religious_party_member_7_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_7')]"
+    rp_vote_demand_tribute_religious_party_member_8_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_8')]"                   
+    rp_vote_demand_tribute_religious_party_member_9_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_religious_party_member_9')]"                 
+    
+    
+    
+    rp_vote_demand_tribute_mercantile_party_member_0_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_0')]"
+    rp_vote_demand_tribute_mercantile_party_member_1_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_1')]"
+    rp_vote_demand_tribute_mercantile_party_member_2_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_2')]"
+    rp_vote_demand_tribute_mercantile_party_member_3_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_3')]"
+    rp_vote_demand_tribute_mercantile_party_member_4_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_4')]"
+    rp_vote_demand_tribute_mercantile_party_member_5_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_5')]"
+    rp_vote_demand_tribute_mercantile_party_member_6_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_6')]"
+    rp_vote_demand_tribute_mercantile_party_member_7_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_7')]"
+    rp_vote_demand_tribute_mercantile_party_member_8_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_8')]"                   
+    rp_vote_demand_tribute_mercantile_party_member_9_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_mercantile_party_member_9')]"                 
+    
+    
+    
+    rp_vote_demand_tribute_populist_party_member_0_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_0')]"
+    rp_vote_demand_tribute_populist_party_member_1_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_1')]"
+    rp_vote_demand_tribute_populist_party_member_2_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_2')]"
+    rp_vote_demand_tribute_populist_party_member_3_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_3')]"
+    rp_vote_demand_tribute_populist_party_member_4_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_4')]"
+    rp_vote_demand_tribute_populist_party_member_5_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_5')]"
+    rp_vote_demand_tribute_populist_party_member_6_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_6')]"
+    rp_vote_demand_tribute_populist_party_member_7_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_7')]"
+    rp_vote_demand_tribute_populist_party_member_8_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_8')]"                   
+    rp_vote_demand_tribute_populist_party_member_9_contra:0 "$rp_vote_no$ [SCOPE.ScriptValue('rp_voting_demand_tribute_populist_party_member_9')]"                 

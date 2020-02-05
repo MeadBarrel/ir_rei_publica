@@ -74,6 +74,17 @@ senate_support_precalc_party = {
 		value = 0
 	}
 	# Somehow $PARTY$ doesn't work with variable lists...
+	remove_variable = $PARTY$_member_0
+	remove_variable = $PARTY$_member_1
+	remove_variable = $PARTY$_member_2
+	remove_variable = $PARTY$_member_3
+	remove_variable = $PARTY$_member_4
+	remove_variable = $PARTY$_member_5
+	remove_variable = $PARTY$_member_6
+	remove_variable = $PARTY$_member_7
+	remove_variable = $PARTY$_member_8
+	remove_variable = $PARTY$_member_9
+	
 	ordered_character = {
 		
 

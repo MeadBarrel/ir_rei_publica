@@ -1,0 +1,4 @@
+﻿l_english:
+    rp_character_add_acquired_support_large:0 "[SCOPE.sChar('target').GetName] will be #Y much#! more willing to support you in the senate for the following year"
+    rp_character_add_acquired_support_moderate:0 "[SCOPE.sChar('target').GetName] will be more willing to support you in the senate for the following year"
+    rp_character_add_acquired_support_small:0 "[SCOPE.sChar('target').GetName] will be #N slightly#! more willing to support you in the senate for the following year"

@@ -1,0 +1,131 @@
+# ============================ CONFIG ==================================================================================
+
+rp_voting_{{ MATTER }}_multiplier = 1.0
+
+
+rp_pref_pi_{{ MATTER }} = {
+	value = 0
+	# Development <-> Expansion
+	#add = rp_get_political_ideology_expansion
+	#add = rp_get_political_ideology_development
+
+	# Cooperation <-> Oppression
+	# add = rp_get_political_ideology_cooperation
+	# subtract = rp_get_political_ideology_oppression
+
+	# Openness <-> Isolation
+	# add = rp_get_political_ideology_openness 
+	# subtract = rp_get_political_ideology_isolation
+
+	# Elitarian <-> Egalitarian
+	#add = rp_get_political_ideology_elitarian
+	#add = rp_get_political_ideology_egalitarian
+
+	# Conservative <-> Progressive
+	#add = rp_get_political_ideology_conservative
+	#add = rp_get_political_ideology_progressive
+
+	divide = 4
+}
+
+
+# PERSONAL REASONS =====================================================================================================
+rp_voting_{{ MATTER }}_personal = {
+	value = rp_pref_pi_{{ MATTER }}
+}
+
+
+# PARTY REASONS ========================================================================================================
+rp_voting_{{ MATTER }}_military_party = {
+	value = 0
+}
+
+
+rp_voting_{{ MATTER }}_civic_party = {
+	value = 0
+}
+
+rp_voting_{{ MATTER }}_religious_party = {
+	value = 0
+}
+
+rp_voting_{{ MATTER }}_mercantile_party = {
+	value = 0
+}
+
+rp_voting_{{ MATTER }}_populist_party = {
+	value = 0
+}
+
+
+rp_voting_{{ MATTER }}_patriotic = {
+	value = 0
+	if = {limit = { party=military_party } add=rp_voting_{{ MATTER }}_military_party }
+	if = {limit = { party=civic_party } add=rp_voting_{{ MATTER }}_civic_party }
+	if = {limit = { party=religious_party } add=rp_voting_{{ MATTER }}_religious_party }
+	if = {limit = { party=mercantile_party } add=rp_voting_{{ MATTER }}_mercantile_party }
+	if = {limit = { party=populist_party } add=rp_voting_{{ MATTER }}_populist_party }
+}
+
+
+# COMBINED =============================================================================================================
+rp_voting_{{ MATTER }}_general = {
+	value = rp_voting_{{ MATTER }}_personal
+	add = rp_voting_{{ MATTER }}_patriotic
+}
+
+rp_voting_{{ MATTER }}_ruler = {
+	value = rp_voting_{{ MATTER }}_general
+	add = rp_voting_support_ruler
+	round = yes
+}
+
+# ============================ DO NOT TOUCH ============================================================================
+rp_voting_{{ MATTER }}_military_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = military_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_{{ MATTER }}_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_{{ MATTER }}_civic_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = civic_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_{{ MATTER }}_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_{{ MATTER }}_religious_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = religious_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_{{ MATTER }}_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_{{ MATTER }}_mercantile_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = mercantile_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_{{ MATTER }}_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_{{ MATTER }}_populist_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = populist_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_{{ MATTER }}_ruler>0 } add=rp_character_voting_power }
+	}
+}

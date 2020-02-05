@@ -1,0 +1,86 @@
+rp_threaten_for_support = {
+	on_other_nation = no
+	on_own_nation = no
+
+	potential_trigger = {
+		hidden:scope:target = {
+			is_alive = yes
+			employer = scope:actor
+		}
+		hidden:scope:actor = {
+			is_republic = yes
+		}
+	}
+
+	allowed_trigger = {
+		scope:target = {
+			not = { has_trait = brave }			
+			trigger_if = {
+				limit = {
+					OR = {
+						not = { has_variable = threatened_by }
+						var:threatened_by = scope:actor.current_ruler
+					}
+				}
+				custom_tooltip = {
+					text = "rp_threaten_for_support_threatened_recently"
+					NOT = {
+						OR = {
+							not = { has_variable = threatened_by }
+							var:threatened_by = scope:actor.current_ruler
+						}
+					}					
+				}
+			}
+		}
+	}
+
+	effect = {
+		scope:actor = {
+			add_tyranny = 4
+		}
+		scope:target = {
+			add_loyalty = -10			
+			hidden_effect = {
+				set_variable = {
+					name = threatened_by
+					value = scope:actor.current_ruler
+					days = 2920
+				}
+			}
+			random_list = {
+				75 = {}
+				25 = {
+					trigger = {
+						scope:target = {
+							can_get_rivals = yes
+						}
+						scope:actor.current_ruler = {
+							can_get_rivals = yes
+						}	
+					}
+					modifier = {
+						scope:target = {
+							has_trait = vengeful
+						}
+						add = { value = 15 }
+					}
+					modifier = {
+						scope:target = {
+							has_trait = forgiving
+						}
+						add = { value = -10 }
+					}
+					scope:target = {
+						add_rival = scope:actor.current_ruler
+					}	
+				}
+			}
+		}
+		custom_tooltip = rp_threaten_for_support_outcome
+	}
+
+	ai_will_do = {
+		factor = 0
+	}
+}

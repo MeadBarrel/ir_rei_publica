@@ -1,0 +1,136 @@
+# ============================ CONFIG ==================================================================================
+
+rp_voting_declare_war_multiplier = 1.0
+
+
+rp_pref_pi_declare_war = {
+	value = 0
+	# Development <-> Expansion
+	add = rp_get_political_ideology_expansion
+	subtract = rp_get_political_ideology_development
+
+	# Cooperation <-> Oppression
+	subtract = rp_get_political_ideology_cooperation
+	add = rp_get_political_ideology_oppression
+
+	divide = 4
+}
+
+
+# PERSONAL REASONS =====================================================================================================
+rp_voting_declare_war_personal = {
+	value = rp_pref_pi_declare_war
+
+	add = rp_svp_warlike
+	subtract = rp_svp_personal_opinion_of_target_country
+	add = rp_svp_wants_expansion
+	subtract = rp_svp_our_holdings_endangered_by_them
+
+}
+
+
+# PARTY REASONS ========================================================================================================
+rp_voting_declare_war_military_party = {
+	value = 20
+	subtract = rp_svp_military_party_opinion_of_target
+}
+
+
+rp_voting_declare_war_civic_party = {
+	value = 0
+	subtract = rp_svp_civic_party_opinion_of_target
+}
+
+rp_voting_declare_war_religious_party = {
+	value = 0
+	subtract = rp_svp_religious_party_opinion_of_target
+}
+
+rp_voting_declare_war_mercantile_party = {
+	value = 0
+	subtract = rp_svp_mercantile_party_opinion_of_target
+}
+
+rp_voting_declare_war_populist_party = {
+	subtract = rp_svp_populist_party_opinion_of_target
+}
+
+
+rp_voting_declare_war_patriotic = {
+	value = 0
+	if = {limit = { party=military_party } add=rp_voting_declare_war_military_party }
+	if = {limit = { party=civic_party } add=rp_voting_declare_war_civic_party }
+	if = {limit = { party=religious_party } add=rp_voting_declare_war_religious_party }
+	if = {limit = { party=mercantile_party } add=rp_voting_declare_war_mercantile_party }
+	if = {limit = { party=populist_party } add=rp_voting_declare_war_populist_party }
+
+	if = {  # Already at war
+		limit = { employer = { war = yes } }
+		add = -20
+	}
+}
+
+
+# COMBINED =============================================================================================================
+rp_voting_declare_war_general = {
+	value = rp_voting_declare_war_personal
+	add = rp_voting_declare_war_patriotic
+}
+
+rp_voting_declare_war_ruler = {
+	value = rp_voting_declare_war_general
+	add = rp_voting_support_ruler
+	round = yes
+}
+
+# ============================ DO NOT TOUCH ============================================================================
+
+
+rp_voting_declare_war_military_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = military_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_declare_war_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_declare_war_civic_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = civic_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_declare_war_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_declare_war_religious_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = religious_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_declare_war_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_declare_war_mercantile_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = mercantile_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_declare_war_ruler>0 } add=rp_character_voting_power }
+	}
+}
+
+
+rp_voting_declare_war_populist_party_ruler = {
+	value = 0
+	every_in_list = {
+		variable = populist_party_members
+		limit = { can_vote = yes }
+		if = { limit={ rp_voting_declare_war_ruler>0 } add=rp_character_voting_power }
+	}
+}

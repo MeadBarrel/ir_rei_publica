@@ -1,5 +1,4 @@
 rp_voting_support_ruler = {
-	value = 0
 
 	if = {
 		limit = {
@@ -10,16 +9,24 @@ rp_voting_support_ruler = {
 
 	if = {
 		limit = {
+			has_variable = support_gained
+			var:support_gained = employer.current_ruler
+		}
+		add = var:support_gained_value
+	}
+
+	if = {
+		limit = {
 			is_friend = employer.current_ruler
 		}
-		add = 10
+		add = 40
 	}
 
 	if = {
 		limit = {
 			is_rival = employer.current_ruler
 		}
-		add = -10
+		add = -40
 	}
 
 	if = {  # Our friend is a rival of a ruler
@@ -28,19 +35,86 @@ rp_voting_support_ruler = {
 				is_rival = employer.current_ruler
 			}
 		}
-		add = -5
+		add = -15
 	}
 
 	if = {  # Low loyalty
 		limit = {
-			loyalty < 60
+			loyalty < 75
 		}
 		add = {
-			value = -60
+			value = -75
 			add = loyalty
-			divide = 3
 		}
 	}
+
+	if = {  # High loyalty
+		limit = {
+			loyalty > 90
+		}
+		add = {
+			value=loyalty
+			subtract=90
+			multiply = 1.5
+		}
+	}
+
+	if= {  # Ruler popularity > 80
+		limit = {
+			employer.current_ruler.popularity > 80
+		}
+		add = 10
+	}
+
+	if = { # Low ruler popularity 
+		limit = {
+			employer.current_ruler.popularity < 60
+		}
+		subtract = 10
+	}
+	if = {  # Even lower ruler popularity
+		limit = {
+			employer.current_ruler.popularity < 30
+		}
+		subtract = 10
+	}
+
+	if = { # Threatened
+		limit = {
+			has_variable = threatened_by
+			var:threatened_by = employer.current_ruler
+		}
+		add = {
+			value = 20
+			if = {
+				limit = { has_trait = coward } 
+				add = 20
+			}	
+			if = {
+				limit = { has_trait = cautious }
+				add = 10
+			}
+			if = {
+				limit = { or = { has_trait = reckless has_trait = stubborn } }
+				divide = 2
+			}			
+		}
+	}
+
+	if = {  # Bribed
+		limit = {
+			has_variable = bribed_for_support
+			var:bribed_for_support = employer.current_ruler
+		}
+		add = {
+			value = 15
+			if = {
+				limit = { has_trait = corrupt }
+				add = 15
+			}
+		}
+	}
+
 
 }
 

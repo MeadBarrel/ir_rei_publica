@@ -1,0 +1,4 @@
+﻿l_russian:
+    rp_character_add_acquired_support_large:0 "В течение ближайшего года [SCOPE.sChar('target').GetName] будет #Y гораздо#! благосклоннее к вам в сенате"
+    rp_character_add_acquired_support_moderate:0 "В течение ближайшего года [SCOPE.sChar('target').GetName] будет благосклоннее к вам в сенате"
+    rp_character_add_acquired_support_small:0 "В течение ближайшего года [SCOPE.sChar('target').GetName] будет #N чуть#! благосклоннее к вам в сенате"
