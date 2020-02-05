@@ -5,35 +5,21 @@ rp_voting_guarantee_multiplier = 1.0
 
 rp_pref_pi_guarantee = {
 	value = 0
-	# Development <-> Expansion
-	add = {
-		value = rp_get_political_ideology_expansion
-		subtract = rp_get_political_ideology_development
-		divide = 2
-	}
+
+	add = rp_get_political_ideology_expansion
+	subtract = rp_get_political_ideology_development
 
 	# Cooperation <-> Oppression
 	add = rp_get_political_ideology_cooperation
 	subtract = rp_get_political_ideology_oppression
 
+	divide = 4
 }
 
-
-rp_pref_pi_guarantee_scaled = {
-	if = {
-		limit = { rp_pref_pi_guarantee > 0 }
-		value = rp_pref_pi_guarantee
-		divide = { value = rp_pref_pi_guarantee multiply = rp_im add = rp_ia }	
-	} 
-	else = {
-		value = rp_pref_pi_guarantee
-		divide = { value = rp_pref_pi_guarantee multiply = rp_im_neg add = rp_ia }	
-	}
-}
 
 # PERSONAL REASONS =====================================================================================================
 rp_voting_guarantee_personal = {
-	value = rp_pref_pi_guarantee_scaled
+	value = rp_pref_pi_guarantee
 	add = { value = rp_svp_warlike divide = 2 }
 	add = rp_svp_personal_opinion_of_target_country
 	add = {
@@ -95,6 +81,7 @@ rp_voting_guarantee_general = {
 rp_voting_guarantee_ruler = {
 	value = rp_voting_guarantee_general
 	add = rp_voting_support_ruler
+	round = yes
 }
 
 # ============================ DO NOT TOUCH ============================================================================

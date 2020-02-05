@@ -18,7 +18,7 @@ def process(type_, parameters):
             output_name = output_name.replace('{%s}' % key, value)
         output_file_path = os.path.join('./output', output_name)
         os.makedirs(os.path.dirname(output_file_path), exist_ok=True)
-        with open(output_file_path, 'w') as f:
+        with open(output_file_path, 'w', encoding='utf-8-sig') as f:
             f.write(result)
 
 

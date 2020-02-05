@@ -75,3 +75,5 @@
     rp_pi_progressive_moderate:0 "$rp_pi_progressive$: $rp_pi_moderate$"
     rp_pi_progressive_low:0 "$rp_pi_progressive$: $rp_pi_low$"
     rp_pi_progressive_very_low:0 "$rp_pi_progressive$: $rp_pi_very_low$"
+
+    rp_character_ruler_support_tt:0 "Поддержка правителя: [SCOPE.ScriptValue('rp_voting_support_ruler')]"

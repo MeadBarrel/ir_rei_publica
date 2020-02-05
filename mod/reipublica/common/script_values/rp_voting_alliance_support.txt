@@ -14,24 +14,13 @@ rp_pref_pi_alliance = {
 	add = rp_get_political_ideology_openness 
 	subtract = rp_get_political_ideology_isolation
 
+	divide = 4
 }
 
-
-rp_pref_pi_alliance_scaled = {
-	if = {
-		limit = { rp_pref_pi_alliance > 0 }
-		value = rp_pref_pi_alliance
-		divide = { value = rp_pref_pi_alliance multiply = rp_im add = rp_ia }	
-	} 
-	else = {
-		value = rp_pref_pi_alliance
-		divide = { value = rp_pref_pi_alliance multiply = rp_im_neg add = rp_ia }	
-	}
-}
 
 # PERSONAL REASONS =====================================================================================================
 rp_voting_alliance_personal = {
-	value = rp_pref_pi_alliance_scaled
+	value = rp_pref_pi_alliance
 
 	add = rp_svp_personal_opinion_of_target_country
 	add = {
@@ -92,6 +81,7 @@ rp_voting_alliance_general = {
 rp_voting_alliance_ruler = {
 	value = rp_voting_alliance_general
 	add = rp_voting_support_ruler
+	round=yes
 }
 
 # ============================ DO NOT TOUCH ============================================================================
@@ -143,3 +133,5 @@ rp_voting_alliance_populist_party_ruler = {
 		if = { limit={ rp_voting_alliance_ruler>0 } add=rp_character_voting_power }
 	}
 }
+
+

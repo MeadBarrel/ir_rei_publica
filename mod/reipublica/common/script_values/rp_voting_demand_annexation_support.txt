@@ -12,24 +12,14 @@ rp_pref_pi_demand_annexation = {
 	# Openness <-> Isolation
 	add = rp_get_political_ideology_openness 
 	subtract = rp_get_political_ideology_isolation
+
+	divide = 4
 }
 
-
-rp_pref_pi_demand_annexation_scaled = {
-	if = {
-		limit = { rp_pref_pi_demand_annexation > 0 }
-		value = rp_pref_pi_demand_annexation
-		divide = { value = rp_pref_pi_demand_annexation multiply = rp_im add = rp_ia }	
-	} 
-	else = {
-		value = rp_pref_pi_demand_annexation
-		divide = { value = rp_pref_pi_demand_annexation multiply = rp_im_neg add = rp_ia }	
-	}
-}
 
 # PERSONAL REASONS =====================================================================================================
 rp_voting_demand_annexation_personal = {
-	value = rp_pref_pi_demand_annexation_scaled
+	value = rp_pref_pi_demand_annexation
 	subtract = {
 		value = rp_svp_personal_opinion_of_target_country
 		divide = 2
@@ -104,6 +94,7 @@ rp_voting_demand_annexation_general = {
 rp_voting_demand_annexation_ruler = {
 	value = rp_voting_demand_annexation_general
 	add = rp_voting_support_ruler
+	round = yes
 }
 
 # ============================ DO NOT TOUCH ============================================================================

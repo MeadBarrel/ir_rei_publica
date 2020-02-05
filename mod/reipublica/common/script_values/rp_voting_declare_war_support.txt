@@ -12,24 +12,14 @@ rp_pref_pi_declare_war = {
 	# Cooperation <-> Oppression
 	subtract = rp_get_political_ideology_cooperation
 	add = rp_get_political_ideology_oppression
+
+	divide = 4
 }
 
-
-rp_pref_pi_declare_war_scaled = {
-	if = {
-		limit = { rp_pref_pi_declare_war > 0 }
-		value = rp_pref_pi_declare_war
-		divide = { value = rp_pref_pi_declare_war multiply = rp_im add = rp_ia }	
-	} 
-	else = {
-		value = rp_pref_pi_declare_war
-		divide = { value = rp_pref_pi_declare_war multiply = rp_im_neg add = rp_ia }	
-	}
-}
 
 # PERSONAL REASONS =====================================================================================================
 rp_voting_declare_war_personal = {
-	value = rp_pref_pi_declare_war_scaled
+	value = rp_pref_pi_declare_war
 
 	add = rp_svp_warlike
 	subtract = rp_svp_personal_opinion_of_target_country
@@ -90,6 +80,7 @@ rp_voting_declare_war_general = {
 rp_voting_declare_war_ruler = {
 	value = rp_voting_declare_war_general
 	add = rp_voting_support_ruler
+	round = yes
 }
 
 # ============================ DO NOT TOUCH ============================================================================

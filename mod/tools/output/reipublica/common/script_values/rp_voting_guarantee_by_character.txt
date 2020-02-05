@@ -1,0 +1,355 @@
+﻿# Military party
+rp_voting_guarantee_military_party_member_0 = {
+	var:military_party_member_0 = {		
+
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_1 = {
+	var:military_party_member_1 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_2 = {
+	var:military_party_member_2 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_3 = {
+	var:military_party_member_3 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_4 = {
+	var:military_party_member_4 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_5 = {
+	var:military_party_member_5 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_6 = {
+	var:military_party_member_6 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_7 = {
+	var:military_party_member_7 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_8 = {
+	var:military_party_member_8 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_military_party_member_9 = {
+	var:military_party_member_9 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+# Civic party
+rp_voting_guarantee_civic_party_member_0 = {
+	var:civic_party_member_0 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_1 = {
+	var:civic_party_member_1 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_2 = {
+	var:civic_party_member_2 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_3 = {
+	var:civic_party_member_3 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_4 = {
+	var:civic_party_member_4 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_5 = {
+	var:civic_party_member_5 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_6 = {
+	var:civic_party_member_6 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_7 = {
+	var:civic_party_member_7 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_8 = {
+	var:civic_party_member_8 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_civic_party_member_9 = {
+	var:civic_party_member_9 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+# Religious party
+rp_voting_guarantee_religious_party_member_0 = {
+	var:religious_party_member_0 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_1 = {
+	var:religious_party_member_1 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_2 = {
+	var:religious_party_member_2 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_3 = {
+	var:religious_party_member_3 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_4 = {
+	var:religious_party_member_4 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_5 = {
+	var:religious_party_member_5 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_6 = {
+	var:religious_party_member_6 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_7 = {
+	var:religious_party_member_7 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_8 = {
+	var:religious_party_member_8 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_religious_party_member_9 = {
+	var:religious_party_member_9 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+
+# Mercantile party
+rp_voting_guarantee_mercantile_party_member_0 = {
+	var:mercantile_party_member_0 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_1 = {
+	var:mercantile_party_member_1 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_2 = {
+	var:mercantile_party_member_2 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_3 = {
+	var:mercantile_party_member_3 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_4 = {
+	var:mercantile_party_member_4 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_5 = {
+	var:mercantile_party_member_5 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_6 = {
+	var:mercantile_party_member_6 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_7 = {
+	var:mercantile_party_member_7 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_8 = {
+	var:mercantile_party_member_8 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_mercantile_party_member_9 = {
+	var:mercantile_party_member_9 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+# Populist party
+rp_voting_guarantee_populist_party_member_0 = {
+	var:populist_party_member_0 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_1 = {
+	var:populist_party_member_1 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_2 = {
+	var:populist_party_member_2 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_3 = {
+	var:populist_party_member_3 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_4 = {
+	var:populist_party_member_4 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_5 = {
+	var:populist_party_member_5 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_6 = {
+	var:populist_party_member_6 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_7 = {
+	var:populist_party_member_7 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_8 = {
+	var:populist_party_member_8 = {
+		value = rp_voting_guarantee_ruler
+	}
+}
+
+
+rp_voting_guarantee_populist_party_member_9 = {
+	var:populist_party_member_9 = {
+		value = rp_voting_guarantee_ruler
+	}
+}

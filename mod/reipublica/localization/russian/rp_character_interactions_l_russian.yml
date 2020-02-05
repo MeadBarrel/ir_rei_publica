@@ -1,0 +1,12 @@
+﻿l_russian:
+    rp_threaten_for_support:0 "Угрожать"
+    rp_threaten_for_support_past:0 "$CHAR$ получил угрозы"
+    rp_threaten_for_support_act:0 "Вы пригрозите персонажу $CHAR$"
+    rp_threaten_for_support_act_past:0 "$CHAR$ получил угрозы"
+    rp_threaten_for_support_threatened_recently:0 "Ваш правитель уже угрожал песонажу [SCOPE.sChar(target).GetName] недавно"
+    rp_threaten_for_support_outcome:0 "Какое-то время [SCOPE.sChar(target).GetName] будет более склонен поддержать вас в сенате"
+
+    rp_buy_support:0 "Купить поддержку"
+    rp_buy_support_past:0 "Персонаж подкуплен!"
+    rp_buy_support_act:0 "Вы купите поддержку персонажа $CHAR$ в сенате"
+    rp_buy_support_act_past:0 "Лидер державы $COUNTRY$ купил поддержку персонажа $CHAR$"

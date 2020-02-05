@@ -1,11 +1,18 @@
 rp_voting_support_ruler = {
-	value = -15
 
 	if = {
 		limit = {
 			is_ruler = yes
 		}
 		add = 1000
+	}
+
+	if = {
+		limit = {
+			has_variable = support_gained
+			var:support_gained = employer.current_ruler
+		}
+		add = var:support_gained_value
 	}
 
 	if = {
@@ -71,6 +78,43 @@ rp_voting_support_ruler = {
 		}
 		subtract = 10
 	}
+
+	if = { # Threatened
+		limit = {
+			has_variable = threatened_by
+			var:threatened_by = employer.current_ruler
+		}
+		add = {
+			value = 20
+			if = {
+				limit = { has_trait = coward } 
+				add = 20
+			}	
+			if = {
+				limit = { has_trait = cautious }
+				add = 10
+			}
+			if = {
+				limit = { or = { has_trait = reckless has_trait = stubborn } }
+				divide = 2
+			}			
+		}
+	}
+
+	if = {  # Bribed
+		limit = {
+			has_variable = bribed_for_support
+			var:bribed_for_support = employer.current_ruler
+		}
+		add = {
+			value = 15
+			if = {
+				limit = { has_trait = corrupt }
+				add = 15
+			}
+		}
+	}
+
 
 }
 

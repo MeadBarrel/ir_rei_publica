@@ -24,24 +24,14 @@ rp_pref_pi_{{ MATTER }} = {
 	# Conservative <-> Progressive
 	#add = rp_get_political_ideology_conservative
 	#add = rp_get_political_ideology_progressive
+
+	divide = 4
 }
 
-
-rp_pref_pi_{{ MATTER }}_scaled = {
-	if = {
-		limit = { rp_pref_pi_{{ MATTER }} > 0 }
-		value = rp_pref_pi_{{ MATTER }}
-		divide = { value = rp_pref_pi_{{ MATTER }} multiply = rp_im add = rp_ia }	
-	} 
-	else = {
-		value = rp_pref_pi_{{ MATTER }}
-		divide = { value = rp_pref_pi_{{ MATTER }} multiply = rp_im_neg add = rp_ia }	
-	}
-}
 
 # PERSONAL REASONS =====================================================================================================
 rp_voting_{{ MATTER }}_personal = {
-	value = rp_pref_pi_{{ MATTER }}_scaled
+	value = rp_pref_pi_{{ MATTER }}
 }
 
 
@@ -87,6 +77,7 @@ rp_voting_{{ MATTER }}_general = {
 rp_voting_{{ MATTER }}_ruler = {
 	value = rp_voting_{{ MATTER }}_general
 	add = rp_voting_support_ruler
+	round = yes
 }
 
 # ============================ DO NOT TOUCH ============================================================================

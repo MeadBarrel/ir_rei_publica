@@ -129,7 +129,7 @@ rp_derival_chance_scheme = {
 }
 
 rp_scheme_ruler_befriend_chance = {
-	value = 6
+	value = 20
 	min = 0
 	max = 75
 

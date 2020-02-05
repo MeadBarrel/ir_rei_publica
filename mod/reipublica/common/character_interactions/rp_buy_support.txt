@@ -1,0 +1,88 @@
+rp_buy_support = {
+
+	on_other_nation = no
+	on_own_nation = yes
+	
+	sound = "event:/SFX/UI/Character/Unique/sfx_ui_character_bribe"
+	
+	potential_trigger = {
+		hidden:scope:target = {
+			NOT = { employer = { tag = REB } }
+			NOT = { employer = { tag = BAR } }
+			is_alive = yes
+			is_ruler = no
+		}
+		hidden:scope:actor = {
+			is_republic = yes
+		}
+	}
+	
+	
+	allowed_trigger = {
+		hidden:scope:actor.current_ruler = {
+			wealth >= 100
+		}
+		scope:target = {
+			prisoner = no
+			is_adult = yes
+			trigger_if = {
+				limit = {
+					has_variable = ca_character_bribed
+				}
+				custom_tooltip = {
+					text = "BRIBED_RECENTLY"
+			
+					NOT = { has_variable = ca_character_bribed }
+				}
+			}
+			NOR = {
+				has_trait = righteous
+				has_trait = honest
+			}
+		}
+	}
+	
+
+	
+	effect = {
+		scope:actor.current_ruler = {
+			if = {
+				limit = { scope:actor = { is_ai = no } }
+				add_corruption = 1
+			}
+		}
+		scope:actor.current_ruler = {
+			add_gold = -100
+		}
+		scope:target = {
+			add_gold = 100
+			add_corruption = 5
+			
+			hidden_effect = {
+				set_variable = {
+					name = ca_character_bribed
+					days = 730
+				}
+				set_variable = {
+					name = bribed_for_support
+					value = scope:actor.current_ruler
+					days = 365
+				}
+			}
+
+			if = {
+				limit = {has_trait=corrupt}
+				custom_tooltip = rp_character_add_acquired_support_moderate
+			}
+			else = {
+				custom_tooltip = rp_character_add_acquired_support_small
+			}
+			
+		}
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+	
+}	

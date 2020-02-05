@@ -247,36 +247,42 @@ rp_svp_at_war_with_our_friend = {
 		limit = {
 			scope:target = {
 				any_countries_at_war_with = {
-					prev.prev = {
-						if = {
-							limit = {
-								opinion = { target = prev value > 150 }
-							} 
-							add = 5
-						}
-						if = {
-							limit = {
-								opinion = { target = prev value > 100 }
-							} 
-							add = 5
-						}
-						if = {
-							limit = {
-								opinion = { target = prev value > 50 }
-							} 
-							add = 5
-						}
-						if = {
-							limit = {
-								opinion = { target = prev value > 0 }
-							} 
-							add = 5
-						}												
-					}										
+					limit = { opinion = { target = prev value > 150 } }
 				}
 			}
-		}
+		} 
+		add = 5
 	}
+	if = {  
+		limit = {
+			scope:target = {
+				any_countries_at_war_with = {
+					limit = { opinion = { target = prev value > 100 } }
+				}
+			}
+		} 
+		add = 5
+	}
+	if = { 
+		limit = {
+			scope:target = {
+				any_countries_at_war_with = {
+					limit = { opinion = { target = prev value > 50 } }
+				}
+			}
+		} 
+		add = 5
+	}	
+	if = {  # Are at war against 
+		limit = {
+			scope:target = {
+				any_countries_at_war_with = {
+					limit = { opinion = { target = prev value > 0 } }
+				}
+			}
+		} 
+		add = 5
+	}	
 }
 
 

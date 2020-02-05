@@ -92,6 +92,6 @@ character_window_political_ideology = {
 			else_if = { limit = { rp_get_political_ideology_progressive > 0 } custom_tooltip = rp_pi_progressive_very_low }
 		}
 
-
+		custom_tooltip = "rp_character_ruler_support_tt"
 	}
 }

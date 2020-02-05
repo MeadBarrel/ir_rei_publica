@@ -8,141 +8,102 @@ rp_voting_support = {
 
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_0 exists = var:$PARTY$_member_0 var:$PARTY$_member_0 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_0 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_0 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_0_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_0 exists = var:$PARTY$_member_0 var:$PARTY$_member_0 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_0 = { custom_tooltip = "rp_vote_contra" }
+			limit = { has_variable = $PARTY$_member_0 exists = var:$PARTY$_member_0 var:$PARTY$_member_0 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_0 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_0_contra }
 		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_0 exists = var:$PARTY$_member_0 var:$PARTY$_member_0 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_0 = { custom_tooltip = "rp_vote_absolve" }
-		}
-
+		
 
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_1 exists = var:$PARTY$_member_1 var:$PARTY$_member_1 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_1 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_1 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_1_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_1 exists = var:$PARTY$_member_1 var:$PARTY$_member_1 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_1 = { custom_tooltip = "rp_vote_contra" }
-		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_1 exists = var:$PARTY$_member_1 var:$PARTY$_member_1 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_1 = { custom_tooltip = "rp_vote_absolve" }
+			limit = { has_variable = $PARTY$_member_1 exists = var:$PARTY$_member_1 var:$PARTY$_member_1 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_1 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_1_contra }
 		}
 
 
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_2 exists = var:$PARTY$_member_2 var:$PARTY$_member_2 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_2 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_2 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_2_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_2 exists = var:$PARTY$_member_2 var:$PARTY$_member_2 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_2 = { custom_tooltip = "rp_vote_contra" }
+			limit = { has_variable = $PARTY$_member_2 exists = var:$PARTY$_member_2 var:$PARTY$_member_2 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_2 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_2_contra }
 		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_2 exists = var:$PARTY$_member_2 var:$PARTY$_member_2 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_2 = { custom_tooltip = "rp_vote_absolve" }
-		}
-
-
+		
+		
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_3 exists = var:$PARTY$_member_3 var:$PARTY$_member_3 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_3 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_3 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_3_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_3 exists = var:$PARTY$_member_3 var:$PARTY$_member_3 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_3 = { custom_tooltip = "rp_vote_contra" }
+			limit = { has_variable = $PARTY$_member_3 exists = var:$PARTY$_member_3 var:$PARTY$_member_3 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_3 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_3_contra }
 		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_3 exists = var:$PARTY$_member_3 var:$PARTY$_member_3 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_3 = { custom_tooltip = "rp_vote_absolve" }
-		}
-
-
+		
+		
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_4 exists = var:$PARTY$_member_4 var:$PARTY$_member_4 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_4 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_4 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_4_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_4 exists = var:$PARTY$_member_4 var:$PARTY$_member_4 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_4 = { custom_tooltip = "rp_vote_contra" }
+			limit = { has_variable = $PARTY$_member_4 exists = var:$PARTY$_member_4 var:$PARTY$_member_4 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_4 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_4_contra }
 		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_4 exists = var:$PARTY$_member_4 var:$PARTY$_member_4 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_4 = { custom_tooltip = "rp_vote_absolve" }
-		}
-
-
+		
+		
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_5 exists = var:$PARTY$_member_5 var:$PARTY$_member_5 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_5 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_5 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_5_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_5 exists = var:$PARTY$_member_5 var:$PARTY$_member_5 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_5 = { custom_tooltip = "rp_vote_contra" }
+			limit = { has_variable = $PARTY$_member_5 exists = var:$PARTY$_member_5 var:$PARTY$_member_5 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_5 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_5_contra }
 		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_5 exists = var:$PARTY$_member_5 var:$PARTY$_member_5 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_5 = { custom_tooltip = "rp_vote_absolve" }
-		}
-
-
+		
+		
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_6 exists = var:$PARTY$_member_6 var:$PARTY$_member_6 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_6 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_6 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_6_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_6 exists = var:$PARTY$_member_6 var:$PARTY$_member_6 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_6 = { custom_tooltip = "rp_vote_contra" }
+			limit = { has_variable = $PARTY$_member_6 exists = var:$PARTY$_member_6 var:$PARTY$_member_6 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_6 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_6_contra }
 		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_6 exists = var:$PARTY$_member_6 var:$PARTY$_member_6 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_6 = { custom_tooltip = "rp_vote_absolve" }
-		}
-
+		
+		
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_7 exists = var:$PARTY$_member_7 var:$PARTY$_member_7 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_7 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_7 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_7_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_7 exists = var:$PARTY$_member_7 var:$PARTY$_member_7 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_7 = { custom_tooltip = "rp_vote_contra" }
+			limit = { has_variable = $PARTY$_member_7 exists = var:$PARTY$_member_7 var:$PARTY$_member_7 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_7 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_7_contra }
 		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_7 exists = var:$PARTY$_member_7 var:$PARTY$_member_7 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_7 = { custom_tooltip = "rp_vote_absolve" }
-		}
-
+		
+		
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_8 exists = var:$PARTY$_member_8 var:$PARTY$_member_8 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_8 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_8 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_8_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_8 exists = var:$PARTY$_member_8 var:$PARTY$_member_8 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_8 = { custom_tooltip = "rp_vote_contra" }
-		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_8 exists = var:$PARTY$_member_8 var:$PARTY$_member_8 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_8 = { custom_tooltip = "rp_vote_absolve" }
-		}
+			limit = { has_variable = $PARTY$_member_8 exists = var:$PARTY$_member_8 var:$PARTY$_member_8 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_8 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_8_contra }
+		}		
 
 		trigger_if = {
 			limit = { has_variable = $PARTY$_member_9 exists = var:$PARTY$_member_9 var:$PARTY$_member_9 = { can_vote=yes rp_voting_$MATTER$_ruler > 0 } }
-			var:$PARTY$_member_9 = { custom_tooltip = "rp_vote_pro" }
+			var:$PARTY$_member_9 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_9_pro }
 		}
 		trigger_if = {
-			limit = { has_variable = $PARTY$_member_9 exists = var:$PARTY$_member_9 var:$PARTY$_member_9 = { can_vote=yes rp_voting_$MATTER$_ruler < 0 } }
-			var:$PARTY$_member_9 = { custom_tooltip = "rp_vote_contra" }
-		}
-		trigger_if = {
-			limit = { has_variable = $PARTY$_member_9 exists = var:$PARTY$_member_9 var:$PARTY$_member_9 = { can_vote=yes rp_voting_$MATTER$_ruler = 0 } }
-			var:$PARTY$_member_9 = { custom_tooltip = "rp_vote_absolve" }
+			limit = { has_variable = $PARTY$_member_9 exists = var:$PARTY$_member_9 var:$PARTY$_member_9 = { can_vote=yes rp_voting_$MATTER$_ruler <= 0 } }
+			var:$PARTY$_member_9 = { custom_tooltip = rp_vote_$MATTER$_$PARTY$_member_9_contra }
 		}
 
-		
 	}
 
 }
